@@ -10,8 +10,8 @@ private:
 public:
 	listA();
 	~listA();
-	void insertFirst(associate*);
-	bool searchAssociate(associate*);
+	bool insertFirst(associate*);
+	bool searchAssociate(string);
 	bool eliminateAssociate(associate*);
 	string toString();
 };
