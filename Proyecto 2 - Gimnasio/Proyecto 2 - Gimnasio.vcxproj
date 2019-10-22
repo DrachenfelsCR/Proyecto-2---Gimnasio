@@ -123,10 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="measurements.h" />
     <ClInclude Include="persona.h" />
     <ClInclude Include="routine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="measurements.cpp" />
     <ClCompile Include="routine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -57,3 +57,5 @@ string routine::toString() {
 	s << " " << "Repeticiones: " << this->instructions[3] << endl;
 	return s.str();
 }
+
+routine::~routine(){}

@@ -21,9 +21,15 @@
     <ClInclude Include="routine.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="measurements.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="routine.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="measurements.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
