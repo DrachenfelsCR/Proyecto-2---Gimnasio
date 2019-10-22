@@ -16,7 +16,7 @@ public:
 	void setFullName(string);
 	string getId();
 	string getFullName();
-	string toString();
+	virtual string toString();
 	~person();
 };
 

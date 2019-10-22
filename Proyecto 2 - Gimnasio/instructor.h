@@ -6,7 +6,7 @@
 class instructor : public person
 {
 private:
-
+	
 public:
 	instructor(string = "#", string ="#");
 	~instructor();

@@ -37,7 +37,13 @@ int associate::getPhone() {
 string associate::getRegistrationDate() {
 	return this->registration_date;
 }
-
+string associate::toString() {
+	stringstream s;
+	s << person::toString() << endl;
+	s << "Email: " << this->email << endl;
+	s << "Numero de telefono: " << this->phone << endl;
+	s << "Fecha de inscripcion: " << this->registration_date << endl;
+}
 associate::~associate()
 {
 }
