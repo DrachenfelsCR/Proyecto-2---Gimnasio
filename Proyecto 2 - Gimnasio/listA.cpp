@@ -24,36 +24,47 @@ bool listA::insertFirst(associate* member) {
 	}
 }
 
-bool listA::searchAssociate(string id) {
+associate* listA::searchAndGet(string id) {
 	this->current = this->first;
 	while (current != NULL)
 	{
 		if (this->current->getMember()->getId() == id)
 		{
-			return true;
+			return this->current->getMember();
 		}
 		else
 		{
 			this->current = this->current->getNext();
 		}
-	} return false;
+	} return NULL;
 }
-
-while (current != NULL) {
-	if ((current->getCar()->getPlaca() == p)) {
-		return true;
+bool listA::eliminateAssociate(string id) {
+	if (first != NULL) {
+		nodeA* before = NULL;
+		current = first;
+		while ((current != NULL) && (current->getMember()->getId() != id))
+		{
+			before = current;
+			current = current->getNext();
+		}
+		if (current == NULL) {
+			return false;
+		}
+		//this else if, is in case that the first element is the one that must be deleted.
+		else if(before == NULL)
+		{
+			first = first->getNext();
+			delete current;
+		}
+		else 
+		{
+			before->getNext() = current->getNext();
+			delete current;
+		}
 	}
-	else {
-		current = current->getNext();
-	}
-} return false;
-
+}
 
 listA::~listA()
 {
 }
 
-bool eliminateAssociate(associate* ) {
-
-}
-string toString();
