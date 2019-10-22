@@ -1,0 +1,26 @@
+#include "nodeA.h"
+
+nodeA::nodeA(associate* member, nodeA* next)
+{
+	this->member = member;
+	this->next = next;
+}
+void nodeA::setMember(associate* member) {
+	this->member = member;
+}
+
+associate* nodeA::getMember() {
+	return this->member;
+}
+
+void nodeA::setNext(nodeA* next) {
+	this->next = next;
+}
+
+nodeA* nodeA::getNext() {
+	return this->next;
+}
+
+nodeA::~nodeA()
+{
+}

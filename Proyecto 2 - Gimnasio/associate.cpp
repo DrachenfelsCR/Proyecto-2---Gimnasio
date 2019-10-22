@@ -37,6 +37,7 @@ int associate::getPhone() {
 string associate::getRegistrationDate() {
 	return this->registration_date;
 }
+
 associate::~associate()
 {
 }

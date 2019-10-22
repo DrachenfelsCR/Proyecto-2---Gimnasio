@@ -26,4 +26,11 @@ string person::getId() {
 	return this->id;
 }
 
+string person::toString() {
+	stringstream s;
+	s << "Nombre completo: " << this->full_name << endl;
+	s << "ID: " << this->id << endl;
+	return s.str();
+}
+
 person::~person() {}

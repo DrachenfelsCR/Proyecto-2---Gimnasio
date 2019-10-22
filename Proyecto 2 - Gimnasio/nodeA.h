@@ -1,0 +1,21 @@
+#ifndef NODEA_H
+#define NODEA_H
+#include "associate.h"
+
+class nodeA
+{
+private:
+	associate* member;
+	nodeA* next;
+public:
+	nodeA(associate*, nodeA*);
+	void setMember(associate*);
+	associate* getMember();
+	void setNext(nodeA*);
+	nodeA* getNext();
+	string toString();
+	~nodeA();
+
+
+};
+#endif // !NODEA_H

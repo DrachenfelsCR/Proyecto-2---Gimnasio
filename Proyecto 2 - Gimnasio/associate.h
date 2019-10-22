@@ -18,6 +18,7 @@ public:
 	string getEmail();
 	int getPhone();
 	string getRegistrationDate();
+	string toString();
 	~associate();
 };
 

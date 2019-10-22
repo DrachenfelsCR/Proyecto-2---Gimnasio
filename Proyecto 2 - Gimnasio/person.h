@@ -1,6 +1,7 @@
 #ifndef PERSON_H
 #define PERSON_H
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 class person
@@ -15,6 +16,7 @@ public:
 	void setFullName(string);
 	string getId();
 	string getFullName();
+	string toString();
 	~person();
 };
 
