@@ -21,6 +21,13 @@ nodeA* nodeA::getNext() {
 	return this->next;
 }
 
+string nodeA::toString()
+{
+	stringstream s;
+	s << member->toString()<<;
+	return s.str();
+}
+
 nodeA::~nodeA()
 {
 }

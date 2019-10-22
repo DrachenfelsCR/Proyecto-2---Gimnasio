@@ -1,25 +1,23 @@
 #ifndef INSTRUCTOR_H
 #define INSTRUCTOR_H
+#include "person.h"
 #include <iostream>
 
-class instructor
+class instructor : public person
 {
 private:
 	
 public:
-	instructor();
+	instructor(string = "#", string ="#");
 	~instructor();
+	string toString();
 
+	
 
 };
 
-instructor::instructor()
-{
-}
 
-instructor::~instructor()
-{
-}
+
 
 
 #endif // !INSTRUCTOR_H
