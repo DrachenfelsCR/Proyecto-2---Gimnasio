@@ -24,7 +24,7 @@ nodeA* nodeA::getNext() {
 string nodeA::toString()
 {
 	stringstream s;
-	s << member->toString()<<;
+	s << member->toString() << endl;
 	return s.str();
 }
 
