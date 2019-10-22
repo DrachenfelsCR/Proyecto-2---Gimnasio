@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="associate.h" />
     <ClInclude Include="gym.h" />
+    <ClInclude Include="nodeI.h" />
     <ClInclude Include="tools.h" />
     <ClInclude Include="measurements.h" />
     <ClInclude Include="person.h" />
@@ -133,8 +134,10 @@
   <ItemGroup>
     <ClCompile Include="associate.cpp" />
     <ClCompile Include="gym.cpp" />
+    <ClCompile Include="instructor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="measurements.cpp" />
+    <ClCompile Include="nodeI.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="routine.cpp" />
     <ClCompile Include="tools.cpp" />
