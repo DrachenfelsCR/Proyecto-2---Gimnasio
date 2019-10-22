@@ -124,18 +124,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="associate.h" />
-    <ClInclude Include="instructor.h" />
+    <ClInclude Include="gym.h" />
+    <ClInclude Include="tools.h" />
     <ClInclude Include="measurements.h" />
-    <ClInclude Include="nodeA.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="routine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="associate.cpp" />
+    <ClCompile Include="gym.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="measurements.cpp" />
-    <ClCompile Include="nodeA.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="routine.cpp" />
+    <ClCompile Include="tools.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
