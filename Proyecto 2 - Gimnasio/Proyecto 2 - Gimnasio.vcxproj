@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="measurements.h" />
+    <ClInclude Include="person.h" />
     <ClInclude Include="routine.h" />
   </ItemGroup>
   <ItemGroup>
