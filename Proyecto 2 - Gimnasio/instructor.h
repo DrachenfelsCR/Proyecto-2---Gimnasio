@@ -5,7 +5,7 @@
 class instructor
 {
 private:
-
+	
 public:
 	instructor();
 	~instructor();
