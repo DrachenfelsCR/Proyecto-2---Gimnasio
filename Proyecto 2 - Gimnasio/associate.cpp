@@ -5,7 +5,6 @@ associate::associate() : person(" ", " ")
 	this->email = " ";
 	this->phone = 0;
 	this->registration_date = " ";
-
 }
 associate::associate(string id, string full_name, string email, int phone, string registration_date) : person(id, full_name)
 {
