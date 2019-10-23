@@ -2,6 +2,7 @@
 #define GROUPCLASS_H
 #include "associate.h"
 #include "instructor.h"
+#include "listA.h"
 
 class groupClass
 {
@@ -9,6 +10,7 @@ private:
 	string class_name;
 	instructor* tutor;
 	string class_code;
+	listA class_members;
 	char room;
 	int quantity;
 public:
