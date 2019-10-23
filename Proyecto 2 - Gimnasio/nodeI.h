@@ -1,6 +1,7 @@
 #ifndef NODEI_H
 #define NODEI_H
 #include "instructor.h"
+using namespace std;
 
 class nodeI
 {
