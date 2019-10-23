@@ -10,6 +10,7 @@ instructor::instructor(string full_name, string id, associate* aso): person(full
 
 instructor::instructor() : person("", "")
 {
+	this->aso = NULL;
 }
 
 

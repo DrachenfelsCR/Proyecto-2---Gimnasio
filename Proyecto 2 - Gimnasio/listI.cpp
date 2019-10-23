@@ -1,50 +1,52 @@
 #include "listI.h"
 
+
 listI::listI()
 {
-	first = NULL;
-	current = NULL;
+	this->first = NULL;
+	this->current = NULL;
 }
 
-listI::~listI()
-{
+bool listI::insertFirst(instructor* tutor) {
+	current = new nodeI(tutor, NULL);
+	if (this->first == NULL) {
+		this->first = current;
+		return true;
+	}
+	else if ((searchAndGet(tutor->getId())))
+	{
+		return false;
+	}
+	else
+	{
+		this->current->setNext(this->first);
+		this->first = this->current;
+		return true;
+	}
+}
+
+instructor* listI::searchAndGet(string id) {
+	this->current = this->first;
+	while (current != NULL)
+	{
+		if (this->current->getTutor()->getId() == id)
+		{
+			return this->current->getTutor();
+		}
+		else
+		{
+			this->current = this->current->getNext();
+		}
+	} return NULL;
+}
+
+
+
+listI::~listI() {
 	current = first;
-	while (first!=NULL)
+	while (first != NULL)
 	{
 		first = first->getNext();
 		delete current;
 	}
-}
-
-void listI::insertLast(instructor* i)
-{
-	if (first==NULL)
-	{
-		first = new nodeI(i, nullptr);
-	}
-	else
-	{
-		while (current->getNext()!=NULL)
-		{
-			current = current->getNext();
-		}
-		if (current->getInstruc()->getId()!=i->getId())
-		{
-			current = first;
-			current->setNext(new nodeI(i,nullptr));
-		}
-	}
-	
-}
-
-string listI::toString()
-{
-	stringstream s;
-	current = first;
-	while (current!=NULL)
-	{
-		s << current->toString() << endl;
-		current = current->getNext();
-	}
-	return s.str();
 }

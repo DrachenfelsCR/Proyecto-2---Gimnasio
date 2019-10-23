@@ -1,37 +1,38 @@
 #include "nodeI.h"
 
-nodeI::nodeI(instructor* instruc, nodeI* next)
+nodeI::nodeI(instructor* tutor, nodeI* next)
 {
-	this->instruc = instruc;
+	this->tutor = tutor;
+	this->next = next;
+}
+void nodeI::setTutor(instructor* tutor) {
+	this->tutor = tutor;
+}
+
+instructor* nodeI::getTutor() {
+	return tutor;
+}
+
+void nodeI::setNext(nodeI* next) {
 	this->next = next;
 }
 
-void nodeI::setInstruc(instructor* instruc)
-{
-	this->instruc = instruc;
-}
-
-instructor* nodeI::getInstruc()
-{
-	return instruc;
-}
-
-void nodeI::setNext(nodeI* next)
-{
-	this->next = next;
-}
-
-nodeI* nodeI::getNext()
-{
-	return next;
+nodeI* nodeI::getNext() {
+	return this->next;
 }
 
 string nodeI::toString()
 {
-	return string();
+	stringstream s;
+	s << tutor->toString()<<endl;
+	return s.str();
 }
 
 nodeI::~nodeI()
 {
 }
+
+
+
+
 

@@ -67,6 +67,17 @@ bool listA::eliminateAssociate(string id) {
 	} return false;
 }
 
+string listA::toString()
+{
+	stringstream s;
+	while (current!=NULL)
+	{
+		s << current->toString();
+		current = current->getNext();
+	}
+	return s.str();
+}
+
 listA::~listA() {
 	current = first;
 	while (first != NULL)

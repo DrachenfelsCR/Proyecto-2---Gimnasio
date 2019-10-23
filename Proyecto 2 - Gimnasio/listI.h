@@ -1,32 +1,18 @@
 #ifndef LISTI_H
 #define LISTI_H
 #include "nodeI.h"
-using namespace std;
 
-
-class listI {
-
+class listI
+{
 private:
 	nodeI* first;
 	nodeI* current;
-
-
 public:
 	listI();
 	~listI();
-	void insertLast(instructor*);
+	bool insertFirst(instructor*);
+	instructor* searchAndGet(string);
 	string toString();
-
-
-
-
-
-
-
-
-
-
 };
 
-
-#endif
+#endif // !LISTA_H

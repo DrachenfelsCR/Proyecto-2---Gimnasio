@@ -17,6 +17,7 @@ void gym::inicio() {
 void gym::controlSistema() {
 	opc = 0;
 	string f;
+	associate* a1 = new associate();
 	int cont = 1;
 	inicio();
 	switch (opc)
@@ -25,7 +26,15 @@ void gym::controlSistema() {
 		limpiaPantalla();
 		imprimirCadena("\t Sistema de Ingreso de Socio");
 		imprimirCadena("\t Digite el Nombre del Socio que quiere agregar");
-		leerCadena();
+		a1->setFullName(leerCadena());
+		imprimirCadena("\t Digite el id");
+		a1->setId(leerCadena());
+		imprimirCadena("\t Digite Correo electronico");
+		a1->setEmail(leerCadena());
+		imprimirCadena("\t Digite La fecha de Inscripcion");
+		a1->setRegistrationDate(leerCadena());
+		l1->insertFirst(a1);
+
 		break;
 	case 2:
 

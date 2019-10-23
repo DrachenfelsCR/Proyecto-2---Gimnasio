@@ -2,16 +2,15 @@
 #define NODEI_H
 #include "instructor.h"
 using namespace std;
-
 class nodeI
 {
 private:
-	instructor* instruc;
+	instructor* tutor;
 	nodeI* next;
 public:
 	nodeI(instructor*, nodeI*);
-	void setInstruc(instructor*);
-	instructor* getInstruc();
+	void setTutor(instructor*);
+	instructor* getTutor();
 	void setNext(nodeI*);
 	nodeI* getNext();
 	string toString();
@@ -19,6 +18,5 @@ public:
 
 
 };
-#endif // !NODEI_H
-
+#endif // !NODEA_H
 
