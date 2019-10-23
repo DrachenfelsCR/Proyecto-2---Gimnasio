@@ -11,8 +11,8 @@ public:
 	listA();
 	~listA();
 	bool insertFirst(associate*);
-	bool searchAssociate(string);
-	bool eliminateAssociate(associate*);
+	associate* searchAndGet(string);
+	bool eliminateAssociate(string);
 	string toString();
 };
 
