@@ -10,9 +10,8 @@ class instructor : public person
 {
 private:
 	associate* aso;
-	
 public:
-	instructor(string,string,associate*);
+	instructor(string,string, associate*);
 	instructor();
 	~instructor();
 	string toString();

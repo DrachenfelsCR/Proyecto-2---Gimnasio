@@ -3,7 +3,7 @@
 nodeI::nodeI(instructor* instruc, nodeI* next)
 {
 	this->instruc = instruc;
-	this->instruc = instruc;
+	this->next = next;
 }
 
 void nodeI::setInstruc(instructor* instruc)
