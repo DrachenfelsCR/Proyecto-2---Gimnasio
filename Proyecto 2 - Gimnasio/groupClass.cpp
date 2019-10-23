@@ -55,3 +55,7 @@ char groupClass::getRoom() {
 int groupClass::getQuantity() {
 	return this->quantity;
 }
+
+groupClass::~groupClass() {
+
+}
