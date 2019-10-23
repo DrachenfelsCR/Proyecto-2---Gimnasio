@@ -13,7 +13,7 @@ private:
 public:
 	listI();
 	~listI();
-	void insertFirst(instructor*);
+	void insertFirst();
 	string toString();
 
 
