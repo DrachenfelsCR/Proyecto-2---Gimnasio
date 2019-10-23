@@ -12,13 +12,13 @@ bool listA::insertFirst(associate* member) {
 		this->first = current;
 		return true;
 	}
-	else if (searchAssociate(member->getId() == this->current->getMember()->getId()))
+	else if ((searchAndGet(member->getId())))
 	{
 		return false;
 	}
 	else
 	{
-		this->current = this->current->setNext(this->first);
+		this->current->setNext(this->first);
 		this->first = this->current;
 		return true;
 	}
@@ -42,6 +42,7 @@ associate* listA::searchAndGet(string id) {
 bool listA::eliminateAssociate(string id) {
 	if (first != NULL) {
 		nodeA* before = NULL;
+		nodeA* aux = NULL;
 		current = first;
 		while ((current != NULL) && (current->getMember()->getId() != id))
 		{
@@ -59,7 +60,8 @@ bool listA::eliminateAssociate(string id) {
 		}
 		else 
 		{
-			before->getNext() = current->getNext();
+			aux = before->getNext();
+			aux = current->getNext();
 			delete current;
 		}
 	}
