@@ -130,6 +130,7 @@
     <ClInclude Include="listI.h" />
     <ClInclude Include="measurements.h" />
     <ClInclude Include="nodeA.h" />
+    <ClInclude Include="nodeI.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="routine.h" />
   </ItemGroup>
@@ -143,6 +144,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="measurements.cpp" />
     <ClCompile Include="nodeA.cpp" />
+    <ClCompile Include="nodeI.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="routine.cpp" />
     <ClCompile Include="tools.cpp" />
