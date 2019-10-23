@@ -9,6 +9,7 @@ using namespace std;
 class instructor : public person
 {
 private:
+	associate* aso;
 	
 public:
 	instructor(string,string,associate*);

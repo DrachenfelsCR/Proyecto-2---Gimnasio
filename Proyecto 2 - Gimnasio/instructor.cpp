@@ -3,11 +3,15 @@
 
 
 
-instructor::instructor(string, string, associate*) : person(full_name, id)
+
+instructor::instructor(string, string, associate* aso) : person(full_name, id)
 {
+	this->aso = aso;
 }
 
-instructor::instructor : person("", "")
+
+
+instructor::instructor() : person("", "")
 {
 }
 
