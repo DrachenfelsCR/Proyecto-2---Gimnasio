@@ -35,6 +35,10 @@ double measurements::getBodyFat() {
 	return this->body_fat;
 }
 
+measurements::~measurements()
+{
+}
+
 double measurements::getBodyMass() {
 	return this->body_mass;
 }

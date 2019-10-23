@@ -1,7 +1,7 @@
 #ifndef NODEA_H
 #define NODEA_H
 #include "associate.h"
-
+using namespace std;
 class nodeA
 {
 private:
