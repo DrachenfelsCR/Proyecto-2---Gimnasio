@@ -67,8 +67,7 @@ bool listA::eliminateAssociate(string id) {
 	} return false;
 }
 
-listA::~listA()
-{
+listA::~listA() {
 	current = first;
 	while (first != NULL)
 	{
