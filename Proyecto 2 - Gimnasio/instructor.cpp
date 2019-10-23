@@ -3,8 +3,9 @@
 
 
 
-instructor::instructor(string full_name, string id, associate*): person(full_name,id)
+instructor::instructor(string full_name, string id, associate* aso): person(full_name,id)
 {
+	this->aso = aso;
 }
 
 instructor::instructor() : person("", "")

@@ -2,6 +2,7 @@
 
 gym::gym()
 {
+	l1 = new listA();
 	opc = 0;
 }
 
@@ -15,13 +16,16 @@ void gym::inicio() {
 }
 void gym::controlSistema() {
 	opc = 0;
+	string f;
 	int cont = 1;
 	inicio();
 	switch (opc)
 	{
 	case 1:
-		imprimirCadena("drachenfels manco");
-
+		limpiaPantalla();
+		imprimirCadena("\t Sistema de Ingreso de Socio");
+		imprimirCadena("\t Digite el Nombre del Socio que quiere agregar");
+		leerCadena();
 		break;
 	case 2:
 
