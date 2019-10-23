@@ -1,6 +1,7 @@
 #ifndef LISTI_H
 #define LISTI_H
 #include "nodeI.h"
+using namespace std;
 
 
 class listI {
