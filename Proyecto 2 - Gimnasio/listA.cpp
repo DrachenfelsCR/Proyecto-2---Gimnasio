@@ -53,18 +53,18 @@ bool listA::eliminateAssociate(string id) {
 			return false;
 		}
 		//this else if, is in case that the first element is the one that must be deleted.
-		else if(before == NULL)
+		else if (before == NULL)
 		{
 			first = first->getNext();
 			delete current;
 		}
-		else 
+		else
 		{
 			aux = before->getNext();
 			aux = current->getNext();
 			delete current;
 		}
-	}
+	} return false;
 }
 
 listA::~listA()
