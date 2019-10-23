@@ -38,6 +38,7 @@ associate* listA::searchAndGet(string id) {
 		}
 	} return NULL;
 }
+
 bool listA::eliminateAssociate(string id) {
 	if (first != NULL) {
 		nodeA* before = NULL;
