@@ -69,5 +69,11 @@ bool listA::eliminateAssociate(string id) {
 
 listA::~listA()
 {
+	current = first;
+	while (first != NULL)
+	{
+		first = first->getNext();
+		delete current;
+	}
 }
 
