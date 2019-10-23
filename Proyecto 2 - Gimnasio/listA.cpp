@@ -12,13 +12,13 @@ bool listA::insertFirst(associate* member) {
 		this->first = current;
 		return true;
 	}
-	else if (searchAssociate(member->getId() == this->current->getMember()->getId()))
+	else if ((searchAndGet(member->getId())))
 	{
 		return false;
 	}
 	else
 	{
-		this->current = this->current->setNext(this->first);
+		this->current->setNext(this->first);
 		this->first = this->current;
 		return true;
 	}
@@ -40,7 +40,31 @@ associate* listA::searchAndGet(string id) {
 }
 
 bool listA::eliminateAssociate(string id) {
-	
+	if (first != NULL) {
+		nodeA* before = NULL;
+		nodeA* aux = NULL;
+		current = first;
+		while ((current != NULL) && (current->getMember()->getId() != id))
+		{
+			before = current;
+			current = current->getNext();
+		}
+		if (current == NULL) {
+			return false;
+		}
+		//this else if, is in case that the first element is the one that must be deleted.
+		else if(before == NULL)
+		{
+			first = first->getNext();
+			delete current;
+		}
+		else 
+		{
+			aux = before->getNext();
+			aux = current->getNext();
+			delete current;
+		}
+	}
 }
 
 listA::~listA()
