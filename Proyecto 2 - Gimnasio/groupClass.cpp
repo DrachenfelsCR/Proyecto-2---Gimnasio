@@ -4,11 +4,11 @@ groupClass::groupClass() {
 	this->class_name = "";
 	this->class_code = "";
 	this->tutor = NULL;
-	this->room = '';
+	this->room = ' ';
 	this->quantity = 0;
 }
 
-groupClass::groupClass(string class_name, string class_code, instructor* tutor, char room, int quantity) {
+groupClass::groupClass(string class_nam, instructor* tutor, string class_code, char room, int quantity) {
 	this->class_name = class_name;
 	this->class_code = class_code;
 	this->tutor = tutor;
