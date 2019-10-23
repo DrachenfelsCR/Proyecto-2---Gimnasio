@@ -6,7 +6,7 @@ nodeI::nodeI(instructor* instruc, nodeI* next)
 	this->instruc = instruc;
 }
 
-void nodeI::setMember(instructor* instruc)
+void nodeI::setInstruc(instructor* instruc)
 {
 	this->instruc = instruc;
 }
@@ -35,7 +35,3 @@ nodeI::~nodeI()
 {
 }
 
-instructor* nodeI::getMember()
-{
-	return nullptr;
-}

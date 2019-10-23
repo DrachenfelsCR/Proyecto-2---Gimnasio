@@ -9,7 +9,7 @@ private:
 	nodeI* next;
 public:
 	nodeI(instructor*, nodeI*);
-	void setMember(instructor*);
+	void setInstruc(instructor*);
 	instructor* getInstruc();
 	void setNext(nodeI*);
 	nodeI* getNext();
