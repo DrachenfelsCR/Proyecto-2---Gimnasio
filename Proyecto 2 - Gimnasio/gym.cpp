@@ -20,6 +20,7 @@ void gym::controlSistema() {
 	switch (opc)
 	{
 	case 1:
+		imprimirCadena("drachenfels manco");
 
 		break;
 	case 2:
@@ -45,6 +46,7 @@ void gym::controlSistema() {
 		break;
 
 	case 9:
+		
 		break;
 	}
 

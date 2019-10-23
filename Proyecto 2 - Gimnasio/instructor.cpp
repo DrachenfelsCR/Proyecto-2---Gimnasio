@@ -1,9 +1,16 @@
 #include "instructor.h"
 
-instructor::instructor(string full_name, string id): person(full_name,id)
+
+
+
+instructor::instructor(string, string, associate*) : person(full_name, id)
 {
-	
 }
+
+instructor::instructor : person("", "")
+{
+}
+
 
 instructor::~instructor()
 {
