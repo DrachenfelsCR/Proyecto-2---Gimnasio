@@ -6,6 +6,16 @@ listI::listI()
 	current = NULL;
 }
 
+listI::~listI()
+{
+	current = first;
+	while (first!=NULL)
+	{
+		first = first->getNext();
+		delete current;
+	}
+}
+
 void listI::insertLast(instructor* i)
 {
 	if (first==NULL)
