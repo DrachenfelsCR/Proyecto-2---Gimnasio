@@ -33,6 +33,12 @@
     <ClInclude Include="listI.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="groupClass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="listA.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="routine.cpp">
@@ -60,6 +66,12 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="listI.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="groupClass.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="listA.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
