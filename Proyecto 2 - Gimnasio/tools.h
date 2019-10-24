@@ -18,6 +18,7 @@ string leerCadena();
 string dibujarHospital();
 char leerCaracter();
 string menuInicio();
+string menuPrimario();
 string menuClaseGrupales();
 string menuInstructor();
 

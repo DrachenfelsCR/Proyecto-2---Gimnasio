@@ -69,7 +69,6 @@ void gym::adMenu()
 
 	}
 
-
 void gym::menuPrincipal() {
 	{
 		limpiaPantalla();
@@ -90,6 +89,15 @@ void gym::menuPrincipal() {
 				imprimirCadena("\t Bienvenido Al Sistema De Socios");
 				imprimirCadena("\t Digite el NombreCompleto De la persona");
 				a->setFullName(leerCadena());
+				imprimirCadena("\t Digite el Numero de ID");
+				a->setId(leerCadena());
+				imprimirCadena("\t Digite el CorreoElectronico");
+				a->setEmail(leerCadena());
+				imprimirCadena("\t Digite el numero telefonico");
+				a->setPhone(leerEntero());
+				imprimirCadena("\t Digite la Fecha de Inscripcion");
+				a->setRegistrationDate(leerCadena());
+				
 				l1->insertFirst(a);
 				
 
@@ -98,8 +106,9 @@ void gym::menuPrincipal() {
 			case 2:
 				break;
 			case 3:
+
+				imprimirCadena("\t Lista General de socios");
 				imprimirCadena(l1->toString());
-				break;
 
 			case 4:
 				break;
@@ -116,7 +125,7 @@ void gym::menuPrincipal() {
 			case 9:
 				break;
 			}
-			imprimirCadena("\t Digite 1 para seguir");
+			imprimirCadena("\t Digite 1 para seguir o 2 para volver a menu principal");
 			cont = leerSeleccion(2);
 			limpiaPantalla();
 			if (cont == 2) { adMenu(); }

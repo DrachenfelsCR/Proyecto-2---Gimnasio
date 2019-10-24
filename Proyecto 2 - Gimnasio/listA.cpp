@@ -7,24 +7,17 @@ listA::listA()
 }
 
 void listA::insertFirst(associate* member) {
-	current = first;
-	if (first == nullptr)
+	current = new nodeA(member,nullptr);
+	if (first==NULL)
 	{
-		first = new nodeA (member, nullptr);
+		first = current;
 	}
-	else {
-		while (current->getNext() != NULL)
-		{
-			current = current->getNext();
-		}
-		if (current->getMember()->getId() != member->getId())
-		{
-			current->setNext(new nodeA(member, nullptr));
-		}
-
+	else
+	{
+		current->setNext(first);
+		first = current;
 	}
 }
-
 associate* listA::searchAndGet(string id) {
 	this->current = this->first;
 	while (current != NULL)
@@ -70,10 +63,11 @@ bool listA::eliminateAssociate(string id) {
 
 string listA::toString()
 {
+	current = first;
 	stringstream s;
 	while (current!=NULL)
 	{
-		s << current->toString();
+		s << current->toString()<<endl;
 		current = current->getNext();
 	}
 	return s.str();

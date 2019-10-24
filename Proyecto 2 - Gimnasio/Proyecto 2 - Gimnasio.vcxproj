@@ -134,6 +134,7 @@
     <ClInclude Include="nodeI.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="routine.h" />
+    <ClInclude Include="tools.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="associate.cpp" />
