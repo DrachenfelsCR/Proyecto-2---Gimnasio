@@ -7,38 +7,37 @@ listI::listI()
 	this->current = NULL;
 }
 
-bool listI::insertFirst(instructor* tutor) {
-	current = new nodeI(tutor, NULL);
-	if (this->first == NULL) {
-		this->first = current;
-		return true;
-	}
-	else if ((searchAndGet(tutor->getId())))
+void listI::insertLast(instructor* tutor) {
+	if (first==NULL)
 	{
-		return false;
+		first = new nodeI(tutor, nullptr);
 	}
 	else
 	{
-		this->current->setNext(this->first);
-		this->first = this->current;
-		return true;
+		while (current->getNext()!=NULL)
+		{
+			current = current->getNext();
+		}
+		if (current->getTutor()->getId()!=tutor->getId())
+		{
+			current = first;
+			current->setNext(new nodeI(tutor,nullptr));
+		}
 	}
 }
 
-instructor* listI::searchAndGet(string id) {
-	this->current = this->first;
-	while (current != NULL)
+string listI::toString()
+{
+	stringstream s;
+	while (current!=NULL)
 	{
-		if (this->current->getTutor()->getId() == id)
-		{
-			return this->current->getTutor();
-		}
-		else
-		{
-			this->current = this->current->getNext();
-		}
-	} return NULL;
+		s << current->toString() << endl;
+		current = current->getNext();
+	}
+	return s.str();
 }
+
+
 
 
 

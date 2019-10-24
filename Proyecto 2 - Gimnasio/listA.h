@@ -10,7 +10,7 @@ private:
 public:
 	listA();
 	~listA();
-	bool insertFirst(associate*);
+	void insertFirst(associate*);
 	associate* searchAndGet(string);
 	bool eliminateAssociate(string);
 	string toString();

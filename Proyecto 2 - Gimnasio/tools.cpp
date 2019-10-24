@@ -99,7 +99,7 @@ int numeroCodigo(string codigo) {
 void limpiaPantalla() {
 	system("cls");
 }
-string menuInicio() {
+string menuPrimario() {
 	stringstream s;
 	s << endl;
 	s << "\t ______________________________________________________________" << endl;
@@ -113,10 +113,11 @@ string menuInicio() {
 	s << "\t|6.Instructor con mejores resultados en perdida de grasa       |" << endl;
 	s << "\t|7.Menu instructor                                             |" << endl;
 	s << "\t|8.Menu clases grupales                                        |" << endl;
-	s << "\t|9.Salir                                                      |" << endl;
+	s << "\t|9.Salir                                                       |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
-}string menuInstructor() {
+}
+string menuInstructor() {
 	stringstream s;
 	s << "\t ______________________________________________________________" << endl;
 	s << "\t|                    Menu Instructor                           |" << endl;
@@ -143,6 +144,19 @@ string menuClaseGrupales() {
 	s << "\t|2.Visualizacion clase grupal                                  |" << endl;
 	s << "\t|3.Matricular socio                                            |" << endl;
 	s << "\t|4.Regresar al Menu principal                                  |" << endl;
+	s << "\t|______________________________________________________________|" << endl;
+	return s.str();
+
+}
+string menuInicio() {
+	stringstream s;
+	s << "\t ______________________________________________________________" << endl;
+	s << "\t|             Bienvenido al Gimnasio Vital Salud               |" << endl;
+	s << "\t|______________________________________________________________|" << endl;
+	s << "\t|1.Menu Principal                                              |" << endl;
+	s << "\t|2.                                                            |" << endl;
+	s << "\t|3.                                                            |" << endl;
+	s << "\t|4.                                                            |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }

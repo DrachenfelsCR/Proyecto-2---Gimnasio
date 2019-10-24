@@ -6,21 +6,22 @@ listA::listA()
 	this->current = NULL;
 }
 
-bool listA::insertFirst(associate* member) {
-	current = new nodeA(member, NULL);
-	if (this->first == NULL) {
-		this->first = current;
-		return true;
-	}
-	else if ((searchAndGet(member->getId())))
+void listA::insertFirst(associate* member) {
+	current = first;
+	if (first == nullptr)
 	{
-		return false;
+		first = new nodeA (member, nullptr);
 	}
-	else
-	{
-		this->current->setNext(this->first);
-		this->first = this->current;
-		return true;
+	else {
+		while (current->getNext() != NULL)
+		{
+			current = current->getNext();
+		}
+		if (current->getMember()->getId() != member->getId())
+		{
+			current->setNext(new nodeA(member, nullptr));
+		}
+
 	}
 }
 

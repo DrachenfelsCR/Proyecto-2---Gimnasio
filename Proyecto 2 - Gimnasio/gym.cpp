@@ -3,6 +3,7 @@
 gym::gym()
 {
 	l1 = new listA();
+	l2 = new listI();
 	opc = 0;
 }
 
@@ -14,15 +15,70 @@ void gym::inicio() {
 	imprimirCadena("\t Seleccione una opcion [1-9]: ");
 	opc = leerSeleccion(9);
 }
-void gym::controlSistema() {
+void gym::adMenu()
+{
+	limpiaPantalla();
+	opc = 0;
+	do {
+		imprimirCadena(menuInicio());
+		imprimirCadena("\t Seleccione una opcion [1-5]: ");
+		opc = leerSeleccion(5);
+		switch (opc)
+		{
+		case 1:
+			menuPrincipal();
+			break;
+		case 2:
+
+			break;
+		case 3:
+			break;
+		case 4:
+
+		case 5:
+			exit(0);
+			break;
+		}
+	} while (true);
+}
+
+
+
+	void gym::controlSistema() {
+		opc = 0;
+		int cont = 1;
+		inicio();
+		switch (opc)
+		{
+		case 1:
+			menuPrincipal();
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+		case 4:
+			break;
+		case 5:
+			exit(0);
+			break;
+		}
+
+
+	}
+
+
+void gym::menuPrincipal() {
 	{
-		associate* a = new associate();
 		limpiaPantalla();
 		int x = 0;
 		int cont = 1;
 		opc = 0;
 		do {
-			imprimirCadena(menuInicio());
+			associate* a = new associate();
+			imprimirCadena(menuPrimario());
 			imprimirCadena("\t Seleccione una opcion [1-9]");
 			opc = leerSeleccion(9);
 			switch (opc)
@@ -63,7 +119,7 @@ void gym::controlSistema() {
 			imprimirCadena("\t Digite 1 para seguir");
 			cont = leerSeleccion(2);
 			limpiaPantalla();
-			if (cont == 2) {}
+			if (cont == 2) { adMenu(); }
 		} while (cont == 1);
 	}
 }
@@ -101,6 +157,8 @@ void gym::manejoClasesGrupales()
 		if (cont == 2) { controlSistema(); }
 	} while (cont == 1);
 }
+
+
 
 void gym::manejoInstructores()
 {

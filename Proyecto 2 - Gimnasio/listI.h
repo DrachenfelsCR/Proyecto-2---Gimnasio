@@ -10,8 +10,7 @@ private:
 public:
 	listI();
 	~listI();
-	bool insertFirst(instructor*);
-	instructor* searchAndGet(string);
+	void insertLast(instructor*);
 	string toString();
 };
 

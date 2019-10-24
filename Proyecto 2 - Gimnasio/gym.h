@@ -3,10 +3,12 @@
 #include <iostream>
 #include "tools.h"
 #include "listA.h"
+#include "listI.h"
 class gym {
 private:
 	int opc;
 	listA* l1;
+	listI* l2;
 
 
 public:
@@ -15,6 +17,7 @@ public:
 	void adMenu();
 	void controlSistema();
 	void manejoClasesGrupales();
+	void menuPrincipal();
 	void manejoInstructores();
 	~gym();
 
