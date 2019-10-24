@@ -15,56 +15,57 @@ void gym::inicio() {
 	opc = leerSeleccion(9);
 }
 void gym::controlSistema() {
-	opc = 0;
-	string f;
-	associate* a1 = new associate();
-	int cont = 1;
-	inicio();
-	switch (opc)
 	{
-	case 1:
+		associate* a = new associate();
 		limpiaPantalla();
-		imprimirCadena("\t Sistema de Ingreso de Socio");
-		imprimirCadena("\t Digite el Nombre del Socio que quiere agregar");
-		a1->setFullName(leerCadena());
-		imprimirCadena("\t Digite el id");
-		a1->setId(leerCadena());
-		imprimirCadena("\t Digite Correo electronico");
-		a1->setEmail(leerCadena());
-		imprimirCadena("\t Digite La fecha de Inscripcion");
-		a1->setRegistrationDate(leerCadena());
-		l1->insertFirst(a1);
+		int x = 0;
+		int cont = 1;
+		opc = 0;
+		do {
+			imprimirCadena(menuInicio());
+			imprimirCadena("\t Seleccione una opcion [1-9]");
+			opc = leerSeleccion(9);
+			switch (opc)
+			{
+			case 1:
+				
 
-		break;
-	case 2:
+				limpiaPantalla();
+				imprimirCadena("\t Bienvenido Al Sistema De Socios");
+				imprimirCadena("\t Digite el NombreCompleto De la persona");
+				a->setFullName(leerCadena());
+				l1->insertFirst(a);
+				
 
-		break;
-	case 3:
-
-		break;
-	case 4:
-
-		break;
-	case 5:
-		break;
-
-	case 6:
-		break;
-
-	case 7:
-		manejoInstructores();
-		break;
-	case 8:
-		manejoClasesGrupales();
-		break;
-
-	case 9:
 		
-		break;
+				break;
+			case 2:
+				break;
+			case 3:
+				imprimirCadena(l1->toString());
+				break;
+
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				manejoInstructores();
+				break;
+			case 8:
+				manejoClasesGrupales();
+				break;
+			case 9:
+				break;
+			}
+			imprimirCadena("\t Digite 1 para seguir");
+			cont = leerSeleccion(2);
+			limpiaPantalla();
+			if (cont == 2) {}
+		} while (cont == 1);
 	}
-
-
-
 }
 
 void gym::manejoClasesGrupales()
