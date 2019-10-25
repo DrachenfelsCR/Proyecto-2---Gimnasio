@@ -2,6 +2,10 @@
 #define ASSOCIATE_H
 #include "person.h"
 #include "measurements.h"
+#include "instructor.h"
+class associate;
+class instructor;
+
 
 class associate : public person
 {

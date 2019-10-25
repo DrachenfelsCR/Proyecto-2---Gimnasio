@@ -1,7 +1,7 @@
 #ifndef LISTI_H
 #define LISTI_H
 #include "nodeI.h"
-
+#include "associate.h"
 class listI
 {
 private:
@@ -12,6 +12,7 @@ public:
 	~listI();
 	void insertLast(instructor*);
 	string toString();
+	bool findInstructor(string id);
 };
 
 #endif // !LISTA_H

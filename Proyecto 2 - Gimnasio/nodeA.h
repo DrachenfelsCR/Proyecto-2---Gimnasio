@@ -2,6 +2,8 @@
 #define NODEA_H
 #include "associate.h"
 using namespace std;
+class associate;
+
 class nodeA
 {
 private:

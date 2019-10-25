@@ -1,20 +1,20 @@
 #ifndef INSTRUCTOR_H
 #define INSTRUCTOR_H
 #include "person.h"
-#include "associate.h"
 #include "listA.h"
 #include <iostream>
 using namespace std;
-
+class listA;
 class instructor : public person
 {
 private:
-	associate* aso;
+	listA* lista;
 public:
-	instructor(string,string, associate*);
+	instructor(string,string, listA*);
 	instructor();
 	~instructor();
 	string toString();
+	listA* getLista();
 
 	
 

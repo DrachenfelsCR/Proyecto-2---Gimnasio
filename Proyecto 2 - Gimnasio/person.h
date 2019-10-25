@@ -3,12 +3,12 @@
 #include <iostream>
 #include <sstream>
 using namespace std;
-
-class person
+	class person
 {
 private:
 	string id;
 	string full_name;
+
 public:
 	person();
 	person(string,string);

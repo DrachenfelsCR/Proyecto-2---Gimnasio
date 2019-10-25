@@ -2,6 +2,11 @@
 #define NODEI_H
 #include "instructor.h"
 using namespace std;
+
+class instructor;
+class nodeI;
+
+
 class nodeI
 {
 private:

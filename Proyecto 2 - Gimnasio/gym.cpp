@@ -77,6 +77,7 @@ void gym::menuPrincipal() {
 		opc = 0;
 		do {
 			associate* a = new associate();
+			instructor* t = new instructor();
 			imprimirCadena(menuPrimario());
 			imprimirCadena("\t Seleccione una opcion [1-9]");
 			opc = leerSeleccion(9);
@@ -86,7 +87,7 @@ void gym::menuPrincipal() {
 				
 
 				limpiaPantalla();
-				imprimirCadena("\t Bienvenido Al Sistema De Socios");
+				imprimirCadena("\t Bienvenido Al Sistema De ingreso de Socios \n");
 				imprimirCadena("\t Digite el NombreCompleto De la persona");
 				a->setFullName(leerCadena());
 				imprimirCadena("\t Digite el Numero de ID");
@@ -97,20 +98,40 @@ void gym::menuPrincipal() {
 				a->setPhone(leerEntero());
 				imprimirCadena("\t Digite la Fecha de Inscripcion");
 				a->setRegistrationDate(leerCadena());
+				imprimirCadena("\t Digite la cedula del instructor \n");
+				limpiaPantalla();
+				imprimirCadena(l2->toString());
+				if (l2->findInstructor(leerCadena())==true) {
+					l1->insertFirst(a);
 				
-				l1->insertFirst(a);
-				
-
-		
+				}
+				else
+				{
+					imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema");
+				}
 				break;
 			case 2:
+				limpiaPantalla();
+				imprimirCadena("\t Bienvenido Al Sistema De ingreso de instructores \n");
+				imprimirCadena("\t Digite el NombreCompleto De la persona");
+				t->setFullName(leerCadena());
+				imprimirCadena("\t Digite el ID de la persona");
+				t->setId(leerCadena());
+				l2->insertLast(t);
+				
 				break;
 			case 3:
-
-				imprimirCadena("\t Lista General de socios");
+				limpiaPantalla();
+				imprimirCadena("\t Lista General de socios \n");
 				imprimirCadena(l1->toString());
+				break;
 
 			case 4:
+				limpiaPantalla();
+				imprimirCadena("\t Lista General de instructores \n");
+				imprimirCadena(l2->toString());
+				imprimirCadena(t->getLista()->toString());
+			
 				break;
 			case 5:
 				break;
@@ -123,6 +144,7 @@ void gym::menuPrincipal() {
 				manejoClasesGrupales();
 				break;
 			case 9:
+				exit(9);
 				break;
 			}
 			imprimirCadena("\t Digite 1 para seguir o 2 para volver a menu principal");

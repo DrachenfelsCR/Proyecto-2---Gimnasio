@@ -8,6 +8,7 @@ listI::listI()
 }
 
 void listI::insertLast(instructor* tutor) {
+	current = first;
 	if (first==NULL)
 	{
 		first = new nodeI(tutor, nullptr);
@@ -20,7 +21,7 @@ void listI::insertLast(instructor* tutor) {
 		}
 		if (current->getTutor()->getId()!=tutor->getId())
 		{
-			current = first;
+
 			current->setNext(new nodeI(tutor,nullptr));
 		}
 	}
@@ -28,6 +29,7 @@ void listI::insertLast(instructor* tutor) {
 
 string listI::toString()
 {
+	current = first;
 	stringstream s;
 	while (current!=NULL)
 	{
@@ -35,6 +37,21 @@ string listI::toString()
 		current = current->getNext();
 	}
 	return s.str();
+}
+
+bool listI::findInstructor(string id)
+{
+	current = first;
+	while (current!=NULL)
+	{
+
+		if (current->getTutor()->getId() == id)
+		{
+			return true;
+		}
+		current = current->getNext();
+	}
+	return false;
 }
 
 

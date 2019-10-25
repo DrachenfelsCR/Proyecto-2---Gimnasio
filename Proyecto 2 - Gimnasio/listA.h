@@ -1,6 +1,12 @@
 #ifndef LISTA_H
 #define LISTA_H
 #include "nodeA.h"
+#include "associate.h"
+
+class associate;
+class nodeI;
+class nodeA;
+
 
 class listA
 {
