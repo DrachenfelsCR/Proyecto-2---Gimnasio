@@ -13,10 +13,10 @@ private:
 	string email;
 	int phone;
 	string registration_date;
-	measurements measures;
+	measurements* measures;
 public:
 	associate();
-	associate(string, string, string,int,string);
+	associate(string, string, string,int,string, measurements*);
 	void setEmail(string);
 	void setPhone(int);
 	void setRegistrationDate(string);
