@@ -6,14 +6,16 @@ groupClass::groupClass() {
 	this->tutor = NULL;
 	this->room = ' ';
 	this->quantity = 0;
+	this->hour = "";
 }
 
-groupClass::groupClass(string class_nam, instructor* tutor, string class_code, char room, int quantity) {
+groupClass::groupClass(string class_nam, instructor* tutor, string class_code, char room, int quantity, string hour) {
 	this->class_name = class_name;
 	this->class_code = class_code;
 	this->tutor = tutor;
 	this->room = room;
 	this->quantity = quantity;
+	this->hour = hour;
 }
 
 void groupClass::setClassName(string class_name) {
@@ -34,6 +36,14 @@ void groupClass::setQuantity(int quantity) {
 
 void groupClass::setRoom(char room) {
 	this->room = room;
+}
+
+void groupClass::setHour(string hour){
+	this->hour = hour;
+}
+
+string groupClass::getHour() {
+	return this->hour;
 }
 
 string groupClass::getClassName() {
