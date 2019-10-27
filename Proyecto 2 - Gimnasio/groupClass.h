@@ -9,7 +9,7 @@ class groupClass
 private:
 	string class_name;
 	instructor* tutor;
-	string class_code;
+	int class_code;
 	listA class_members;
 	char room;
 	int quantity;
@@ -18,10 +18,10 @@ private:
 
 public:
 	groupClass();
-	groupClass(string, instructor*, string, char, int, string, string);
+	groupClass(string, instructor*,int, char, int, string, string);
 	void setClassName(string);
 	void setTutor(instructor*);
-	void setClassCode(string);
+	void setClassCode(int);
 	void setRoom(char);
 	void setQuantity(int);
 	void setHour(string);
@@ -29,7 +29,7 @@ public:
 	string getClassName();
 	instructor* getInstructor();
 	string getHour();
-	string getClassCode();
+	int getClassCode();
 	char getRoom();
 	int getQuantity();
 	string toString();

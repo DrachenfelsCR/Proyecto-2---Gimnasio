@@ -14,6 +14,7 @@ public:
 	void insertFirst(groupClass*);
 	groupClass* searchAndGet(string);
 	string toString();
+	int countNodes();
 };
 
 #endif // !LISTA_G

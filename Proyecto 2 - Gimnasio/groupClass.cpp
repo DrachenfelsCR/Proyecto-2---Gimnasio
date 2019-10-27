@@ -2,7 +2,7 @@
 
 groupClass::groupClass() {
 	this->class_name = "";
-	this->class_code = "";
+	this->class_code = 0;
 	this->tutor = NULL;
 	this->room = ' ';
 	this->quantity = 0;
@@ -10,7 +10,7 @@ groupClass::groupClass() {
 	this->day = "";
 }
 
-groupClass::groupClass(string class_nam, instructor* tutor, string class_code, char room, int quantity, string hour, string day) {
+groupClass::groupClass(string class_nam, instructor* tutor, int class_code, char room, int quantity, string hour, string day) {
 	this->class_name = class_name;
 	this->class_code = class_code;
 	this->tutor = tutor;
@@ -24,7 +24,7 @@ void groupClass::setClassName(string class_name) {
 	this->class_name = class_name;
 }
 
-void groupClass::setClassCode(string class_code) {
+void groupClass::setClassCode(int class_code) {
 	this->class_code = class_code;
 }
 
@@ -79,7 +79,7 @@ string groupClass::getClassName() {
 	return this->class_name;
 }
 
-string groupClass::getClassCode() {
+int groupClass::getClassCode() {
 	return this->class_code;
 }
 

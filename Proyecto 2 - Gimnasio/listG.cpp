@@ -24,7 +24,7 @@ groupClass* listG::searchAndGet(string class_name) {
 	{
 		if (this->current->getGroupClass()->getClassName() == class_name)
 		{
-			return this->current->getGroupClass;
+			return this->current->getGroupClass();
 		}
 		else
 		{
@@ -45,6 +45,17 @@ string listG::toString()
 	return s.str();
 }
 
+int listG::countNodes(){
+	current = first;
+	int quantity = 0;
+	while (current != NULL)
+	{
+		quantity++;
+		current = current->getNext();
+	}
+	return quantity;
+}
+
 listG::~listG() {
 	current = first;
 	while (first != NULL)
@@ -53,4 +64,5 @@ listG::~listG() {
 		delete current;
 	}
 }
+
 
