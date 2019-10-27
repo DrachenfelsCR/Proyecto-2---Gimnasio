@@ -128,9 +128,11 @@
     <ClInclude Include="gym.h" />
     <ClInclude Include="instructor.h" />
     <ClInclude Include="listA.h" />
+    <ClInclude Include="listG.h" />
     <ClInclude Include="listI.h" />
     <ClInclude Include="measurements.h" />
     <ClInclude Include="nodeA.h" />
+    <ClInclude Include="nodeG.h" />
     <ClInclude Include="nodeI.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="room.h" />
@@ -145,10 +147,12 @@
     <ClCompile Include="gym.cpp" />
     <ClCompile Include="instructor.cpp" />
     <ClCompile Include="listA.cpp" />
+    <ClCompile Include="listG.cpp" />
     <ClCompile Include="listI.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="measurements.cpp" />
     <ClCompile Include="nodeA.cpp" />
+    <ClCompile Include="nodeG.cpp" />
     <ClCompile Include="nodeI.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="room.cpp" />

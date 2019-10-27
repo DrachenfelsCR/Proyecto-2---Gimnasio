@@ -14,16 +14,18 @@ private:
 	char room;
 	int quantity;
 	string hour;
+	string day;
 
 public:
 	groupClass();
-	groupClass(string, instructor*, string, char, int, string);
+	groupClass(string, instructor*, string, char, int, string, string);
 	void setClassName(string);
 	void setTutor(instructor*);
 	void setClassCode(string);
 	void setRoom(char);
 	void setQuantity(int);
 	void setHour(string);
+	void setDay(int);
 	string getClassName();
 	instructor* getInstructor();
 	string getHour();
