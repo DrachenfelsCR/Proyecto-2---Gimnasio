@@ -4,6 +4,7 @@ gym::gym()
 {
 	l1 = new listA();
 	l2 = new listI();
+	r1 = new roomArray();
 	opc = 0;
 }
 

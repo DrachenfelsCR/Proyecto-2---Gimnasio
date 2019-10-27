@@ -136,6 +136,7 @@
     <ClInclude Include="nodeI.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="room.h" />
+    <ClInclude Include="roomArray.h" />
     <ClInclude Include="routine.h" />
     <ClInclude Include="schedule.h" />
     <ClInclude Include="time.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="nodeI.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="room.cpp" />
+    <ClCompile Include="roomArray.cpp" />
     <ClCompile Include="routine.cpp" />
     <ClCompile Include="schedule.cpp" />
     <ClCompile Include="time.cpp" />

@@ -8,16 +8,17 @@ class room
 private:
 	char name;
 	int capacity;
-	schedule* room_schedule;
+	schedule room_schedule;
 	listG group_list;
 public:
-	room(char,int,schedule*);
+	room();
+	room(char,int);
 	void setName(char);
 	void setCapacity(int);
-	void setSchedule(schedule*);
+	void setSchedule(schedule);
 	char getName();
 	int getCapacity();
-	schedule* getSchedule();
+	schedule getSchedule();
 	~room();
 };
 
