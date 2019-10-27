@@ -73,6 +73,7 @@ void gym::menuPrincipal() {
 	{
 		limpiaPantalla();
 		int x = 0;
+		string id;
 		int cont = 1;
 		opc = 0;
 		do {
@@ -98,26 +99,32 @@ void gym::menuPrincipal() {
 				a->setPhone(leerEntero());
 				imprimirCadena("\t Digite la Fecha de Inscripcion");
 				a->setRegistrationDate(leerCadena());
-				imprimirCadena("\t Digite la cedula del instructor \n");
 				limpiaPantalla();
+				imprimirCadena("\t Digite la cedula del instructor \n");
 				imprimirCadena(l2->toString());
-				if (l2->findInstructor(leerCadena())==true) {
+				id = leerCadena();
+				if (l2->findInstructor(id)==true) {
 					l1->insertFirst(a);
+					a->setAssigned(l2->searchAndGet(id));
+					l2->searchAndGet((id))->getLista()->insertFirst(a);
+					imprimirCadena("\t Se ha inscrito el socio de manera correcta en el sistema");
 				
 				}
 				else
 				{
 					imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema");
+					imprimirCadena("\t No se ha podido inscribir el socio de manera correcta en el sistema");
 				}
 				break;
 			case 2:
 				limpiaPantalla();
 				imprimirCadena("\t Bienvenido Al Sistema De ingreso de instructores \n");
-				imprimirCadena("\t Digite el NombreCompleto De la persona");
+				imprimirCadena("\t Digite el Nombre Completo De la persona");
 				t->setFullName(leerCadena());
 				imprimirCadena("\t Digite el ID de la persona");
 				t->setId(leerCadena());
 				l2->insertLast(t);
+				imprimirCadena("Se ha ingresado el instructor al sistema de manera correcta");
 				
 				break;
 			case 3:
@@ -130,7 +137,6 @@ void gym::menuPrincipal() {
 				limpiaPantalla();
 				imprimirCadena("\t Lista General de instructores \n");
 				imprimirCadena(l2->toString());
-				imprimirCadena(t->getLista()->toString());
 			
 				break;
 			case 5:
@@ -195,6 +201,7 @@ void gym::manejoInstructores()
 {
 	limpiaPantalla();
 	int x = 0;
+	string id;
 	int cont = 1;
 	opc = 0;
 	do {
@@ -204,7 +211,16 @@ void gym::manejoInstructores()
 		switch (opc)
 		{
 		case 1:
-
+			limpiaPantalla();
+			imprimirCadena(l2->toString());
+			imprimirCadena("\t Digite el Numero de ID del instructor");
+			id = leerCadena();
+			while (l2->findInstructor(id)== true) {
+					imprimirCadena("Lista de Socios");
+					imprimirCadena(l2->searchAndGet(id)->getLista()->toString());
+					break;
+			}
+			imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema");
 			break;
 
 		case 2:

@@ -13,6 +13,7 @@ public:
 	void insertLast(instructor*);
 	string toString();
 	bool findInstructor(string id);
+	instructor* searchAndGet(string id);
 };
 
 #endif // !LISTA_H
