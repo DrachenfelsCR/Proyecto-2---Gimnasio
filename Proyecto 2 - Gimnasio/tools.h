@@ -11,6 +11,7 @@ using namespace std;
 void imprimirCadena(string);
 void limpiaPantalla();
 int leerEntero();
+double leerDecimal();
 int leerSeleccion(int);
 int letraCodigo(string);
 void limpiaPantalla();

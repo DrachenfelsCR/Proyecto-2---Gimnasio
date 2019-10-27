@@ -56,6 +56,23 @@ int leerEntero() {
 	}
 
 }
+double leerDecimal() {
+	double n;
+	while (true) {
+		cout << "\t";
+		if (cin >> n) {
+			cin.clear();
+			cin.ignore(1024, '\n');
+			return n;
+		}
+		else {
+			cerr << "\t Valor incorrecto.. " << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+		}
+	}
+
+}
 int leerSeleccion(int mayor) {
 	int entrada = 0;
 	while (true) {

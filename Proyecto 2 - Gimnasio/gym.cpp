@@ -243,15 +243,26 @@ void gym::manejoInstructores()
 			imprimirCadena(l1->toString());
 			imprimirCadena("\t Digite el numero ID del Socio para registrar Sus Mediciones");
 			ID = leerCadena();
-			while (l1->find(ID) == true) {
+			if (l1->find(ID) == true) {
 				imprimirCadena(l1->searchAndGet(ID)->toString());
 				imprimirCadena("\t Digite el Peso del Socio en Kilos");
-			
+				m->setWeight(leerDecimal());
+				l1->searchAndGet(ID)->setMeasures(m);
+				imprimirCadena("\t Digite el Altura del Socio en Kilos");
+				m->setHeight(leerDecimal());
+				l1->searchAndGet(ID)->setMeasures(m);
+				imprimirCadena("\t Digite el La grasa del Socio");
+				m->setBodyFat(leerDecimal());
+				l1->searchAndGet(ID)->setMeasures(m);
+				limpiaPantalla();
+				imprimirCadena(l1->searchAndGet(ID)->getMeasures()->toString());
 				
 				break;
 			}
-			imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
-			break;
+			else {
+				imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
+				break;
+			}
 		case 7:
 			break;
 		case 8:

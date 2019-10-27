@@ -50,7 +50,7 @@ measurements::~measurements()
 double measurements::calculateBMI()
 {
 	double bodyMass = 0;
-	bodyMass = (weight/ (height * height));
+	bodyMass =( (weight) / (height * height));
 	return bodyMass;
 }
 
@@ -62,7 +62,7 @@ string measurements::bmiDescription()
 	}
 	else
 	{
-		if (calculateBMI()<=23,5)
+		if (calculateBMI()<=23.5)
 		{
 			return "Normal";
 		}
@@ -72,7 +72,11 @@ string measurements::bmiDescription()
 string measurements::toString()
 {
 	stringstream s;
-	s << "peso" << weight << endl;
+	s << "\t Peso : " << weight <<" k "<< endl;
+	s << "\t Altura : " << height <<"m"<< endl;
+	s << "\t Porcentaje de Grasa : " << body_fat << "%" << endl;
+	s << "\t IMC : " << calculateBMI() << endl;
+	//s << "\t Estado: " << bmiDescription() << endl;
 	return s.str();
 }
 
