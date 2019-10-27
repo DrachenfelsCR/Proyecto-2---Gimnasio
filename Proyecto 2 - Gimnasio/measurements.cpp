@@ -62,10 +62,46 @@ string measurements::bmiDescription()
 	}
 	else
 	{
-		if (calculateBMI()<=23.5)
+		if (calculateBMI()>=18.5 && calculateBMI()<=24.9)
 		{
 			return "Normal";
 		}
+		else
+		{
+			if (calculateBMI()>=25 && calculateBMI()<=29)
+			{
+				return "sobrePeso";
+			}
+			else
+			{
+				if (calculateBMI()>=30 && calculateBMI()<=34.9)
+				{
+					return "Obesidad I";
+				}
+				else
+				{
+					if (calculateBMI()>=35 && calculateBMI()<=39.9)
+					{
+						return "Obesidad II"; 
+					}
+					else
+					{
+						if (calculateBMI()>=40 && calculateBMI()<=49.9)
+						{
+							return "Obesidad III";
+						}
+						else
+						{
+							if (calculateBMI()>50)
+							{
+								return "Obesidad IV";
+							}
+						}
+					}
+				}
+			}
+		}
+
 	}
 }
 
@@ -76,7 +112,7 @@ string measurements::toString()
 	s << "\t Altura : " << height <<"m"<< endl;
 	s << "\t Porcentaje de Grasa : " << body_fat << "%" << endl;
 	s << "\t IMC : " << calculateBMI() << endl;
-	//s << "\t Estado: " << bmiDescription() << endl;
+	s << "\t Estado: " << bmiDescription() << endl;
 	return s.str();
 }
 
