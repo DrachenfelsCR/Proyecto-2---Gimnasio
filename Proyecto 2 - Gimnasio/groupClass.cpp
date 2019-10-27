@@ -10,14 +10,38 @@ groupClass::groupClass() {
 	this->day = "";
 }
 
-groupClass::groupClass(string class_nam, instructor* tutor, int class_code, char room, int quantity, string hour, string day) {
+groupClass::groupClass(string class_nam, instructor* tutor, int class_code, char room, int quantity, string hour, int day) {
 	this->class_name = class_name;
 	this->class_code = class_code;
 	this->tutor = tutor;
 	this->room = room;
 	this->quantity = quantity;
 	this->hour = hour;
-	this->day = day;
+	switch (day)
+	{
+	case 1:
+		this->day = "Lunes";
+		break;
+	case 2:
+		this->day = "Martes";
+		break;
+	case 3:
+		this->day = "Miercoles";
+		break;
+	case 4:
+		this->day = "Jueves";
+		break;
+	case 5:
+		this->day = "Viernes";
+		break;
+	case 6:
+		this->day = "Sabado";
+		break;
+	default:
+		this->day = "";
+		break;
+	}
+	
 }
 
 void groupClass::setClassName(string class_name) {

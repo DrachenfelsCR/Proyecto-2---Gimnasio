@@ -18,7 +18,7 @@ private:
 
 public:
 	groupClass();
-	groupClass(string, instructor*,int, char, int, string, string);
+	groupClass(string, instructor*,int, char, int, string, int);
 	void setClassName(string);
 	void setTutor(instructor*);
 	void setClassCode(int);

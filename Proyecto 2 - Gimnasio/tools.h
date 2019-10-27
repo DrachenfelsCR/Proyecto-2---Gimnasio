@@ -22,6 +22,8 @@ string menuInicio();
 string menuPrimario();
 string menuClaseGrupales();
 string menuInstructor();
+bool validarDia(int);
+bool validarHora(string);
 
 
 

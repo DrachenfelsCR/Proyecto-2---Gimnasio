@@ -10,6 +10,7 @@ public:
 	roomArray();
 	bool searchRoom(char);
 	room* getRoom(char);
+	void setNames();
 	~roomArray();
 
 };
