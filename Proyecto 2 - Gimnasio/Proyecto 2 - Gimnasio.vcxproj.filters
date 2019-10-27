@@ -54,6 +54,9 @@
     <ClInclude Include="schedule.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="routine.cpp">
@@ -96,6 +99,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="schedule.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="time.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -135,6 +135,7 @@
     <ClInclude Include="person.h" />
     <ClInclude Include="routine.h" />
     <ClInclude Include="schedule.h" />
+    <ClInclude Include="time.h" />
     <ClInclude Include="tools.h" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClCompile Include="person.cpp" />
     <ClCompile Include="routine.cpp" />
     <ClCompile Include="schedule.cpp" />
+    <ClCompile Include="time.cpp" />
     <ClCompile Include="tools.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

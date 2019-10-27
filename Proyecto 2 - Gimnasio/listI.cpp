@@ -54,6 +54,23 @@ bool listI::findInstructor(string id)
 	return false;
 }
 
+instructor* listI::searchAndGet(string id)
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (this->current->getTutor()->getId() == id)
+		{
+			return current->getTutor();
+		}
+		else
+		{
+			current = this->current->getNext();
+		}
+	} return NULL;
+}
+
+
 
 
 

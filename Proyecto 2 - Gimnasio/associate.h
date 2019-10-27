@@ -14,14 +14,17 @@ private:
 	int phone;
 	string registration_date;
 	measurements* measures;
+	instructor*  assigned;
 public:
 	associate();
-	associate(string, string, string,int,string, measurements*);
+	associate(string, string, string,int,string, measurements*, instructor*);
+	void setAssigned(instructor*);
 	void setEmail(string);
 	void setPhone(int);
 	void setRegistrationDate(string);
 	string getEmail();
 	int getPhone();
+	instructor* getAssigned();
 	string getRegistrationDate();
 	string toString();
 	~associate();
