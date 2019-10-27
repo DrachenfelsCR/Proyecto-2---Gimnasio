@@ -2,7 +2,7 @@
 
 schedule::schedule()
 {
-	for (int i = 2; i < 15; i++)
+	for (int i = 1; i < 15; i++)
 		for (int j = 0; j < 7; j++)
 			this->the_schedule[i][j] = "";
 	this->the_schedule[0][0] = "      ";
@@ -69,387 +69,796 @@ bool schedule::insertElement(int day, string time, string element) {
 		{
 		case 1:
 			if (time == "6:00") {
-				aux = element;
-				this->the_schedule[1][day] = element;
+				if (this->the_schedule[1][day] != "") {
+					return false;
+				}
+				else
+				{
+					this->the_schedule[1][day] = element;
+					return true;
+				}
 			}
 			else if (time == "7:00")
 			{
-				aux = element;
-				this->the_schedule[2][day] = element;
+				if (this->the_schedule[2][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[2][day] = element;
+				return true;
 			}
 			else if (time == "8:00")
 			{
-				aux = element;
-				this->the_schedule[3][day] = element;
+				if (this->the_schedule[3][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[3][day] = element;
+				return true;
 			}
 			else if (time == "9:00")
 			{
-				aux = element;
-				this->the_schedule[4][day] = element;
+				if (this->the_schedule[4][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[4][day] = element;
+				return true;
 			}
 			else if (time == "10:00")
 			{
-				aux = element;
-				this->the_schedule[5][day] = element;
+				if (this->the_schedule[5][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[5][day] = element;
+				return true;
 			}
 			else if (time == "11:00")
 			{
-				aux = element;
-				this->the_schedule[6][day] = element;
+				if (this->the_schedule[6][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[6][day] = element;
+				return true;
 			}
 			else if (time == "12:00")
 			{
-				aux = element;
-				this->the_schedule[7][day] = element;
+				if (this->the_schedule[7][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[7][day] = element;
+				return true;
 			}
 			else if (time == "13:00")
 			{
-				aux = element;
-				this->the_schedule[8][day] = element;
+				if (this->the_schedule[8][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[8][day] = element;
+				return true;
 			}
 			else if (time == "14:00")
 			{
-				aux = element;
-				this->the_schedule[9][day] = element;
+				if (this->the_schedule[9][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[9][day] = element;
+				return true;
 			}
 			else if (time == "15:00")
 			{
-				aux = element;
-				this->the_schedule[10][day] = element;
+				if (this->the_schedule[10][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[10][day] = element;
+				return true;
 			}
 			else if (time == "16:00")
 			{
-				aux = element;
-				this->the_schedule[11][day] = element;
+				if (this->the_schedule[11][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[11][day] = element;
+				return true;
 			}
 			else if (time == "17:00")
 			{
-				aux = element;
-				this->the_schedule[12][day] = element;
+				if (this->the_schedule[12][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[12][day] = element;
+				return true;
 			}
 			else if (time == "18:00")
 			{
-				aux = element;
-				this->the_schedule[13][day] = element;
+				if (this->the_schedule[13][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[13][day] = element;
+				return true;
 			}
 			else if (time == "19:00")
 			{
-				aux = element;
-				this->the_schedule[14][day] = element;
+				if (this->the_schedule[14][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[14][day] = element;
+				return true;
 			}
 			else
 			{
-				aux = element;
-				return false;
+				return true;
 			}
 		case 2:
 			if (time == "6:00") {
-				aux = element;
-				this->the_schedule[1][day] = element;
+				if (this->the_schedule[1][day] != "") {
+					return false;
+				}
+				else
+				{
+					this->the_schedule[1][day] = element;
+					return true;
+				}
 			}
 			else if (time == "7:00")
 			{
-				aux = element;
-				this->the_schedule[2][day] = element;
+				if (this->the_schedule[2][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[2][day] = element;
+				return true;
 			}
 			else if (time == "8:00")
 			{
-				aux = element;
-				this->the_schedule[3][day] = element;
+				if (this->the_schedule[3][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[3][day] = element;
+				return true;
 			}
 			else if (time == "9:00")
 			{
-				aux = element;
-				this->the_schedule[4][day] = element;
+				if (this->the_schedule[4][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[4][day] = element;
+				return true;
 			}
 			else if (time == "10:00")
 			{
-				aux = element;
-				this->the_schedule[5][day] = element;
+				if (this->the_schedule[5][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[5][day] = element;
+				return true;
 			}
 			else if (time == "11:00")
 			{
-				aux = element;
-				this->the_schedule[6][day] = element;
+				if (this->the_schedule[6][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[6][day] = element;
+				return true;
 			}
 			else if (time == "12:00")
 			{
-				aux = element;
-				this->the_schedule[7][day] = element;
+				if (this->the_schedule[7][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[7][day] = element;
+				return true;
 			}
 			else if (time == "13:00")
 			{
-				aux = element;
-				this->the_schedule[8][day] = element;
+				if (this->the_schedule[8][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[8][day] = element;
+				return true;
 			}
 			else if (time == "14:00")
 			{
-				aux = element;
-				this->the_schedule[9][day] = element;
+				if (this->the_schedule[9][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[9][day] = element;
+				return true;
 			}
 			else if (time == "15:00")
 			{
-				aux = element;
-				this->the_schedule[10][day] = element;
+				if (this->the_schedule[10][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[10][day] = element;
+				return true;
 			}
 			else if (time == "16:00")
 			{
-				aux = element;
-				this->the_schedule[11][day] = element;
+				if (this->the_schedule[11][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[11][day] = element;
+				return true;
 			}
 			else if (time == "17:00")
 			{
-				aux = element;
-				this->the_schedule[12][day] = element;
+				if (this->the_schedule[12][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[12][day] = element;
+				return true;
 			}
 			else if (time == "18:00")
 			{
-				aux = element;
-				this->the_schedule[13][day] = element;
+				if (this->the_schedule[13][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[13][day] = element;
+				return true;
 			}
 			else if (time == "19:00")
 			{
-				aux = element;
-				this->the_schedule[14][day] = element;
+				if (this->the_schedule[14][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[14][day] = element;
+				return true;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
 		case 3:
-			if (time == "6:00")
-				this->the_schedule[1][day] = element;
+			if (time == "6:00") {
+				if (this->the_schedule[1][day] != "") {
+					return false;
+				}
+				else
+				{
+					this->the_schedule[1][day] = element;
+					return true;
+				}
+			}
 			else if (time == "7:00")
 			{
-				this->the_schedule[2][day] = element;
+				if (this->the_schedule[2][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[2][day] = element;
+				return true;
 			}
 			else if (time == "8:00")
 			{
-				this->the_schedule[3][day] = element;
+				if (this->the_schedule[3][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[3][day] = element;
+				return true;
 			}
 			else if (time == "9:00")
 			{
-				this->the_schedule[4][day] = element;
+				if (this->the_schedule[4][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[4][day] = element;
+				return true;
 			}
 			else if (time == "10:00")
 			{
-				this->the_schedule[5][day] = element;
+				if (this->the_schedule[5][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[5][day] = element;
+				return true;
 			}
 			else if (time == "11:00")
 			{
-				this->the_schedule[6][day] = element;
+				if (this->the_schedule[6][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[6][day] = element;
+				return true;
 			}
 			else if (time == "12:00")
 			{
-				this->the_schedule[7][day] = element;
+				if (this->the_schedule[7][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[7][day] = element;
+				return true;
 			}
 			else if (time == "13:00")
 			{
-				this->the_schedule[8][day] = element;
+				if (this->the_schedule[8][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[8][day] = element;
+				return true;
 			}
 			else if (time == "14:00")
 			{
-				this->the_schedule[9][day] = element;
+				if (this->the_schedule[9][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[9][day] = element;
+				return true;
 			}
 			else if (time == "15:00")
 			{
-				this->the_schedule[10][day] = element;
+				if (this->the_schedule[10][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[10][day] = element;
+				return true;
 			}
 			else if (time == "16:00")
 			{
-				this->the_schedule[11][day] = element;
+				if (this->the_schedule[11][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[11][day] = element;
+				return true;
 			}
 			else if (time == "17:00")
 			{
-				this->the_schedule[12][day] = element;
+				if (this->the_schedule[12][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[12][day] = element;
+				return true;
 			}
 			else if (time == "18:00")
 			{
-				this->the_schedule[13][day] = element;
+				if (this->the_schedule[13][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[13][day] = element;
+				return true;
 			}
 			else if (time == "19:00")
 			{
-				this->the_schedule[14][day] = element;
+				if (this->the_schedule[14][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[14][day] = element;
+				return true;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
 		case 4:
-			if (time == "6:00")
-				this->the_schedule[1][day] = element;
+			if (time == "6:00") {
+				if (this->the_schedule[1][day] != "") {
+					return false;
+				}
+				else
+				{
+					this->the_schedule[1][day] = element;
+					return true;
+				}
+			}
 			else if (time == "7:00")
 			{
-				this->the_schedule[2][day] = element;
+				if (this->the_schedule[2][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[2][day] = element;
+				return true;
 			}
 			else if (time == "8:00")
 			{
-				this->the_schedule[3][day] = element;
+				if (this->the_schedule[3][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[3][day] = element;
+				return true;
 			}
 			else if (time == "9:00")
 			{
-				this->the_schedule[4][day] = element;
+				if (this->the_schedule[4][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[4][day] = element;
+				return true;
 			}
 			else if (time == "10:00")
 			{
-				this->the_schedule[5][day] = element;
+				if (this->the_schedule[5][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[5][day] = element;
+				return true;
 			}
 			else if (time == "11:00")
 			{
-				this->the_schedule[6][day] = element;
+				if (this->the_schedule[6][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[6][day] = element;
+				return true;
 			}
 			else if (time == "12:00")
 			{
-				this->the_schedule[7][day] = element;
+				if (this->the_schedule[7][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[7][day] = element;
+				return true;
 			}
 			else if (time == "13:00")
 			{
-				this->the_schedule[8][day] = element;
+				if (this->the_schedule[8][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[8][day] = element;
+				return true;
 			}
 			else if (time == "14:00")
 			{
-				this->the_schedule[9][day] = element;
+				if (this->the_schedule[9][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[9][day] = element;
+				return true;
 			}
 			else if (time == "15:00")
 			{
-				this->the_schedule[10][day] = element;
+				if (this->the_schedule[10][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[10][day] = element;
+				return true;
 			}
 			else if (time == "16:00")
 			{
-				this->the_schedule[11][day] = element;
+				if (this->the_schedule[11][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[11][day] = element;
+				return true;
 			}
 			else if (time == "17:00")
 			{
-				this->the_schedule[12][day] = element;
+				if (this->the_schedule[12][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[12][day] = element;
+				return true;
 			}
 			else if (time == "18:00")
 			{
-				this->the_schedule[13][day] = element;
+				if (this->the_schedule[13][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[13][day] = element;
+				return true;
 			}
 			else if (time == "19:00")
 			{
-				this->the_schedule[14][day] = element;
+				if (this->the_schedule[14][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[14][day] = element;
+				return true;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
-		case 5: if (time == "6:00")
-			this->the_schedule[1][day] = element;
-			  else if (time == "7:00")
-		{
-			this->the_schedule[2][day] = element;
-		}
-			  else if (time == "8:00")
-		{
-			this->the_schedule[3][day] = element;
-		}
-			  else if (time == "9:00")
-		{
-			this->the_schedule[4][day] = element;
-		}
-			  else if (time == "10:00")
-		{
-			this->the_schedule[5][day] = element;
-		}
-			  else if (time == "11:00")
-		{
-			this->the_schedule[6][day] = element;
-		}
-			  else if (time == "12:00")
-		{
-			this->the_schedule[7][day] = element;
-		}
-			  else if (time == "13:00")
-		{
-			this->the_schedule[8][day] = element;
-		}
-			  else if (time == "14:00")
-		{
-			this->the_schedule[9][day] = element;
-		}
-			  else if (time == "15:00")
-		{
-			this->the_schedule[10][day] = element;
-		}
-			  else if (time == "16:00")
-		{
-			this->the_schedule[11][day] = element;
-		}
-			  else if (time == "17:00")
-		{
-			this->the_schedule[12][day] = element;
-		}
-			  else if (time == "18:00")
-		{
-			this->the_schedule[13][day] = element;
-		}
-			  else if (time == "19:00")
-		{
-			this->the_schedule[14][day] = element;
-		}
-			  else
-		{
-			return false;
-		}
-		case 6: if (time == "6:00")
-			this->the_schedule[1][day] = element;
-			  else if (time == "7:00")
-		{
-			this->the_schedule[2][day] = element;
-		}
-			  else if (time == "8:00")
-		{
-			this->the_schedule[3][day] = element;
-		}
-			  else if (time == "9:00")
-		{
-			this->the_schedule[4][day] = element;
-		}
-			  else if (time == "10:00")
-		{
-			this->the_schedule[5][day] = element;
-		}
-			  else if (time == "11:00")
-		{
-			this->the_schedule[6][day] = element;
-		}
-			  else if (time == "12:00")
-		{
-			this->the_schedule[7][day] = element;
-		}
-			  else if (time == "13:00")
-		{
-			this->the_schedule[8][day] = element;
-		}
-			  else if (time == "14:00")
-		{
-			this->the_schedule[9][day] = element;
-		}
-			  else if (time == "15:00")
-		{
-			this->the_schedule[10][day] = element;
-		}
-			  else if (time == "16:00")
-		{
-			this->the_schedule[11][day] = element;
-		}
-			  else if (time == "17:00")
-		{
-			this->the_schedule[12][day] = element;
-		}
-			  else if (time == "18:00")
-		{
-			this->the_schedule[13][day] = element;
-		}
-			  else if (time == "19:00")
-		{
-			this->the_schedule[14][day] = element;
-		}
-			  else
-		{
-			return false;
-		}
+		case 5:
+			if (time == "6:00") {
+				if (this->the_schedule[1][day] != "") {
+					return false;
+				}
+				else
+				{
+					this->the_schedule[1][day] = element;
+					return true;
+				}
+			}
+			else if (time == "7:00")
+			{
+				if (this->the_schedule[2][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[2][day] = element;
+				return true;
+			}
+			else if (time == "8:00")
+			{
+				if (this->the_schedule[3][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[3][day] = element;
+				return true;
+			}
+			else if (time == "9:00")
+			{
+				if (this->the_schedule[4][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[4][day] = element;
+				return true;
+			}
+			else if (time == "10:00")
+			{
+				if (this->the_schedule[5][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[5][day] = element;
+				return true;
+			}
+			else if (time == "11:00")
+			{
+				if (this->the_schedule[6][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[6][day] = element;
+				return true;
+			}
+			else if (time == "12:00")
+			{
+				if (this->the_schedule[7][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[7][day] = element;
+				return true;
+			}
+			else if (time == "13:00")
+			{
+				if (this->the_schedule[8][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[8][day] = element;
+				return true;
+			}
+			else if (time == "14:00")
+			{
+				if (this->the_schedule[9][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[9][day] = element;
+				return true;
+			}
+			else if (time == "15:00")
+			{
+				if (this->the_schedule[10][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[10][day] = element;
+				return true;
+			}
+			else if (time == "16:00")
+			{
+				if (this->the_schedule[11][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[11][day] = element;
+				return true;
+			}
+			else if (time == "17:00")
+			{
+				if (this->the_schedule[12][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[12][day] = element;
+				return true;
+			}
+			else if (time == "18:00")
+			{
+				if (this->the_schedule[13][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[13][day] = element;
+				return true;
+			}
+			else if (time == "19:00")
+			{
+				if (this->the_schedule[14][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[14][day] = element;
+				return true;
+			}
+			else
+			{
+				return true;
+			}
+		case 6:
+			if (time == "6:00") {
+				if (this->the_schedule[1][day] != "") {
+					return false;
+				}
+				else
+				{
+					this->the_schedule[1][day] = element;
+					return true;
+				}
+			}
+			else if (time == "7:00")
+			{
+				if (this->the_schedule[2][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[2][day] = element;
+				return true;
+			}
+			else if (time == "8:00")
+			{
+				if (this->the_schedule[3][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[3][day] = element;
+				return true;
+			}
+			else if (time == "9:00")
+			{
+				if (this->the_schedule[4][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[4][day] = element;
+				return true;
+			}
+			else if (time == "10:00")
+			{
+				if (this->the_schedule[5][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[5][day] = element;
+				return true;
+			}
+			else if (time == "11:00")
+			{
+				if (this->the_schedule[6][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[6][day] = element;
+				return true;
+			}
+			else if (time == "12:00")
+			{
+				if (this->the_schedule[7][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[7][day] = element;
+				return true;
+			}
+			else if (time == "13:00")
+			{
+				if (this->the_schedule[8][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[8][day] = element;
+				return true;
+			}
+			else if (time == "14:00")
+			{
+				if (this->the_schedule[9][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[9][day] = element;
+				return true;
+			}
+			else if (time == "15:00")
+			{
+				if (this->the_schedule[10][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[10][day] = element;
+				return true;
+			}
+			else if (time == "16:00")
+			{
+				if (this->the_schedule[11][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[11][day] = element;
+				return true;
+			}
+			else if (time == "17:00")
+			{
+				if (this->the_schedule[12][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[12][day] = element;
+				return true;
+			}
+			else if (time == "18:00")
+			{
+				if (this->the_schedule[13][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[13][day] = element;
+				return true;
+			}
+			else if (time == "19:00")
+			{
+				if (this->the_schedule[14][day] != "") {
+					return false;
+				}
+				else
+					this->the_schedule[14][day] = element;
+				return true;
+			}
+			else
+			{
+				return true;
+			}
 
 		default:
 			return false;
