@@ -66,6 +66,9 @@
     <ClInclude Include="listG.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="roomArray.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="routine.cpp">
@@ -120,6 +123,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="listG.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="roomArray.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

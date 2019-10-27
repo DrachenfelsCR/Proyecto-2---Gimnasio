@@ -4,6 +4,7 @@ gym::gym()
 {
 	l1 = new listA();
 	l2 = new listI();
+	r1 = new roomArray();
 	opc = 0;
 }
 
@@ -93,7 +94,7 @@ void gym::menuPrincipal() {
 				a->setFullName(leerCadena());
 				imprimirCadena("\t Digite el Numero de ID");
 				a->setId(leerCadena());
-				imprimirCadena("\t Digite el CorreoElectronico");
+				imprimirCadena("\t Digite el Correo Electronico");
 				a->setEmail(leerCadena());
 				imprimirCadena("\t Digite el numero telefonico");
 				a->setPhone(leerEntero());
@@ -165,6 +166,13 @@ void gym::manejoClasesGrupales()
 {
 	limpiaPantalla();
 	int x = 0;
+	int day = 0;
+	string act;
+	string hour;
+	string id;
+	char rn;
+	bool centinel = false;
+	char op_aux = ' ';
 	int cont = 1;
 	opc = 0;
 	do {
@@ -174,7 +182,74 @@ void gym::manejoClasesGrupales()
 		switch (opc)
 		{
 		case 1:
-
+			imprimirCadena("Digite el salon deseado (A,B,C,D o E)");
+			rn = leerCaracter();
+			while (r1->searchRoom(rn) == false)
+			{
+				imprimirCadena("El salon ingresado no existe o fue ingresado incorrectamente..");
+				imprimirCadena("Intente de nuevo o digite x para salir");
+				op_aux = leerCaracter();
+				if ((op_aux == 'x') || (op_aux == 'X')) {
+					break;
+				}
+			}
+			if ((op_aux == 'x') || (op_aux == 'X')) {
+				break;
+			}
+			imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
+			imprimirCadena("\nDesea crear una clase(s/n): ");
+				op_aux = leerCaracter();
+				if ((op_aux == 's')  || (op_aux == 'S'))
+				{
+					imprimirCadena("Digite el dia deseado (1 a 6): ");
+					day = leerEntero();
+					while (validarDia(day) == false)
+					{
+						imprimirCadena("Ingreso un numero fuera del rango..\n");
+						imprimirCadena("Intente de nuevo: ");
+						day = leerEntero();
+					}
+					imprimirCadena("Digite la hora deseada(6:00/19:00):");
+					hour = leerCadena();
+					while (validarHora(hour) == false)
+					{
+						imprimirCadena("Ingreso una hora incorrecta..\n");
+							imprimirCadena("Intente de nuevo: ");
+						hour = leerCadena();
+					}
+					imprimirCadena("Digite el nombre de la clase");
+					act = leerCadena() + "(xxx)";
+					if (r1->getRoom(rn)->getSchedule()->insertElement(day, hour,act) == false)
+					{
+						imprimirCadena("Horario no  disponible");
+					}
+					else
+					{
+						limpiaPantalla();
+						imprimirCadena("Digita el ID del instructor:");
+						id = leerCadena();
+						while ( (l2->findInstructor(id) != true) || (id == "salir") ) {
+							imprimirCadena("No se encuentra al instructor o digito incorrectamentel el ID..");
+							imprimirCadena("Digite el id de nuevo o digite salir si desea volver al menu principal..");
+							id = leerCadena();
+						}
+						imprimirCadena("Esta seguro de ingresar esta clase? (no podra ser removida una vez ingresada):");
+						imprimirCadena("Digite 's' para confirmar o cualquier otro caracter para salir..");
+						op_aux = leerCaracter();
+						if ((op_aux == 's') || (op_aux == 'S'))
+						{	
+							r1->getRoom(rn)->getSchedule()->insertElement(day, hour, act);
+							groupClass* group = new groupClass(act,l2->searchAndGet(id), 666, rn, 20, hour, day);
+							r1->getRoom(rn)->getGroupList().insertFirst(group);
+							imprimirCadena("Clase agregada exitosamente..\n");
+							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
+						}
+						else
+						{
+							break;
+						}
+					}
+				}
 			break;
 
 		case 2:
@@ -248,7 +323,7 @@ void gym::manejoInstructores()
 				imprimirCadena("\t Digite el Peso del Socio en Kilos");
 				m->setWeight(leerDecimal());
 				l1->searchAndGet(ID)->setMeasures(m);
-				imprimirCadena("\t Digite el Altura del Socio en Kilos");
+				imprimirCadena("\t Digite el Altura del Socio en metros y centimetros");
 				m->setHeight(leerDecimal());
 				l1->searchAndGet(ID)->setMeasures(m);
 				imprimirCadena("\t Digite el La grasa del Socio");

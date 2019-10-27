@@ -11,10 +11,12 @@ private:
 	schedule* room_schedule;
 	listG group_list;
 public:
-	room(char,int,schedule*);
+	room();
+	room(char,int);
 	void setName(char);
 	void setCapacity(int);
 	void setSchedule(schedule*);
+	listG getGroupList();
 	char getName();
 	int getCapacity();
 	schedule* getSchedule();

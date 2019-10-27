@@ -97,6 +97,23 @@ int leerSeleccion(int mayor) {
 		}
 	}
 }
+
+bool validarDia(int dia) 
+{
+	if ((dia <= 0) || (dia > 6))
+		return false;
+		return true;
+}
+
+bool validarHora(string hora)
+{
+	if ((hora == "6:00") || (hora == "7:00") || (hora == "8:00") || (hora == "9:00") || (hora == "10:00") || (hora == "11:00") || (hora == "12:00") || (hora == "13:00") || (hora == "14:00") || (hora == "15:00") || (hora == "16:00") || (hora == "17:00") || (hora == "18:00") || (hora == "19:00"))
+		return true;
+	else
+		return false;
+	
+}
+
 int numeroCodigo(string codigo) {
 	string numero = "";
 	int n = 0;
