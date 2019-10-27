@@ -130,6 +130,7 @@ string menuInstructor() {
 	s << "\t|6.Registrar nueva medicion socio                              |" << endl;
 	s << "\t|7.Mostrar mediciones de socio                                 |" << endl;
 	s << "\t|8.Regresar al menu principal                                  |" << endl;
+	s << "\t|9.Regresar al menu de Fecha                                   |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }
@@ -153,10 +154,7 @@ string menuInicio() {
 	s << "\t ______________________________________________________________" << endl;
 	s << "\t|             Bienvenido al Gimnasio Vital Salud               |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
-	s << "\t|1.Menu Principal                                              |" << endl;
-	s << "\t|2.                                                            |" << endl;
-	s << "\t|3.                                                            |" << endl;
-	s << "\t|4.                                                            |" << endl;
+	s << "\t|1.Ingrese la fecha actual                                     |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }

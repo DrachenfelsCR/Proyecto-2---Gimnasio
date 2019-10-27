@@ -18,6 +18,19 @@ void listA::insertFirst(associate* member) {
 		first = current;
 	}
 }
+bool listA::find(string id)
+{
+	current = first;
+	while (current!=NULL)
+	{
+		if (current->getMember()->getId()==id)
+		{
+			return true;
+		}
+		current = current->getNext();
+	}
+	return false;
+}
 associate* listA::searchAndGet(string id) {
 	this->current = this->first;
 	while (current != NULL)

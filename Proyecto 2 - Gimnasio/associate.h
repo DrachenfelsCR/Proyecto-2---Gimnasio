@@ -21,9 +21,11 @@ public:
 	void setAssigned(instructor*);
 	void setEmail(string);
 	void setPhone(int);
+	void setMeasures(measurements*);
 	void setRegistrationDate(string);
 	string getEmail();
 	int getPhone();
+	measurements* getMeasures();
 	instructor* getAssigned();
 	string getRegistrationDate();
 	string toString();

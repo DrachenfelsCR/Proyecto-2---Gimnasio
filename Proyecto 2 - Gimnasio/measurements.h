@@ -2,6 +2,7 @@
 #define MEASUREMENTS_H
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 class measurements
@@ -14,6 +15,7 @@ private:
 
 public:
 	measurements();
+	measurements(double,double,double, double);
 	void setWeight(double);
 	void setHeight(double);
 	void setBodyMass(double);
@@ -23,6 +25,9 @@ public:
 	double getBodyMass();
 	double getBodyFat();
 	~measurements();
+	double calculateBMI();
+	string bmiDescription();
+	string toString();
 
 };
 

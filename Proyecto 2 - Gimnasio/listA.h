@@ -17,6 +17,7 @@ public:
 	listA();
 	~listA();
 	void insertFirst(associate*);
+	bool find(string id);
 	associate* searchAndGet(string);
 	bool eliminateAssociate(string);
 	string toString();

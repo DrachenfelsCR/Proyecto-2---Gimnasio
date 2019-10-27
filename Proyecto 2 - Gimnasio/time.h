@@ -17,9 +17,9 @@ public:
 	int getDay();
 	int getMonth();
 	int getYear();
-	void setDay();
-	void setMonth();
-	void setYear();
+	void setDay(int);
+	void setMonth(int);
+	void setYear(int);
 	string toString();
 
 

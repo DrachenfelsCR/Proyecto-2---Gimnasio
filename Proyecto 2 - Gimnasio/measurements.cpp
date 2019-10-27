@@ -7,6 +7,14 @@ measurements::measurements() {
 	this->body_mass = 0;
 }
 
+measurements::measurements(double weight, double height, double body_mass, double body_fat)
+{
+	this->weight = weight;
+	this->height = height;
+	this->body_mass = body_fat;
+	this->body_fat = body_fat;
+}
+
 void measurements::setWeight(double weight) {
 	this->weight = weight;
 }
@@ -37,6 +45,35 @@ double measurements::getBodyFat() {
 
 measurements::~measurements()
 {
+}
+
+double measurements::calculateBMI()
+{
+	double bodyMass = 0;
+	bodyMass = (weight/ (height * height));
+	return bodyMass;
+}
+
+string measurements::bmiDescription()
+{
+	if (calculateBMI()<18.5)
+	{
+		return "Bajo de peso";
+	}
+	else
+	{
+		if (calculateBMI()<=23,5)
+		{
+			return "Normal";
+		}
+	}
+}
+
+string measurements::toString()
+{
+	stringstream s;
+	s << "peso" << weight << endl;
+	return s.str();
 }
 
 double measurements::getBodyMass() {

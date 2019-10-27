@@ -191,7 +191,7 @@ void gym::manejoClasesGrupales()
 		imprimirCadena("\t Digite 1 para seguir en manejo de clases grupales o 2 para volver atras: ");
 		cont = leerSeleccion(2);
 		limpiaPantalla();
-		if (cont == 2) { controlSistema(); }
+		if (cont == 2) { adMenu(); }
 	} while (cont == 1);
 }
 
@@ -202,12 +202,16 @@ void gym::manejoInstructores()
 	limpiaPantalla();
 	int x = 0;
 	string id;
+	string ID;
 	int cont = 1;
 	opc = 0;
 	do {
+		measurements* m = new measurements();
+		associate* a = new associate();
+		instructor* t = new instructor();
 		imprimirCadena(menuInstructor());
-		imprimirCadena("\t Seleccione una opcion [1-8]");
-		opc = leerSeleccion(8);
+		imprimirCadena("\t Seleccione una opcion [1-9]");
+		opc = leerSeleccion(9);
 		switch (opc)
 		{
 		case 1:
@@ -235,18 +239,33 @@ void gym::manejoInstructores()
 		case 5:
 			break;
 		case 6:
+			limpiaPantalla();
+			imprimirCadena(l1->toString());
+			imprimirCadena("\t Digite el numero ID del Socio para registrar Sus Mediciones");
+			ID = leerCadena();
+			while (l1->find(ID) == true) {
+				imprimirCadena(l1->searchAndGet(ID)->toString());
+				imprimirCadena("\t Digite el Peso del Socio en Kilos");
+			
+				
+				break;
+			}
+			imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
 			break;
 		case 7:
 			break;
 		case 8:
 			controlSistema();
 			break;
+		case 9:
+			inicio();
+			break;
 
 		}
 		imprimirCadena("\t Digite 1 para seguir en el manejo de instructores o 2 para volver atras: ");
 		cont = leerSeleccion(2);
 		limpiaPantalla();
-		if (cont == 2) { controlSistema(); }
+		if (cont == 2) { adMenu(); }
 	} while (cont == 1);
 }
 
