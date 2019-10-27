@@ -6,12 +6,17 @@
 class room
 {
 private:
-	string name;
-	string code;
+	char name;
 	int capacity;
-	schedule room_schedule;
+	schedule* room_schedule;
 public:
-	room();
+	room(char,int,schedule*);
+	void setName(char);
+	void setCapacity(int);
+	void setSchedule(schedule*);
+	char getName();
+	int getCapacity();
+	schedule* getSchedule();
 	~room();
 };
 
