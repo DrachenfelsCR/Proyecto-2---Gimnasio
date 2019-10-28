@@ -12,6 +12,10 @@ routine::routine() {
 void routine::setCode(int code){
 	this->code = code;
 }
+void routine::setExerciseName(string exerciseName)
+{
+	this->exerciseName= exerciseName;
+}
 void routine::setCreationDate(string creation_date) {
 	this->creation_date = creation_date;
 }
@@ -36,6 +40,11 @@ string routine::getCreationDate() {
 	return this->creation_date;
 }
 
+string routine::getExerciseName()
+{
+	return exerciseName;
+}
+
 string routine::getEndingDate() {
 	return this->ending_date;
 }
@@ -56,6 +65,12 @@ string routine::toString() {
 	s << " " << "Series: " << this->instructions[2] << endl;
 	s << " " << "Repeticiones: " << this->instructions[3] << endl;
 	return s.str();
+}
+
+int routine::RandomCode()
+{
+	code = rand() % 20;
+	return code;
 }
 
 routine::~routine(){}

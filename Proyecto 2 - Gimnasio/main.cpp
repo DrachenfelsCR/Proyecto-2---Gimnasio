@@ -4,6 +4,9 @@
 #include "routine.h"
 #include "instructor.h"
 #include "associate.h"
+#include <time.h>
+#include <cstdlib>
+#include <iostream>
 using namespace std;
 
 int main() {

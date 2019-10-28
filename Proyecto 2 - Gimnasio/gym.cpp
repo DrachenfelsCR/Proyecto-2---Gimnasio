@@ -278,12 +278,14 @@ void gym::manejoInstructores()
 	int x = 0;
 	string id;
 	string ID;
+	string c;
 	int cont = 1;
 	opc = 0;
 	do {
 		measurements* m = new measurements();
 		associate* a = new associate();
 		instructor* t = new instructor();
+		routine* r = new routine();
 		imprimirCadena(menuInstructor());
 		imprimirCadena("\t Seleccione una opcion [1-9]");
 		opc = leerSeleccion(9);
@@ -303,11 +305,30 @@ void gym::manejoInstructores()
 			break;
 
 		case 2:
+			limpiaPantalla();
+			imprimirCadena("\t Lista De socios");
+			imprimirCadena(l1->toString());
+			c = leerCadena();
+			imprimirCadena("\t Digita el Numero de ID del Socio");
+			while (l1->find(c) == true)
+			{
+				l1->searchAndGet(c)->toString();
+				
+				imprimirCadena("\t Digite El objetivo para el Socio");
+				r->setObjetive(leerCadena());
+				l1->searchAndGet(c)->setExercises(r);
+				imprimirCadena("\t Digite el nombre del ejercicio ");
+				r->setExerciseName(leerCadena());
+				l1->searchAndGet(c)->setExercises(r);
+				
+			}
+				imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
 
 			break;
 		case 3:
 
 			break;
+
 
 		case 4:
 			break;
@@ -323,10 +344,10 @@ void gym::manejoInstructores()
 				imprimirCadena("\t Digite el Peso del Socio en Kilos");
 				m->setWeight(leerDecimal());
 				l1->searchAndGet(ID)->setMeasures(m);
-				imprimirCadena("\t Digite el Altura del Socio en metros y centimetros");
+				imprimirCadena("\t Digite la Altura del Socio en metros y centimetros");
 				m->setHeight(leerDecimal());
 				l1->searchAndGet(ID)->setMeasures(m);
-				imprimirCadena("\t Digite el La grasa del Socio");
+				imprimirCadena("\t Digite La grasa del Socio");
 				m->setBodyFat(leerDecimal());
 				l1->searchAndGet(ID)->setMeasures(m);
 				limpiaPantalla();
