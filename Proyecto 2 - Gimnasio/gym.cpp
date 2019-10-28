@@ -312,7 +312,7 @@ void gym::manejoInstructores()
 			imprimirCadena("\t Digita el Numero de ID del Socio");
 			while (l1->find(c) == true)
 			{
-				l1->searchAndGet(c)->toString();
+				imprimirCadena(l1->searchAndGet(c)->toString());
 				
 				imprimirCadena("\t Digite El objetivo para el Socio");
 				r->setObjetive(leerCadena());
