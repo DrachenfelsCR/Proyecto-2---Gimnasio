@@ -6,13 +6,14 @@ associate::associate() : person(" ", " ")
 	this->phone = 0;
 	this->registration_date = " ";
 }
-associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises): person(id, full_name)
+associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises,listR* lista): person(id, full_name)
 {
 	this->email = email;
 	this->phone = phone;
 	this->registration_date = registration_date;
 	this->measures = measures;
 	this->exercises = exercises;
+	this->lista = lista;
 }
 
 void associate::setAssigned(instructor* ins)
@@ -78,4 +79,9 @@ string associate::toString() {
 }
 associate::~associate()
 {
+}
+
+listR* associate::getLista()
+{
+	return lista;
 }

@@ -266,7 +266,7 @@ void gym::manejoClasesGrupales()
 		imprimirCadena("\t Digite 1 para seguir en manejo de clases grupales o 2 para volver atras: ");
 		cont = leerSeleccion(2);
 		limpiaPantalla();
-		if (cont == 2) { adMenu(); }
+		if (cont == 2) { menuPrincipal(); }
 	} while (cont == 1);
 }
 
@@ -308,6 +308,7 @@ void gym::manejoInstructores()
 			limpiaPantalla();
 			imprimirCadena("\t Lista De socios");
 			imprimirCadena(l1->toString());
+			limpiaPantalla();
 			c = leerCadena();
 			imprimirCadena("\t Digita el Numero de ID del Socio");
 			while (l1->find(c) == true)
@@ -372,7 +373,7 @@ void gym::manejoInstructores()
 		imprimirCadena("\t Digite 1 para seguir en el manejo de instructores o 2 para volver atras: ");
 		cont = leerSeleccion(2);
 		limpiaPantalla();
-		if (cont == 2) { adMenu(); }
+		if (cont == 2) { menuPrincipal(); }
 	} while (cont == 1);
 }
 

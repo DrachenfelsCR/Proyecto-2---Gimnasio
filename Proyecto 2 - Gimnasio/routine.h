@@ -6,8 +6,15 @@
 #include <time.h>
 #include <cstdlib>
 #include <iostream>
+#include "listR.h"
+#include "associate.h"
+#include "nodeR.h"
+#include"routine.h"
 using namespace std;
-
+class nodeR;
+class nodeA;
+class associate;
+class listR;
 class routine
 {
 private:

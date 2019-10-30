@@ -3,9 +3,15 @@
 #include "person.h"
 #include "measurements.h"
 #include "instructor.h"
+#include "listR.h"
 #include "routine.h"
+#include "nodeR.h"
 class associate;
 class instructor;
+class listR;
+class nodeR;
+class nodeA;
+class routine;
 
 
 class associate : public person
@@ -17,9 +23,11 @@ private:
 	measurements* measures;
 	instructor*  assigned;
 	routine* exercises;
+	listR* lista;
+
 public:
 	associate();
-	associate(string, string, string,int,string, measurements*, instructor*,routine*);
+	associate(string, string, string,int,string, measurements*, instructor*,routine*,listR*);
 	void setAssigned(instructor*);
 	void setEmail(string);
 	void setPhone(int);
@@ -34,6 +42,7 @@ public:
 	string getRegistrationDate();
 	string toString();
 	~associate();
+	listR* getLista();
 };
 
 #endif // !ASSOCIATE_H
