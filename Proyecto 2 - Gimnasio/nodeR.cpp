@@ -1,19 +1,19 @@
 #include "nodeR.h"
 
-nodeR::nodeR(routine* routines, nodeR* next)
+nodeR::nodeR(routine* r, nodeR* next)
 {
-	this->routines = routines;
+	this->r = r;
 	this->next = next;
 }
 
-void nodeR::setRoutines(routine* routines)
+void nodeR::setR(routine*r)
 {
-	this->routines = routines;
+	this->r = r;
 }
 
-routine* nodeR::getRoutines()
+routine* nodeR::getR()
 {
-	return routines;
+	return r;
 }
 
 void nodeR::setNext(nodeR* next)
@@ -29,10 +29,6 @@ nodeR* nodeR::getNext()
 string nodeR::toString()
 {
 	stringstream s;
-	s << routines->toString() << endl;
+	s << r->toString();
 	return s.str();
-}
-
-nodeR::~nodeR()
-{
 }

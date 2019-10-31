@@ -9,7 +9,6 @@
 class associate;
 class instructor;
 class listR;
-class nodeR;
 class nodeA;
 class routine;
 

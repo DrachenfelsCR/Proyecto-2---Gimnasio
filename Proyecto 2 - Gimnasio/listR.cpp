@@ -2,17 +2,17 @@
 
 listR::listR()
 {
-	first = NULL;
-	current = NULL;
+	this->first = NULL;
+	this->current = NULL;
 }
 
 listR::~listR()
 {
 }
 
-void listR::insertFirst(routine*member)
+void listR::insertFirst(routine*routine)
 {
-	current = new nodeR(member, NULL);
+	current = new nodeR(routine, NULL);
 	if (first == NULL)
 	{
 		first = current;

@@ -1,12 +1,11 @@
 #include "routine.h"
 
-routine::routine(string creation_date, string ending_date, string exerciseName, string objetive, associate* partner)
+routine::routine(string creation_date, string ending_date, string exerciseName, string objetive)
 {
 	this->creation_date = creation_date;
 	this->ending_date = ending_date;
 	this->exerciseName = exerciseName;
 	this->objetive = objetive;
-	this->partner = partner;
 }
 
 routine::routine() {
@@ -28,10 +27,7 @@ void routine::setCreationDate(string creation_date) {
 void routine::setEndingDate(string ending_date) {
 	this->ending_date = ending_date;
 }
-void routine::setPartner(associate* partner)
-{
-	this->partner = partner;
-}
+
 void routine::setObjetive(string objective) {
 	this->objetive = objective;
 }
@@ -67,10 +63,6 @@ string routine::toString() {
 	return s.str();
 }
 
-associate* routine::getPartner()
-{
-	return partner;
-}
 
 int routine::RandomCode()
 {

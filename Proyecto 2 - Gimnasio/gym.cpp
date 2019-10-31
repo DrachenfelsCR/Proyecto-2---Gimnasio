@@ -316,6 +316,10 @@ void gym::manejoInstructores()
 			{
 				limpiaPantalla();
 				imprimirCadena(l1->searchAndGet(c)->toString());
+				imprimirCadena("\t Digite la fecha para iniciar la Rutina");
+				r->setCreationDate(leerCadena());
+				imprimirCadena("\t Digite la fecha donde termina la rutina");
+				r->setEndingDate(leerCadena());
 				imprimirCadena("\t Digite el numero de rutina");
 				r->setCode(leerEntero());
 				imprimirCadena("\t Digite El objetivo para el Socio");
@@ -333,8 +337,11 @@ void gym::manejoInstructores()
 			break;
 		case 3:
 			limpiaPantalla();
+			imprimirCadena(l1->toString());
 			imprimirCadena("\t Digite el ID del socio para ver los Detalles del socio ");
-			imprimirCadena(l1->searchAndGet(f)->getListaR()->toString());
+			c = leerCadena();
+			imprimirCadena("\t Historial de rutinas");
+			imprimirCadena(l1->searchAndGet(c)->getListaR()->toString());
 			break;
 
 

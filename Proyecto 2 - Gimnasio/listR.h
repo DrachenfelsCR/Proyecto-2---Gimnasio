@@ -2,12 +2,10 @@
 #define LIST_R
 #include "nodeR.h"
 #include "routine.h"
-#include "nodeA.h"
 #include "associate.h"
+class associate;
 class nodeR;
 class nodeA;
-class routine;
-class associate;
 class listR
 {
 private:
