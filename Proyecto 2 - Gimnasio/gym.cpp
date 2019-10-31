@@ -4,6 +4,7 @@ gym::gym()
 {
 	l1 = new listA();
 	l2 = new listI();
+	l3 = new listR();
 	r1 = new roomArray();
 	opc = 0;
 }
@@ -279,6 +280,7 @@ void gym::manejoInstructores()
 	string id;
 	string ID;
 	string c;
+	string f;
 	int cont = 1;
 	opc = 0;
 	do {
@@ -308,26 +310,31 @@ void gym::manejoInstructores()
 			limpiaPantalla();
 			imprimirCadena("\t Lista De socios");
 			imprimirCadena(l1->toString());
-			limpiaPantalla();
 			c = leerCadena();
 			imprimirCadena("\t Digita el Numero de ID del Socio");
-			while (l1->find(c) == true)
+			if (l1->find(c) == true)
 			{
+				limpiaPantalla();
 				imprimirCadena(l1->searchAndGet(c)->toString());
-				
+				imprimirCadena("\t Digite el numero de rutina");
+				r->setCode(leerEntero());
 				imprimirCadena("\t Digite El objetivo para el Socio");
 				r->setObjetive(leerCadena());
-				l1->searchAndGet(c)->setExercises(r);
 				imprimirCadena("\t Digite el nombre del ejercicio ");
 				r->setExerciseName(leerCadena());
-				l1->searchAndGet(c)->setExercises(r);
-				
+				l3->insertFirst(r);
+				l1->searchAndGet(c)->getListaR()->insertFirst(r);
 			}
+			else
+			{
 				imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
+			}
 
 			break;
 		case 3:
-
+			limpiaPantalla();
+			imprimirCadena("\t Digite el ID del socio para ver los Detalles del socio ");
+			imprimirCadena(l1->searchAndGet(f)->getListaR()->toString());
 			break;
 
 

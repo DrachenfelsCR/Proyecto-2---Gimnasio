@@ -23,22 +23,24 @@ private:
 	string ending_date;
 	string exerciseName;
 	string objetive;
-	string instructions[4];
+	associate* partner;
 public:
+	routine(string,string,string,string,associate*);
 	routine();
 	~routine();
 	void setCode(int);
 	void setExerciseName(string);
 	void setCreationDate(string);
 	void setEndingDate(string);
+	void setPartner(associate*);
 	void setObjetive(string);
-	void setInstructions(string,string,string,string);
 	int getCode();
 	string getCreationDate();
 	string getExerciseName();
 	string getEndingDate();
 	string getObjective();
 	string toString();
+	associate* getPartner();
 	int RandomCode();
 };
 

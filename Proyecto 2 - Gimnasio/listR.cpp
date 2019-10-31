@@ -10,13 +10,12 @@ listR::~listR()
 {
 }
 
-void listR::insertFirst(routine*r)
+void listR::insertFirst(routine*member)
 {
-	current = new nodeR(r, nullptr);
-	if (first==NULL)
+	current = new nodeR(member, NULL);
+	if (first == NULL)
 	{
 		first = current;
-
 	}
 	else
 	{
@@ -24,5 +23,16 @@ void listR::insertFirst(routine*r)
 		first = current;
 	}
 
+}
 
+string listR::toString()
+{
+	stringstream s;
+	current = first;
+	while (current!=NULL)
+	{
+		s << current->toString()<<endl;
+		current = current->getNext();
+	}
+	return s.str();
 }

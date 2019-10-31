@@ -23,7 +23,7 @@ private:
 	measurements* measures;
 	instructor*  assigned;
 	routine* exercises;
-	listR* lista;
+	listR* listaR;
 
 public:
 	associate();
@@ -42,7 +42,7 @@ public:
 	string getRegistrationDate();
 	string toString();
 	~associate();
-	listR* getLista();
+	listR* getListaR();
 };
 
 #endif // !ASSOCIATE_H

@@ -19,6 +19,7 @@ public:
 	void insertFirst(routine*);
 	routine* searchAndGet(string);
 	int countNodes();
+	string toString();
 };
 
 #endif // !LIST_R
