@@ -1,14 +1,6 @@
 #include "tools.h"
 #include <string>
 
-string dibujarHospital()
-{
-	stringstream s;
-
-	return s.str();
-
-}
-
 char leerCaracter() {
 	string line;
 	char x;
@@ -139,15 +131,15 @@ string menuPrimario() {
 	s << "\t ______________________________________________________________" << endl;
 	s << "\t|              Bienvenido al sistema Del Gimnasio              |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
-	s << "\t|1.Ingresar un nuevo Socio                                     |" << endl;
-	s << "\t|2.Ingresar un nuevo instructor                                |" << endl;
-	s << "\t|3.Lista General de socios                                     |" << endl;
-	s << "\t|4.lista General de  instructores                              |" << endl;
-	s << "\t|5.Mejores resultados en perdida de grasa                      |" << endl;
-	s << "\t|6.Instructor con mejores resultados en perdida de grasa       |" << endl;
-	s << "\t|7.Menu instructor                                             |" << endl;
-	s << "\t|8.Menu clases grupales                                        |" << endl;
-	s << "\t|9.Salir                                                       |" << endl;
+	s << "\t|[1].Ingresar un nuevo Socio                                   |" << endl;
+	s << "\t|[2].Ingresar un nuevo instructor                              |" << endl;
+	s << "\t|[3].Lista General de socios                                   |" << endl;
+	s << "\t|[4].lista General de  instructores                            |" << endl;
+	s << "\t|[5].Mejores resultados en perdida de grasa                    |" << endl;
+	s << "\t|[6].Instructor con mejores resultados en perdida de grasa     |" << endl;
+	s << "\t|[7].Menu instructor                                           |" << endl;
+	s << "\t|[8].Menu clases grupales                                      |" << endl;
+	s << "\t|[9].Salir                                                     |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }
@@ -156,15 +148,15 @@ string menuInstructor() {
 	s << "\t ______________________________________________________________" << endl;
 	s << "\t|                    Menu Instructor                           |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
-	s << "\t|1.Socios por instructor                                       |" << endl;
-	s << "\t|2.Asignar rutina a socio                                      |" << endl;
-	s << "\t|3.detalle socio                                               |" << endl;
-	s << "\t|4.Rutinas vencidas por instructor                             |" << endl;
-	s << "\t|5.Detalle rutina especifica                                   |" << endl;
-	s << "\t|6.Registrar nueva medicion socio                              |" << endl;
-	s << "\t|7.Mostrar mediciones de socio                                 |" << endl;
-	s << "\t|8.Regresar al menu principal                                  |" << endl;
-	s << "\t|9.Regresar al menu de Fecha                                   |" << endl;
+	s << "\t|[1].Socios por instructor                                     |" << endl;
+	s << "\t|[2].Asignar rutina a socio                                    |" << endl;
+	s << "\t|[3].detalle socio                                             |" << endl;
+	s << "\t|[4].Rutinas vencidas por instructor                           |" << endl;
+	s << "\t|[5].Detalle rutina especifica                                 |" << endl;
+	s << "\t|[6].Registrar nueva medicion socio                            |" << endl;
+	s << "\t|[7].Mostrar mediciones de socio                               |" << endl;
+	s << "\t|[8].Regresar al menu principal                                |" << endl;
+	s << "\t|[9].Regresar al menu de Fecha                                 |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }
@@ -175,10 +167,10 @@ string menuClaseGrupales() {
 	s << "\t ______________________________________________________________" << endl;
 	s << "\t|                  Menu De Clases Grupales                     |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
-	s << "\t|1.Creacion de clase grupal                                    |" << endl;
-	s << "\t|2.Visualizacion clase grupal                                  |" << endl;
-	s << "\t|3.Matricular socio                                            |" << endl;
-	s << "\t|4.Regresar al Menu principal                                  |" << endl;
+	s << "\t|[1].Creacion de clase grupal                                  |" << endl;
+	s << "\t|[2].Visualizacion clase grupal                                |" << endl;
+	s << "\t|[3].Matricular socio                                          |" << endl;
+	s << "\t|[4].Regresar al Menu principal                                |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 
@@ -186,9 +178,9 @@ string menuClaseGrupales() {
 string menuInicio() {
 	stringstream s;
 	s << "\t ______________________________________________________________" << endl;
-	s << "\t|             Bienvenido al Gimnasio Vital Salud               |" << endl;
+	s << "\t|            Sistema de Fecha Gimnasio Vital Salud             |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
-	s << "\t|1.Ingrese la fecha actual                                     |" << endl;
+	s << "\t|[1].Ingrese la fecha actual                                   |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }

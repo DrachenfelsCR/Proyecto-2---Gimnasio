@@ -158,7 +158,7 @@ void gym::menuPrincipal() {
 			imprimirCadena("\t Digite 1 para seguir o 2 para volver a menu principal");
 			cont = leerSeleccion(2);
 			limpiaPantalla();
-			if (cont == 2) { adMenu(); }
+			if (cont == 2) { menuPrincipal(); }
 		} while (cont == 1);
 	}
 }
