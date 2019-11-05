@@ -16,7 +16,6 @@ int leerSeleccion(int);
 int letraCodigo(string);
 void limpiaPantalla();
 string leerCadena();
-string dibujarHospital();
 char leerCaracter();
 string menuInicio();
 string menuPrimario();
