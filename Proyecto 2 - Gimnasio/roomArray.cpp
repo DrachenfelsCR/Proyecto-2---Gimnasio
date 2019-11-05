@@ -13,25 +13,24 @@ roomArray::roomArray()
 bool roomArray::searchRoom(char name)
 {
 	for (int i = 0; i < 5; i++)
-	{
-		if (the_rooms[i]->getName() == name)
-			return true;
-		else
-			return false;
-	}
+	
+		if (the_rooms[i]->getName()==name)
+			    return true;	
+	
 	return false;
+	
 }
 
 room* roomArray::getRoom(char name)
 {
 	for (int i = 0; i < 5; i++)
-	{
+	
 		if (the_rooms[i]->getName() == name)
 			return this->the_rooms[i];
-		else
-			return NULL;
-	}
-	return NULL;
+		
+		return NULL;
+	
+	
 }
 
 void roomArray::setNames()
