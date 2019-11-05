@@ -92,3 +92,29 @@ listM* associate::getListaM()
 	return listaM;
 }
 
+
+associate* associate::load(ifstream& inp) {
+	string id;
+	string name;
+	string email;
+	string phone;
+	string registration_date;
+
+	getline(inp, id, '\t');
+	getline(inp, name, '\t');
+	getline(inp, email, '\t');
+	getline(inp, phone, '\t');
+	getline(inp, registration_date, '\n');
+	
+	int phoneAux = convertirInt(phone);
+	
+	return new associate(id, name, email, phoneAux, registration_date, NULL, NULL, NULL, NULL);
+}
+void associate::save(ofstream& outp)
+{
+	outp << getId() << '\t';
+	outp << getFullName() << '\t';
+	outp << email << '\t';
+	outp << phone << '\t';
+	outp << registration_date << '\n';
+}

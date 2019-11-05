@@ -7,6 +7,8 @@
 #include "routine.h"
 #include "nodeR.h"
 #include "listM.h"
+#include <fstream>
+#include "tools.h"
 class associate;
 class instructor;
 class listR;
@@ -25,6 +27,8 @@ private:
 	routine* exercises;
 	listR* listaR;
 	listM* listaM;
+	ifstream finput;
+	ofstream foutput;
 
 public:
 	associate();
@@ -45,6 +49,10 @@ public:
 	~associate();
 	listR* getListaR();
 	listM* getListaM();
+	void save(string);
+	bool load(string);
+	static associate* load(ifstream&);
+	void save(ofstream&);
 };
 
 #endif // !ASSOCIATE_H

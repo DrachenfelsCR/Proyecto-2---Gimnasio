@@ -2,8 +2,9 @@
 #define PERSON_H
 #include <iostream>
 #include <sstream>
+#include <fstream>
 using namespace std;
-	class person
+class person
 {
 private:
 	string id;

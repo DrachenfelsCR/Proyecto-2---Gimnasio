@@ -13,6 +13,8 @@ class listA
 private:
 	nodeA* first;
 	nodeA* current;
+	ifstream finput;
+	ofstream foutput;
 public:
 	listA();
 	~listA();
@@ -21,6 +23,8 @@ public:
 	associate* searchAndGet(string);
 	bool eliminateAssociate(string);
 	string toString();
+	void save(string);
+	bool load(string);
 };
 
 #endif // !LISTA_H

@@ -95,3 +95,43 @@ listA::~listA() {
 	}
 }
 
+void listA::save(string fileName)
+{
+	foutput.open(fileName.c_str());
+
+	if (foutput.good())
+	{
+		current = first;
+		stringstream s;
+		while (current != NULL)
+		{
+			current->getMember()->save(foutput);
+			current = current->getNext();
+		}
+	}
+	else
+	{
+		cout << endl << "Error al abrir fichero de salida" << endl << endl;
+	}
+}
+
+bool listA::load(string) 
+{
+	if (finput)
+	{
+		cout << endl << "<<  Leyendo Archivos y cargando lista  >>" << endl << endl;
+		associate* aAux;
+		while (finput.good()) {
+			aAux = associate::load(finput);
+			if (finput.good()) {
+				this->insertFirst(aAux);
+			}
+		}
+		return true;
+	}
+	else
+	{
+		cout << endl << "error al abrir fichero de entrada" << endl << endl;
+		return false;
+	}
+}
