@@ -75,6 +75,12 @@
     <ClInclude Include="listR.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="nodeM.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="listM.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="routine.cpp">
@@ -138,6 +144,12 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="listR.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeM.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="listM.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,6 +6,7 @@
 #include "listR.h"
 #include "routine.h"
 #include "nodeR.h"
+#include "listM.h"
 class associate;
 class instructor;
 class listR;
@@ -23,6 +24,7 @@ private:
 	instructor*  assigned;
 	routine* exercises;
 	listR* listaR;
+	listM* listaM;
 
 public:
 	associate();
@@ -42,6 +44,7 @@ public:
 	string toString();
 	~associate();
 	listR* getListaR();
+	listM* getListaM();
 };
 
 #endif // !ASSOCIATE_H

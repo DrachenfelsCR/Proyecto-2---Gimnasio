@@ -86,3 +86,9 @@ listR* associate::getListaR()
 {
 	return listaR;
 }
+
+listM* associate::getListaM()
+{
+	return listaM;
+}
+
