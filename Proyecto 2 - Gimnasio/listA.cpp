@@ -115,8 +115,9 @@ void listA::save(string fileName)
 	}
 }
 
-bool listA::load(string) 
+bool listA::load(string fileName) 
 {
+	finput.open(fileName.c_str());
 	if (finput)
 	{
 		cout << endl << "<<  Leyendo Archivos y cargando lista  >>" << endl << endl;
