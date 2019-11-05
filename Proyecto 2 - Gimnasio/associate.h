@@ -12,7 +12,7 @@ class instructor;
 class listR;
 class nodeA;
 class routine;
-
+class listM;
 
 class associate : public person
 {
