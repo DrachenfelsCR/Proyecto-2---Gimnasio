@@ -7,11 +7,15 @@ class listI
 private:
 	nodeI* first;
 	nodeI* current;
+	ifstream input;
+	ofstream output;
 public:
 	listI();
 	~listI();
 	void insertLast(instructor*);
 	string toString();
+	void save(string);
+	bool recover(string);
 	bool findInstructor(string id);
 	instructor* searchAndGet(string id);
 };

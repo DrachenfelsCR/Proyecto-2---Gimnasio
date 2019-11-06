@@ -39,6 +39,41 @@ string listI::toString()
 	return s.str();
 }
 
+void listI::save(string textname)
+{
+	output.open(textname.c_str());
+	if (output.good())
+	{
+
+
+		current = first;
+		while (current!=NULL)
+		{
+			current->getTutor()->guardar(output);
+			current = current->getNext();
+		}
+
+	}
+	output.close();
+}
+
+bool listI::recover(string textname)
+{
+	input.open(textname.c_str());
+	instructor* aux;
+	while (input.good())
+	{
+		aux->recuperar(input);
+		if (input.good())
+		{
+			this->insertLast(aux);
+		}
+
+
+	}
+	input.close();
+}
+
 bool listI::findInstructor(string id)
 {
 	current = first;

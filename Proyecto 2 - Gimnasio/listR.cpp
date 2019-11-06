@@ -25,6 +25,10 @@ void listR::insertFirst(routine*routine)
 
 }
 
+
+
+
+
 string listR::toString()
 {
 	stringstream s;

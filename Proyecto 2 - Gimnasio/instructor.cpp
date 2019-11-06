@@ -33,3 +33,19 @@ listA* instructor::getLista()
 {
 	return lista;
 }
+
+instructor* instructor::recuperar(ifstream& input)
+{
+
+	string nam, id;
+	getline(input, nam,'\t');
+	getline(input, id, '\n');
+	return new instructor(nam,id,nullptr);
+
+}
+
+void instructor::guardar(ofstream& output)
+{
+	output << getFullName() << endl;
+	output << getId() << endl;
+}

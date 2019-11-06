@@ -15,7 +15,8 @@ public:
 	~instructor();
 	string toString();
 	listA* getLista();
-
+	instructor* recuperar(ifstream&);
+	void guardar(ofstream&);
 	
 
 };
