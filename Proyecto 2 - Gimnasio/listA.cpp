@@ -115,24 +115,28 @@ void listA::save(string fileName)
 	}
 }
 
-bool listA::load(string fileName) 
+bool listA::load(listA* lisA, string fileName) 
 {
+	int phoneAux = 0;
 	finput.open(fileName.c_str());
-	if (finput)
-	{
-		cout << endl << "<<  Leyendo Archivos y cargando lista  >>" << endl << endl;
-		associate* aAux;
+	string email, registration, phone, classcode, name, id;
+	associate* aso = NULL;
 		while (finput.good()) {
-			aAux = associate::load(finput);
-			if (finput.good()) {
-				this->insertFirst(aAux);
+			getline(finput, email, '\t');
+			getline(finput, registration, '\t');
+			getline(finput, phone, '\t');
+			getline(finput, classcode, '\t');
+			getline(finput, name, '\t');
+			getline(finput, id, '\t');
+			phoneAux = convertirInt(phone);
+			if (!name.empty() && !id.empty()) 
+			{
+				aso = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, classcode, NULL);
+				lisA->insertFirst(aso);
 			}
+			finput.close();	
+			return true;
 		}
-		return true;
-	}
-	else
-	{
-		cout << endl << "error al abrir fichero de entrada" << endl << endl;
-		return false;
-	}
+		
 }
+
