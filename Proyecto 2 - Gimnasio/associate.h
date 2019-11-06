@@ -49,8 +49,6 @@ public:
 	~associate();
 	listR* getListaR();
 	listM* getListaM();
-	void save(string);
-	bool load(string);
 	static associate* load(ifstream&);
 	void save(ofstream&);
 };

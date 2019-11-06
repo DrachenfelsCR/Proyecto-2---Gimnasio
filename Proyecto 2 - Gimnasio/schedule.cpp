@@ -867,6 +867,46 @@ bool schedule::insertElement(int day, string time, string element) {
 	}
 }
 
+bool schedule::save(ofstream& f2)
+{
+	f2.open("horario_clases.txt", ios::out | ios::app);
+	if (f2.fail())
+	{
+		cout << "Error abriendo archivo" << endl;
+		return false;
+	}
+	else
+	{
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 3; j++)
+			{
+				f2 << this->the_schedule[i][j] << '\t';
+			}
+	}
+	return true;
+	
+}
+
+bool schedule::load(ifstream& f1) 
+{
+	f1.open("horario_clases.txt", ios::in);
+	if (f1.fail())
+	{
+		cout << "Error abriendo archivo" << endl;
+		return false;
+	}
+	else
+	{
+		while (!f1.eof())
+		{
+			for (int i = 0; i < 3; i++)
+				for (int j = 0; j < 3; j++)
+					f1 >> this->the_schedule[i][j];
+		}
+
+	}
+}
+
 schedule::~schedule()
 {
 

@@ -2,6 +2,7 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
@@ -17,4 +18,7 @@ public:
 	string getElement(int, int);
 	string toString();
 	bool insertElement(int, string, string);
+	bool save(ofstream&);
+	bool load(ifstream&);
+
 };
