@@ -11,6 +11,7 @@ class listR
 private:
 	nodeR* first;
 	nodeR* current;
+	
 public:
 	listR();
 	~listR();
