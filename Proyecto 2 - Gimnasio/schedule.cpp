@@ -867,8 +867,9 @@ bool schedule::insertElement(int day, string time, string element) {
 	}
 }
 
-bool schedule::save(ofstream& f2)
+bool schedule::save()
 {
+	ofstream f2;
 	f2.open("horario_clases.txt", ios::out | ios::app);
 	if (f2.fail())
 	{
@@ -887,8 +888,9 @@ bool schedule::save(ofstream& f2)
 	
 }
 
-bool schedule::load(ifstream& f1) 
+bool schedule::load() 
 {
+	ifstream f1;
 	f1.open("horario_clases.txt", ios::in);
 	if (f1.fail())
 	{

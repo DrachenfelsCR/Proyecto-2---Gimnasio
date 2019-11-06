@@ -5,9 +5,10 @@ associate::associate() : person(" ", " ")
 	this->email = " ";
 	this->phone = 0;
 	this->registration_date = " ";
+	this->classCode = "";
 	listaR = new listR();
 }
-associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises,listR* listaR): person(id, full_name)
+associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises,string classCode,listR* listaR): person(id, full_name)
 {
 	this->email = email;
 	this->phone = phone;
@@ -15,6 +16,7 @@ associate::associate(string id, string full_name, string email, int phone, strin
 	this->measures = measures;
 	this->exercises = exercises;
 	this->listaR = listaR;
+	this->classCode = classCode;
 }
 
 void associate::setAssigned(instructor* ins)
@@ -99,16 +101,18 @@ associate* associate::load(ifstream& inp) {
 	string email;
 	string phone;
 	string registration_date;
+	string codeClass;
 
 	getline(inp, id, '\t');
 	getline(inp, name, '\t');
 	getline(inp, email, '\t');
 	getline(inp, phone, '\t');
-	getline(inp, registration_date, '\n');
+	getline(inp, registration_date, '\t');
+	getline(inp, codeClass, '\n');
 	
 	int phoneAux = convertirInt(phone);
 	
-	return new associate(id, name, email, phoneAux, registration_date, NULL, NULL, NULL, NULL);
+	return new associate(id, name, email, phoneAux, registration_date, NULL, NULL, NULL,codeClass, NULL);
 }
 void associate::save(ofstream& outp)
 {
@@ -116,5 +120,7 @@ void associate::save(ofstream& outp)
 	outp << getFullName() << '\t';
 	outp << email << '\t';
 	outp << phone << '\t';
-	outp << registration_date << '\n';
+	outp << registration_date << '\t';
+	outp << classCode << '\n';
+
 }

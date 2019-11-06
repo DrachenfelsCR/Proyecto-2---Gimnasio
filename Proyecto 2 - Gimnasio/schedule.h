@@ -18,7 +18,7 @@ public:
 	string getElement(int, int);
 	string toString();
 	bool insertElement(int, string, string);
-	bool save(ofstream&);
-	bool load(ifstream&);
+	bool save();
+	bool load();
 
 };
