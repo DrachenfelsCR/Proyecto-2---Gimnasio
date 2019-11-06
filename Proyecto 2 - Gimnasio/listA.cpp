@@ -140,9 +140,10 @@ bool listA::load(listA* lisA, string fileName, int clcode)
 				}
 			}
 			
-			finput.close();	
-			return true;
+			
 		}
+		finput.close();
+		return true;
 		
 }
 
