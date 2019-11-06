@@ -24,7 +24,7 @@ public:
 	bool eliminateAssociate(string);
 	string toString();
 	void save(string);
-	bool load(listA*, string );
+	bool load(listA*, string, int);
 };
 
 #endif // !LISTA_H

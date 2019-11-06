@@ -115,9 +115,10 @@ void listA::save(string fileName)
 	}
 }
 
-bool listA::load(listA* lisA, string fileName) 
+bool listA::load(listA* lisA, string fileName, int clcode) 
 {
 	int phoneAux = 0;
+	int clAux = 0;
 	finput.open(fileName.c_str());
 	string email, registration, phone, classcode, name, id;
 	associate* aso = NULL;
@@ -129,11 +130,16 @@ bool listA::load(listA* lisA, string fileName)
 			getline(finput, name, '\t');
 			getline(finput, id, '\t');
 			phoneAux = convertirInt(phone);
-			if (!name.empty() && !id.empty()) 
+			clAux = convertirInt(classcode);
+			if (clcode == clAux)
 			{
-				aso = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, classcode, NULL);
-				lisA->insertFirst(aso);
+				if (!name.empty() && !id.empty())
+				{
+					aso = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, classcode, NULL);
+					lisA->insertFirst(aso);
+				}
 			}
+			
 			finput.close();	
 			return true;
 		}
