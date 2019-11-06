@@ -25,14 +25,13 @@ private:
 	measurements* measures;
 	instructor*  assigned;
 	routine* exercises;
+	string classCode;
 	listR* listaR;
 	listM* listaM;
-	ifstream finput;
-	ofstream foutput;
 
 public:
 	associate();
-	associate(string, string, string,int,string, measurements*, instructor*,routine*,listR*);
+	associate(string, string, string,int,string, measurements*, instructor*,routine*,string,listR*);
 	void setAssigned(instructor*);
 	void setEmail(string);
 	void setPhone(int);
