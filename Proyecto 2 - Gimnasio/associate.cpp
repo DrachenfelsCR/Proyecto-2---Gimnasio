@@ -46,6 +46,11 @@ void associate::setExercises(routine* exercises)
 	this->exercises = exercises;
 }
 
+void associate::setClassCode(string classcode)
+{
+	this->classCode = classcode;
+}
+
 string associate::getEmail() {
 	return this->email;
 }
@@ -71,6 +76,9 @@ instructor* associate::getAssigned()
 
 string associate::getRegistrationDate() {
 	return this->registration_date;
+}
+string associate::getClassCode() {
+	return this->classCode;
 }
 string associate::toString() {
 	stringstream s;

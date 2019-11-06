@@ -38,9 +38,11 @@ public:
 	void setMeasures(measurements*);
 	void setRegistrationDate(string);
 	void setExercises(routine*);
+	void setClassCode(string);
 	string getEmail();
 	routine* getExercises();
 	int getPhone();
+	string getClassCode();
 	measurements* getMeasures();
 	instructor* getAssigned();
 	string getRegistrationDate();
