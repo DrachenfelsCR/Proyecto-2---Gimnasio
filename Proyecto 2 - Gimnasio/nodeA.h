@@ -16,6 +16,7 @@ public:
 	void setNext(nodeA*);
 	nodeA* getNext();
 	string toString();
+	string toStringVe();
 	~nodeA();
 
 

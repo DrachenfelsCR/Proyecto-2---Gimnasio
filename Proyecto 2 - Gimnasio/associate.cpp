@@ -83,11 +83,13 @@ int associate::getClassCode() {
 string associate::toString() {
 	stringstream s;
 	s << person::toString() << endl;
+	s << "Instructor:" << this->assigned->getFullName() << endl;
 	s << "Email: " << this->email << endl;
 	s << "Numero de telefono: " << this->phone << endl;
 	s << "Fecha de inscripcion: " << this->registration_date << endl;
 	return s.str();
 }
+
 associate::~associate()
 {
 }

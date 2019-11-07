@@ -32,6 +32,13 @@ string nodeR::toString()
 	s << r->toString();
 	return s.str();
 }
+string nodeR::toStringVe()
+{
+	stringstream s;
+	s << r->toStringVen();
+	return s.str();
+}
+
 
 nodeR::~nodeR()
 {

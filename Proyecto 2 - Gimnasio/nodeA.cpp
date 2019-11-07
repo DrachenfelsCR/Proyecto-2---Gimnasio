@@ -28,6 +28,13 @@ string nodeA::toString()
 	return s.str();
 }
 
+string nodeA::toStringVe()
+{
+	stringstream s;
+	s << member->toString() << endl;
+	return s.str();
+}
+
 nodeA::~nodeA()
 {
 }

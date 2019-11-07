@@ -26,6 +26,24 @@ void listA::insertFirst(associate* member) {
 		}
 	}
 }
+
+routine* listA::searchR(int ccode)
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getMember()->getListaR()->searchRoutine(ccode))
+		{
+			return current->getMember()->getListaR()->getRoutine(ccode);
+		}
+		else
+		{
+			current = current->getNext();
+		}
+	}
+	return NULL;
+}
+
 bool listA::find(string id)
 {
 	current = first;
@@ -39,6 +57,7 @@ bool listA::find(string id)
 	}
 	return false;
 }
+
 associate* listA::searchAndGet(string id) {
 	this->current = this->first;
 	while (current != NULL)
@@ -92,6 +111,31 @@ string listA::toString()
 		current = current->getNext();
 	}
 	return s.str();
+}
+string listA::toStringVencidas()
+{
+	current = first;
+	stringstream s;
+	while (current != NULL)
+	{
+		s << current->getMember()->getFullName()<< "\t";
+		s << current->getMember()->getListaR()->toStringVencida() << "\t";
+		current = current->getNext();
+	}
+	return s.str();
+}
+bool  listA::checkVen()
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getMember()->getListaR()->checkVencida())
+		{
+			return true;
+		}
+		current = current->getNext();
+	}
+	return false;
 }
 
 listA::~listA() {

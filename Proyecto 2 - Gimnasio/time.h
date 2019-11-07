@@ -12,7 +12,8 @@ private:
 	int year;
 
 public:
-	timeG(int = 0, int = 0, int = 0);
+	timeG(int, int, int);
+	timeG();
 	~timeG();
 	int getDay();
 	int getMonth();

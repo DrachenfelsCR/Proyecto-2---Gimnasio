@@ -7,32 +7,43 @@
 #include <cstdlib>
 #include <iostream>
 #include"routine.h"
+#include "time.h"
+#include "tools.h"
+#include "listE.h"
 using namespace std;
 class routine
 {
 private:
 	int code;
-	string creation_date;
-	string ending_date;
-	string exerciseName;
+	timeG creation_date;
+	timeG ending_date;
 	string objetive;
-
+	bool routine_status;
+	string combo[8];
+	listE* listEx;
 public:
-	routine(string,string,string,string);
+	routine(timeG, timeG,string);
 	routine();
 	~routine();
 	void setCode(int);
 	void setExerciseName(string);
-	void setCreationDate(string);
-	void setEndingDate(string);
+	void setCreationDate(timeG);
+	void setEndingDate(timeG);
 	void setObjetive(string);
+	void setRoutineStatus(timeG*);
+	bool getRoutineStatus();
 	int getCode();
-	string getCreationDate();
+	timeG getCreationDate();
 	string getExerciseName();
-	string getEndingDate();
+	timeG getEndingDate();
 	string getObjective();
 	string toString();
-	int RandomCode();
+	//int RandomCode();
+	string toStringVen();
+	string toStringEsp();
+	string toStringFull();
+	listE* getListE();
+
 };
 
 

@@ -6,6 +6,7 @@
 #include<sstream>
 #include <wchar.h>
 #include <locale.h>
+#include "time.h"
 using namespace std;
 
 void imprimirCadena(string);
@@ -25,8 +26,13 @@ bool validarDia(int);
 bool validarHora(string);
 int convertirInt(string);
 double convertirDouble(string);
-
-
+bool validarDia(int);
+bool validarMes(int);
+bool validarAnio(int);
+bool verificarAnioRutina(int, timeG);
+bool verificarMesRutina(int, timeG);
+string convertirString(int);
+string validarPartCuerpo(int);
 
 
 

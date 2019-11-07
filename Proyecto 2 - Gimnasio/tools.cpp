@@ -18,10 +18,10 @@ char leerCaracter() {
 }
 
 void imprimirCadena(string cadena) {
-	cout << cadena << endl;;
+	cout << cadena << endl;
 }
 void imprimirCaracter(char cadena) {
-	cout << cadena << endl;;
+	cout << cadena << endl;
 }
 
 string leerCadena() {
@@ -90,12 +90,6 @@ int leerSeleccion(int mayor) {
 	}
 }
 
-bool validarDia(int dia) 
-{
-	if ((dia <= 0) || (dia > 6))
-		return false;
-		return true;
-}
 
 bool validarHora(string hora)
 {
@@ -199,3 +193,93 @@ double convertirDouble(std::string s) {
 	r >> v;
 	return v;
 }
+
+string convertirString(int i) {
+	stringstream r(i);
+	string v;
+	r >> v;
+	return v.c_str();
+}
+
+string validarPartCuerpo(int p)
+{
+	switch (p)
+	{
+	case 1:
+		return "Pierna";
+	case 2:
+		return "Pecho";
+	case 3:
+		return "Espalda";
+	case 4:
+		return "Hombro";
+	case 5:
+		return "Triceps";
+	case 6:
+		return "Biceps";
+	case 7:
+		return "Trapecio";
+	case 8:
+		return "Antebrazo";
+	default:
+		break;
+	}
+}
+
+bool validarDia(int dia) {
+	if (dia < 1 || dia > 31)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool validarMes(int mes) {
+	if (mes < 1 || mes > 12)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool validarAnio(int anio) {
+	if (anio < 1)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool verificarAnioRutina(int anioIng, timeG rutina)
+{
+	if (anioIng < rutina.getYear())
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool verificarMesRutina(int mesIng, timeG rutina)
+{
+	if (mesIng > rutina.getMonth())
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
