@@ -59,20 +59,23 @@ void listI::save(string textname)
 
 bool listI::recover(string textname)
 {
-	input.open(textname.c_str());
-	instructor* aux = NULL;
+	input.open(textname.c_str(),ios::app);
+	instructor* aux=NULL;
 	while (input.good())
 	{
 		aux->recuperar(input);
-		if (input.good())
+
+		if (!input.eof())
 		{
+			
 			this->insertLast(aux);
+			return true;
 		}
 
 
 	}
 	input.close();
-	return true;
+	return false;
 }
 
 bool listI::findInstructor(string id)

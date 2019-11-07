@@ -1,2 +1,3 @@
-Faker
-10
+teemo	321312
+willyrex	32131
+carlos Loria Saenz	6666

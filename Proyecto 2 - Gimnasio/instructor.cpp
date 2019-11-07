@@ -40,6 +40,6 @@ instructor* instructor::recuperar(ifstream& input)
 
 void instructor::guardar(ofstream& output)
 {
-	output << getFullName() << endl;
-	output << getId() << endl;
+	output << getFullName() << "\t";
+	output << getId() << "\n";
 }

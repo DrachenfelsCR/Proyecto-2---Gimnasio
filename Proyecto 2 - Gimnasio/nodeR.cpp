@@ -32,3 +32,7 @@ string nodeR::toString()
 	s << r->toString();
 	return s.str();
 }
+
+nodeR::~nodeR()
+{
+}

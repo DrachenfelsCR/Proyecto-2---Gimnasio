@@ -1,11 +1,13 @@
 #include"gym.h"
 
+
 gym::gym()
 {
 	l1 = new listA();
 	l2 = new listI();
 	l3 = new listR();
 	r1 = new roomArray();
+	lt = new analizadorT();
 	opc = 0;
 }
 
@@ -133,13 +135,17 @@ void gym::menuPrincipal() {
 			case 3:
 				limpiaPantalla();
 				imprimirCadena("\t Lista General de socios \n");
+				
 				imprimirCadena(l1->toString());
 				break;
 
 			case 4:
 				limpiaPantalla();
-				l2->recover("instructor_prueba.txt");
+				
+				
+			
 				imprimirCadena("\t Lista General de instructores \n");
+				lt->cargarListaI(l2,"instructor_prueba.txt");
 				imprimirCadena(l2->toString());
 			
 				break;
