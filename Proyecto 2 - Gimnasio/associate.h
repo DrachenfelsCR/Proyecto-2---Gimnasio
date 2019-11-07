@@ -25,24 +25,24 @@ private:
 	measurements* measures;
 	instructor*  assigned;
 	routine* exercises;
-	string classCode;
+	int classCode;
 	listR* listaR;
 	listM* listaM;
 
 public:
 	associate();
-	associate(string, string, string,int,string, measurements*, instructor*,routine*,string,listR*);
+	associate(string, string, string,int,string, measurements*, instructor*,routine*,int,listR*);
 	void setAssigned(instructor*);
 	void setEmail(string);
 	void setPhone(int);
 	void setMeasures(measurements*);
 	void setRegistrationDate(string);
 	void setExercises(routine*);
-	void setClassCode(string);
+	void setClassCode(int);
 	string getEmail();
 	routine* getExercises();
 	int getPhone();
-	string getClassCode();
+	int getClassCode();
 	measurements* getMeasures();
 	instructor* getAssigned();
 	string getRegistrationDate();

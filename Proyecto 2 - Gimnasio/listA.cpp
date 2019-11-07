@@ -7,15 +7,23 @@ listA::listA()
 }
 
 void listA::insertFirst(associate* member) {
-	current = new nodeA(member,nullptr);
-	if (first==NULL)
+
+	current = first;
+	if (first == NULL)
 	{
-		first = current;
+		first = new nodeA(member, nullptr);
 	}
 	else
 	{
-		current->setNext(first);
-		first = current;
+		while (current->getNext() != NULL)
+		{
+			current = current->getNext();
+		}
+		if (current->getMember()->getId() != member->getId())
+		{
+
+			current->setNext(new nodeA(member, nullptr));
+		}
 	}
 }
 bool listA::find(string id)
@@ -98,21 +106,19 @@ listA::~listA() {
 void listA::save(string fileName)
 {
 	foutput.open(fileName.c_str());
+if (foutput.good())
+{
 
-	if (foutput.good())
+
+	current = first;
+	while (current != NULL)
 	{
-		current = first;
-		stringstream s;
-		while (current != NULL)
-		{
-			current->getMember()->save(foutput);
-			current = current->getNext();
-		}
+		current->getMember()->save(foutput);
+		current = current->getNext();
 	}
-	else
-	{
-		cout << endl << "Error al abrir fichero de salida" << endl << endl;
-	}
+
+}
+foutput.close();
 }
 
 bool listA::load(listA* lisA, string fileName, int clcode) 
@@ -137,7 +143,7 @@ bool listA::load(listA* lisA, string fileName, int clcode)
 			{
 				if (!name.empty() && !id.empty())
 				{
-					aso = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, classcode, NULL);
+					aso = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, clAux, NULL);
 					lisA->insertFirst(aso);
 				}
 			}
