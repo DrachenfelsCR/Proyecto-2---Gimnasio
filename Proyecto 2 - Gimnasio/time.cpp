@@ -58,5 +58,7 @@ bool  timeG::increaseMonth()
 	else
 	{
 		this->month = this->month + 1;
+		return true;
 	}
+	return false;
 }

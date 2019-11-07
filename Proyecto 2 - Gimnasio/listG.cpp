@@ -65,4 +65,9 @@ listG::~listG() {
 	}
 }
 
+void listG::save(string archivo)
+{
+
+}
+
 

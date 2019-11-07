@@ -8,9 +8,12 @@ class listG
 private:
 	nodeG* first;
 	nodeG* current;
+	ifstream input;
+	ofstream output;
 public:
 	listG();
 	~listG();
+	void save(string);
 	void insertFirst(groupClass*);
 	groupClass* searchAndGet(string);
 	string toString();

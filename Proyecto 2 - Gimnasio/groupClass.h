@@ -29,10 +29,12 @@ public:
 	string getClassName();
 	instructor* getInstructor();
 	string getHour();
+	string getDay();
 	int getClassCode();
 	char getRoom();
 	int getQuantity();
 	string toString();
+	void save(ofstream&);
 	~groupClass();
 
 

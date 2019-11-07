@@ -115,6 +115,11 @@ char groupClass::getRoom() {
 	return this->room;
 }
 
+string groupClass::getDay()
+{
+	return day;
+}
+
 int groupClass::getQuantity() {
 	return this->quantity;
 }
@@ -133,4 +138,14 @@ string groupClass::toString()
 	s << "Cantidad: " << this->quantity << endl;
 	s << "Horario: " << this->hour << endl;
 	return s.str();
+}
+
+void groupClass::save(ofstream& output)
+{
+	output << getClassName() << "\t";
+	output << getClassCode() << "\t";
+	output << getRoom() << "\t";
+	output << getQuantity()<<"\t";
+	output << getHour() << "\t";
+	output << getDay() << "\n";
 }

@@ -9,8 +9,11 @@ class instructor : public person
 {
 private:
 	listA* lista;
+	int codeI;
 public:
-	instructor(string,string, listA*);
+	instructor(string,string, listA*,int);
+	int getCodeI();
+	void setCodeI(int);
 	instructor();
 	~instructor();
 	string toString();

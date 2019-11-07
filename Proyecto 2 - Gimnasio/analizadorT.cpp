@@ -2,16 +2,19 @@
 
 void analizadorT::cargarListaI(listI*list, string Archivo)
 {
-	string id, name;
+	string id, name, code;
 	ifstream input;
+	int auxCode = 0;
 	input.open(Archivo.c_str());
 	while (input.good())
 	{
 		getline(input, name,'\t');
-		getline(input, id,'\n');
+		getline(input, id,'\t');
+		getline(input, code,'\n');
+		auxCode = convertirInt(code);
 		if (!input.eof())
 		{
-			instructor* t1 = new instructor(name, id, nullptr);
+			instructor* t1 = new instructor(name, id, nullptr,auxCode);
 			list->insertLast(t1);
 	
 		}
@@ -48,3 +51,30 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode)
 	}
 	input.close();
 }
+
+void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instructor* ins)
+{
+	ifstream finput;
+	finput.open(archivo.c_str());
+	int auxcode = 0;
+	string classCode, quality,day,hour,className,room;
+	while (finput.good())
+	{
+		getline(finput, className, '\t');
+		getline(finput, classCode, '\t');
+		getline(finput, room, '\t');
+		getline(finput, quality, '\t');
+		getline(finput, hour, '\t');
+		getline(finput, day, '\n');
+		auxcode = convertirInt(classCode);
+		if (auxcode == ins->getCodeI()) {
+
+			
+		}
+	}
+	
+	finput.close();
+	}
+
+
+
