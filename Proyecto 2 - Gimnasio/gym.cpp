@@ -273,7 +273,7 @@ void gym::manejoClasesGrupales()
 					while (validarDia(day) == false)
 					{
 						imprimirCadena("Ingreso un numero fuera del rango..\n");
-						imprimirCadena("Intente de nuevo: ");
+						imprimirCadena("Intente de nuevo: ");   
 						day = leerEntero();
 					}
 					imprimirCadena("Digite la hora deseada(6:00/19:00):");
@@ -307,7 +307,7 @@ void gym::manejoClasesGrupales()
 						{	
 							r1->getRoom(rn)->getSchedule()->insertElement(day, hour, act);
 							groupClass* group = new groupClass(act,l2->searchAndGet(id), 666, rn, 20, hour, day);
-							r1->getRoom(rn)->getGroupList().insertFirst(group);
+							r1->getRoom(rn)->getGroupList()->insertFirst(group);
 							imprimirCadena("Clase agregada exitosamente..\n");
 							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
 						}

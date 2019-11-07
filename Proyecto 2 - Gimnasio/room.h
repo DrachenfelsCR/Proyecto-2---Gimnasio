@@ -9,14 +9,14 @@ private:
 	char name;
 	int capacity;
 	schedule* room_schedule;
-	listG group_list;
+	listG* lista;
 public:
 	room();
-	room(char,int);
+	room(char,int,listG*);
 	void setName(char);
 	void setCapacity(int);
 	void setSchedule(schedule*);
-	listG getGroupList();
+	listG* getGroupList();
 	char getName();
 	int getCapacity();
 	schedule* getSchedule();

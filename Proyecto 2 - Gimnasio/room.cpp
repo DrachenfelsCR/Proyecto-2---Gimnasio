@@ -1,13 +1,15 @@
 #include "room.h"
 room::room()
 {
+	lista = new listG();
 	this->name = ' ';
 	this->capacity = 0;
 	this->room_schedule = new schedule();
 }
 
-room::room(char name, int capacity)
+room::room(char name, int capacity, listG* lista)
 {
+	this->lista = lista;
 	this->name = name;
 	this->capacity = capacity;
 	this->room_schedule = new schedule();
@@ -42,9 +44,9 @@ schedule* room::getSchedule()
 	return this->room_schedule;
 }
 
-listG room::getGroupList()
+listG* room::getGroupList()
 {
-	return this->group_list;
+	return lista;
 }
 
 room::~room()
