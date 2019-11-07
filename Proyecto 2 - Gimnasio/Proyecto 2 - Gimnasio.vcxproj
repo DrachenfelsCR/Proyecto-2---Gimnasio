@@ -125,16 +125,19 @@
   <ItemGroup>
     <ClInclude Include="analizadorT.h" />
     <ClInclude Include="associate.h" />
+    <ClInclude Include="exercise.h" />
     <ClInclude Include="groupClass.h" />
     <ClInclude Include="gym.h" />
     <ClInclude Include="instructor.h" />
     <ClInclude Include="listA.h" />
+    <ClInclude Include="listE.h" />
     <ClInclude Include="listG.h" />
     <ClInclude Include="listI.h" />
     <ClInclude Include="listM.h" />
     <ClInclude Include="listR.h" />
     <ClInclude Include="measurements.h" />
     <ClInclude Include="nodeA.h" />
+    <ClInclude Include="nodeE.h" />
     <ClInclude Include="nodeG.h" />
     <ClInclude Include="nodeI.h" />
     <ClInclude Include="nodeM.h" />
@@ -150,10 +153,12 @@
   <ItemGroup>
     <ClCompile Include="analizadorT.cpp" />
     <ClCompile Include="associate.cpp" />
+    <ClCompile Include="exercise.cpp" />
     <ClCompile Include="groupClass.cpp" />
     <ClCompile Include="gym.cpp" />
     <ClCompile Include="instructor.cpp" />
     <ClCompile Include="listA.cpp" />
+    <ClCompile Include="listE.cpp" />
     <ClCompile Include="listG.cpp" />
     <ClCompile Include="listI.cpp" />
     <ClCompile Include="listM.cpp" />
@@ -161,6 +166,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="measurements.cpp" />
     <ClCompile Include="nodeA.cpp" />
+    <ClCompile Include="nodeE.cpp" />
     <ClCompile Include="nodeG.cpp" />
     <ClCompile Include="nodeI.cpp" />
     <ClCompile Include="nodeM.cpp" />

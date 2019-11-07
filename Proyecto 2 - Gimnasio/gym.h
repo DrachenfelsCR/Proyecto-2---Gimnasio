@@ -9,6 +9,7 @@
 #include "listR.h"
 #include "roomArray.h"
 #include "time.h"
+#include "listE.h"
 class gym {
 private:
 	int opc;
@@ -18,6 +19,7 @@ private:
 	listR* l3;
 	roomArray* r1;
 	timeG* t1;
+	exercise* e1;
 public:
 	gym();
 	void inicio();

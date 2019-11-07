@@ -194,6 +194,37 @@ double convertirDouble(std::string s) {
 	return v;
 }
 
+string convertirString(int i) {
+	stringstream r(i);
+	string v;
+	r >> v;
+	return v.c_str();
+}
+
+string validarPartCuerpo(int p)
+{
+	switch (p)
+	{
+	case 1:
+		return "Pierna";
+	case 2:
+		return "Pecho";
+	case 3:
+		return "Espalda";
+	case 4:
+		return "Hombro";
+	case 5:
+		return "Triceps";
+	case 6:
+		return "Biceps";
+	case 7:
+		return "Trapecio";
+	case 8:
+		return "Antebrazo";
+	default:
+		break;
+	}
+}
 
 bool validarDia(int dia) {
 	if (dia < 1 || dia > 31)

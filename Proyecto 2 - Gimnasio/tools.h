@@ -31,7 +31,8 @@ bool validarMes(int);
 bool validarAnio(int);
 bool verificarAnioRutina(int, timeG);
 bool verificarMesRutina(int, timeG);
-
+string convertirString(int);
+string validarPartCuerpo(int);
 
 
 

@@ -6,6 +6,7 @@
 class associate;
 class nodeI;
 class nodeA;
+class routine;
 
 
 class listA
@@ -21,6 +22,7 @@ public:
 	void insertFirst(associate*);
 	bool find(string id);
 	associate* searchAndGet(string);
+	routine* searchR(int);
 	bool eliminateAssociate(string);
 	string toStringVencidas();
 	string toString();

@@ -4,13 +4,19 @@ routine::routine(timeG creation_date, timeG ending_date, string exerciseName, st
 {
 	this->creation_date = creation_date;
 	this->ending_date = ending_date;
-	this->exerciseName = exerciseName;
 	this->objetive = objetive;
 	this->routine_status = true;
+	this->combo[0] = "Pierna";
+	this->combo[1] = "Pecho";
+	this->combo[2] = "Espalda";
+	this->combo[3] = "Hombro";
+	this->combo[4] = "Triceps";
+	this->combo[5] = "Biceps";
+	this->combo[6] = "Trapecio";
+	this->combo[7] = "Antebrazo";
 }
 routine::routine()
 {
-	this->exerciseName = "";
 	this->objetive = "";
 	this->routine_status = true;
 }
@@ -18,10 +24,7 @@ routine::routine()
 void routine::setCode(int code){
 	this->code = code;
 }
-void routine::setExerciseName(string exerciseName)
-{
-	this->exerciseName= exerciseName;
-}
+
 void routine::setCreationDate(timeG creation_date) {
 	this->creation_date = creation_date;
 }
@@ -50,6 +53,10 @@ void routine::setRoutineStatus(timeG* today)
 		this->routine_status = true;
 	}
 }
+listE* routine::getListE()
+{
+	return this->exercises;
+}
 
 bool routine::getRoutineStatus()
 {
@@ -62,11 +69,6 @@ int routine::getCode() {
 
 timeG routine::getCreationDate() {
 	return this->creation_date;
-}
-
-string routine::getExerciseName()
-{
-	return exerciseName;
 }
 
 timeG routine::getEndingDate() {
@@ -108,7 +110,61 @@ string routine::toStringVen() {
 	s << endl << "\t";
 	return s.str();
 }
+string routine::toStringEsp()
+{
+	stringstream s;
+	s << "Fecha de inicio: " << this->creation_date.toString();
+	s << "Fecha de vencimiento: " << this->ending_date.toString();
+	if (routine_status == false)
+	{
+		s << "(vencida)";
+	}
+	else
+	{
+		s << "(vigente)";
+	}
+	s << endl;
+	return s.str();
+}
 
+string routine::toStringFull()
+{
+	stringstream s;
+	s << "Pecho:" << endl;
+	if (this->exercises->find("Pecho"));
+	{
+		this->exercises->getExercise("Pecho")->toString("Pecho");
+	}
+	if (this->exercises->find("Pierna"));
+	{
+		this->exercises->getExercise("Pierna")->toString("Pierna");
+	}
+	if (this->exercises->find("Espalda"));
+	{
+		this->exercises->getExercise("Espalda")->toString("Espalda");
+	}
+	if (this->exercises->find("Hombro"));
+	{
+		this->exercises->getExercise("Hombro")->toString("Hombro");
+	}
+	if (this->exercises->find("Triceps"));
+	{
+		this->exercises->getExercise("Triceps")->toString("Triceps");
+	}
+	if (this->exercises->find("Biceps"));
+	{
+		this->exercises->getExercise("Biceps")->toString("Biceps");
+	}
+	if (this->exercises->find("Trapecio"));
+	{
+		this->exercises->getExercise("Trapecio")->toString("Trapecio");
+	}
+	if (this->exercises->find("Antebrazo"));
+	{
+		this->exercises->getExercise("Antebrazo")->toString("Antebrazo");
+	}
+	return s.str();
+}
 
 int routine::RandomCode()
 {

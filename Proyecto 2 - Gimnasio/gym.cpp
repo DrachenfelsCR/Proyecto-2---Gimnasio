@@ -10,6 +10,7 @@ gym::gym()
 	lt = new analizadorT();
 	opc = 0;
 	t1 = new timeG();
+	e1 = NULL;
 }
 
 void gym::timeSetUp() {
@@ -338,6 +339,9 @@ void gym::manejoClasesGrupales()
 void gym::manejoInstructores()
 {
 	limpiaPantalla();
+	//exercise eAux;
+	int rep, ser;
+	string name;
 	int x = 0;
 	string id;
 	string ID;
@@ -495,8 +499,22 @@ void gym::manejoInstructores()
 				r->setCode(leerEntero());
 				imprimirCadena("\t Digite El objetivo para el Socio");
 				r->setObjetive(leerCadena());
+				imprimirCadena("\t Parte del cuerpo((1-pierna, 2-pecho, 3-espalda, 4-hombro, 5-triceps, 6-biceps, 7-trapecio, 8-antebrazo): ");
+				x = leerEntero();
+				while (x > 8 || x < 1)
+				{
+					imprimirCadena("Debe digitar un numero del 1 al 8, intente de nuevo..");
+					x = leerEntero();
+				}
 				imprimirCadena("\t Digite el nombre del ejercicio ");
-				r->setExerciseName(leerCadena());
+				name = leerCadena();
+				//r->setExerciseName(name);
+				imprimirCadena("\t Digite el numero de series deseadas");
+				ser = leerEntero();
+				imprimirCadena("\t Digite el numero de repeticiones deseadas");
+				rep = leerEntero();
+				e1 = new exercise(validarPartCuerpo(x), ser, rep, name);
+				r->getListE()->insertFirst(e1);
 				l3->insertFirst(r);
 				l1->searchAndGet(c)->getListaR()->insertFirst(r);
 			}
@@ -548,6 +566,15 @@ void gym::manejoInstructores()
 			
 			break;
 		case 5:
+			imprimirCadena("Digita ID rutina:");
+			x = leerEntero();
+			if (l1->searchR(x) == NULL)
+			{
+				imprimirCadena("Esta rutina no ha sido encontrada o no existe..");
+			}
+			x = leerEntero();
+			imprimirCadena(l1->searchR(x)->toStringFull());
+			
 			break;
 		case 6:
 			limpiaPantalla();

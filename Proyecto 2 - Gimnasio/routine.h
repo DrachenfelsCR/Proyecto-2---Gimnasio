@@ -8,6 +8,8 @@
 #include <iostream>
 #include"routine.h"
 #include "time.h"
+#include "tools.h"
+#include "listE.h"
 using namespace std;
 class routine
 {
@@ -15,9 +17,10 @@ private:
 	int code;
 	timeG creation_date;
 	timeG ending_date;
-	string exerciseName;
 	string objetive;
 	bool routine_status;
+	string combo[8];
+	listE* exercises;
 public:
 	routine(timeG, timeG,string,string);
 	routine();
@@ -37,6 +40,9 @@ public:
 	string toString();
 	int RandomCode();
 	string toStringVen();
+	string toStringEsp();
+	string toStringFull();
+	listE* getListE();
 
 };
 

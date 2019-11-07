@@ -17,12 +17,13 @@ public:
 	listR();
 	~listR();
 	void insertFirst(routine*);
-	routine* searchAndGet(string);
+	routine* getRoutine(int);
 	void updateRoutines(timeG*);
 	int countNodes();
 	string toString();
 	string toStringVencida();
 	bool checkVencida();
+	bool searchRoutine(int);
 };
 
 #endif // !LIST_R

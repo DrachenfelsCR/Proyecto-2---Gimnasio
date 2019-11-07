@@ -48,7 +48,35 @@ string listR::toString()
 	}
 	return s.str();
 }
+routine* listR::getRoutine(int ccode) 
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getR()->getCode() == ccode)
+		{
+			return current->getR();
+		}
+		else
+			current = current->getNext();
+	} 
+	return NULL;
+}
 
+bool listR::searchRoutine(int ccode)
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getR()->getCode() == ccode)
+		{
+			return true;
+		}
+		else
+			current = current->getNext();
+	}
+	return false;
+}
 string listR::toStringVencida()
 {
 	stringstream s;
