@@ -32,7 +32,7 @@ instructor* instructor::recuperar(ifstream& input)
 {
 
 	string nam, id;
-	getline(input, nam,'\t');
+	getline(input, nam,'\n');
 	getline(input, id, '\n');
 	return new instructor(nam,id,nullptr);
 

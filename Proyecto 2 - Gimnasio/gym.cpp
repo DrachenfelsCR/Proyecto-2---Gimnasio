@@ -1,13 +1,11 @@
 #include"gym.h"
 
-
 gym::gym()
 {
 	l1 = new listA();
 	l2 = new listI();
 	l3 = new listR();
 	r1 = new roomArray();
-	lt = new analizadorT();
 	opc = 0;
 }
 
@@ -78,6 +76,7 @@ void gym::menuPrincipal() {
 		limpiaPantalla();
 		int x = 0;
 		string id;
+		string fileName = "instructor_prueba.txt";
 		int cont = 1;
 		opc = 0;
 		do {
@@ -128,26 +127,19 @@ void gym::menuPrincipal() {
 				imprimirCadena("\t Digite el ID de la persona");
 				t->setId(leerCadena());
 				l2->insertLast(t);
-				l2->save("instructor_prueba.txt");
 				imprimirCadena("Se ha ingresado el instructor al sistema de manera correcta");
 				
 				break;
 			case 3:
 				limpiaPantalla();
 				imprimirCadena("\t Lista General de socios \n");
-				
 				imprimirCadena(l1->toString());
 				break;
 
 			case 4:
 				limpiaPantalla();
-				
-				
-			
-				imprimirCadena("\t Lista General de instructores \n");
-				lt->cargarListaI(l2,"instructor_prueba.txt");
-				imprimirCadena(l2->toString());
-			
+					imprimirCadena("\t Lista General de instructores \n");
+					imprimirCadena(l2->toString());
 				break;
 			case 5:
 				break;
