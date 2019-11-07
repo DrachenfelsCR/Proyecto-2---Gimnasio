@@ -29,6 +29,7 @@ public:
 	bool checkVen();
 	void save(string);
 	bool load(listA*, string, int);
+	associate* searchByRoutine(int ccode);
 };
 
 #endif // !LISTA_H

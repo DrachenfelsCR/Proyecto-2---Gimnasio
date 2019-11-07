@@ -358,7 +358,7 @@ void gym::manejoInstructores()
 		measurements* m = new measurements();
 		associate* a = new associate();
 		instructor* t = new instructor();
-		//routine* r = new routine();
+		routine* r = new routine();
 		imprimirCadena(menuInstructor());
 		imprimirCadena("\t Seleccione una opcion [1-9]");
 		opc = leerSeleccion(9);
@@ -443,7 +443,7 @@ void gym::manejoInstructores()
 				creation.setYear(year);
 				creation.setMonth(month);
 				creation.setDay(day);
-				ro1->setCreationDate(creation);
+				r->setCreationDate(creation);
 				imprimirCadena("Fecha ingresada: ");
 				imprimirCadena(creation.toString());
 				imprimirCadena("\t Digite el anio donde termina la rutina");
@@ -496,11 +496,11 @@ void gym::manejoInstructores()
 				end.setYear(year);
 				end.setMonth(month);
 				end.setDay(day);
-				ro1->setEndingDate(end);
+				r->setEndingDate(end);
 				imprimirCadena("\t Digite el numero de rutina");
-				ro1->setCode(leerEntero());
+				r->setCode(leerEntero());
 				imprimirCadena("\t Digite El objetivo para el Socio");
-				ro1->setObjetive(leerCadena());
+				r->setObjetive(leerCadena());
 				imprimirCadena("\t Parte del cuerpo((1-pierna, 2-pecho, 3-espalda, 4-hombro, 5-triceps, 6-biceps, 7-trapecio, 8-antebrazo): ");
 				x = leerEntero();
 				while (x > 8 || x < 1)
@@ -515,9 +515,9 @@ void gym::manejoInstructores()
 				imprimirCadena("\t Digite el numero de repeticiones deseadas");
 				rep = leerEntero();
 				e1 = new exercise(validarPartCuerpo(x), ser, rep, name);
-				ro1->getListE()->insertFirst(e1);
-				l3->insertFirst(ro1);
-				l1->searchAndGet(c)->getListaR()->insertFirst(ro1);
+				r->getListE()->insertFirst(e1);
+				l3->insertFirst(r);
+				l1->searchAndGet(c)->getListaR()->insertFirst(r);
 			}
 			else
 			{
@@ -574,8 +574,11 @@ void gym::manejoInstructores()
 				imprimirCadena("Esta rutina no ha sido encontrada o no existe..");
 				break;
 			}
-			cout << "\n";
-			imprimirCadena("Objetivo: " + l1->searchR(x)->getObjective());
+			limpiaPantalla();
+			imprimirCadena(l1->searchByRoutine(x)->toStringR());
+			imprimirCadena(l1->searchR(x)->toStringEsp());
+			cout << "Objetivo: ";	
+			imprimirCadena(l1->searchR(x)->getObjective());
 			imprimirCadena(l1->searchR(x)->toStringFull());
 			
 			break;
@@ -596,8 +599,7 @@ void gym::manejoInstructores()
 				m->setBodyFat(leerDecimal());
 				l1->searchAndGet(ID)->setMeasures(m);
 				limpiaPantalla();
-				imprimirCadena(l1->searchAndGet(ID)->getMeasures()->toString());
-				
+				imprimirCadena(l1->searchAndGet(ID)->getMeasures()->toString());			
 				break;
 			}
 			else {

@@ -47,6 +47,7 @@ public:
 	instructor* getAssigned();
 	string getRegistrationDate();
 	string toString();
+	string toStringR();
 	~associate();
 	listR* getListaR();
 	listM* getListaM();

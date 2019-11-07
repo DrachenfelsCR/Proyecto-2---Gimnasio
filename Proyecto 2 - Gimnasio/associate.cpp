@@ -90,6 +90,15 @@ string associate::toString() {
 	return s.str();
 }
 
+string associate::toStringR() {
+	stringstream s;
+	s << person::toString() << endl;
+	s << "Instructor: " << this->assigned->getFullName() << endl;
+	s << "ID socio: " << this->classCode;
+	return s.str();
+}
+
+
 associate::~associate()
 {
 }
