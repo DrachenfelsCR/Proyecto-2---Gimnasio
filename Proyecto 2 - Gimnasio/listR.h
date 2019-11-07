@@ -3,6 +3,7 @@
 #include "nodeR.h"
 #include "routine.h"
 #include "associate.h"
+#include "time.h"
 class associate;
 class nodeR;
 class nodeA;
@@ -17,6 +18,7 @@ public:
 	~listR();
 	void insertFirst(routine*);
 	routine* searchAndGet(string);
+	void updateRoutines(timeG*);
 	int countNodes();
 	string toString();
 };

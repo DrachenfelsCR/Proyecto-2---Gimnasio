@@ -6,6 +6,12 @@ timeG::timeG(int day, int month, int year)
 	this->month = month;
 	this->year = year;
 }
+timeG::timeG()
+{
+	this->day = 0;
+	this->month = 0;
+	this->year = 0;
+}
 
 timeG::~timeG()
 {
@@ -44,7 +50,7 @@ void timeG::setYear(int year)
 string timeG::toString()
 {
 	stringstream s;
-	s << day << "/" << month << "/" << year << endl;
+	s << day << "/" << month << "/" << year;
 	return s.str();
 }
 bool  timeG::increaseMonth()
@@ -58,5 +64,6 @@ bool  timeG::increaseMonth()
 	else
 	{
 		this->month = this->month + 1;
+		return true;
 	}
 }

@@ -25,7 +25,15 @@ void listR::insertFirst(routine*routine)
 
 }
 
-
+void listR::updateRoutines(timeG* today)
+{
+	current = first;
+	while (current != NULL)
+	{
+		current->getR()->setRoutineStatus(today);
+		current = current->getNext();
+	}
+}
 
 
 

@@ -7,32 +7,36 @@
 #include <cstdlib>
 #include <iostream>
 #include"routine.h"
+#include "time.h"
 using namespace std;
 class routine
 {
 private:
 	int code;
-	string creation_date;
-	string ending_date;
+	timeG creation_date;
+	timeG ending_date;
 	string exerciseName;
 	string objetive;
-
+	bool routine_status;
 public:
-	routine(string,string,string,string);
+	routine(timeG, timeG,string,string);
 	routine();
 	~routine();
 	void setCode(int);
 	void setExerciseName(string);
-	void setCreationDate(string);
-	void setEndingDate(string);
+	void setCreationDate(timeG);
+	void setEndingDate(timeG);
 	void setObjetive(string);
+	void setRoutineStatus(timeG*);
+	bool getRoutineStatus();
 	int getCode();
-	string getCreationDate();
+	timeG getCreationDate();
 	string getExerciseName();
-	string getEndingDate();
+	timeG getEndingDate();
 	string getObjective();
 	string toString();
 	int RandomCode();
+
 };
 
 

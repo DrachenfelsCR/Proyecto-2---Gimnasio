@@ -157,11 +157,13 @@ void gym::menuPrincipal() {
 				a->setEmail(leerCadena());
 				imprimirCadena("\t Digite el numero telefonico");
 				a->setPhone(leerEntero());
-				imprimirCadena("\t Digite la Fecha de Inscripcion");
-				a->setRegistrationDate(leerCadena());
-				limpiaPantalla();
-				imprimirCadena("\t Digite la cedula del instructor \n");
+				//---
+				a->setRegistrationDate(t1->toString());
+				imprimirCadena("\tFecha de Inscripcion: " + a->getRegistrationDate());
+				cout << "\n";
+				//--
 				imprimirCadena(l2->toString());
+				imprimirCadena("\t Digite la cedula del instructor \n");
 				id = leerCadena();
 				if (l2->findInstructor(id)==true) {
 					l1->insertFirst(a);
@@ -341,7 +343,10 @@ void gym::manejoInstructores()
 	string ID;
 	string c;
 	string f;
+	timeG creation;
+	timeG end;
 	int cont = 1;
+	int day, month, year;
 	opc = 0;
 	do {
 		measurements* m = new measurements();
@@ -358,13 +363,17 @@ void gym::manejoInstructores()
 			imprimirCadena(l2->toString());
 			imprimirCadena("\t Digite el Numero de ID del instructor");
 			id = leerCadena();
-			while (l2->findInstructor(id)== true) {
-					imprimirCadena("Lista de Socios");
-					imprimirCadena(l2->searchAndGet(id)->getLista()->toString());
-					break;
+			if (l2->findInstructor(id) != true) {
+				imprimirCadena("\t (!) La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema\n");
+				break;
 			}
-			imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema");
-			break;
+			else
+			{
+				imprimirCadena("Lista de Socios:\n");
+				imprimirCadena(l2->searchAndGet(id)->getLista()->toString());
+				break;
+			}
+			
 
 		case 2:
 			limpiaPantalla();
@@ -376,10 +385,112 @@ void gym::manejoInstructores()
 			{
 				limpiaPantalla();
 				imprimirCadena(l1->searchAndGet(c)->toString());
-				imprimirCadena("\t Digite la fecha para iniciar la Rutina");
-				r->setCreationDate(leerCadena());
-				imprimirCadena("\t Digite la fecha donde termina la rutina");
-				r->setEndingDate(leerCadena());
+				imprimirCadena("Fecha actual: ");
+				imprimirCadena(t1->toString());
+				imprimirCadena("\t Digite el anio para iniciar la Rutina:");
+				year = leerEntero();
+				while (validarAnio(year) == false)
+				{
+					imprimirCadena("(!)El anio debe ser mayor a 0, intente de nuevo..");
+					year = leerEntero();
+				}
+				while (year < t1->getYear())
+				{
+					imprimirCadena("(!)El anio ingresado es menor al actual, intente de nuevo..");
+					year = leerEntero();
+				}
+				imprimirCadena("\t Digite el mes para iniciar la rutina:");
+				month = leerEntero();
+				while (validarMes(month) == false)
+				{
+					imprimirCadena("(!)El mes debe ser mayor a 0 y menor a 12, intente de nuevo..");
+					month = leerEntero();
+				}
+				while (year == t1->getYear() && month < t1->getMonth())
+				{
+					imprimirCadena("(!)No se puede ingresar un mes menor en el mismo anio..");
+					imprimirCadena("\nIntente de nuevo..");
+					month = leerEntero();
+					while (validarMes(month) == false)
+					{
+						imprimirCadena("(!)El mes debe ser mayor a 0 y menor a 12, intente de nuevo..");
+						month = leerEntero();
+					}
+				}
+				imprimirCadena("\t Digite el dia para iniciar la rutina:");
+				day = leerEntero();
+				while (validarDia(day) == false)
+				{
+					imprimirCadena("(!)El dia debe ser mayor a 0 y menor a 31, intente de nuevo..");
+					month = leerEntero();
+				}
+				while (month == t1->getMonth() && day < t1->getDay())
+				{
+					imprimirCadena("(!)El dia no puede ser menor que la fecha actual, intente de nuevo..");
+					day = leerEntero();
+					while (validarDia(day) == false)
+					{
+						imprimirCadena("(!)El dia debe ser mayor a 0 y menor a 31, intente de nuevo..");
+						month = leerEntero();
+					}
+				}
+				creation.setYear(year);
+				creation.setMonth(month);
+				creation.setDay(day);
+				r->setCreationDate(creation);
+				imprimirCadena("Fecha ingresada: ");
+				imprimirCadena(creation.toString());
+				imprimirCadena("\t Digite el anio donde termina la rutina");
+				year = leerEntero();
+				while (validarAnio(year) == false)
+				{
+					imprimirCadena("(!)El anio debe ser mayor a 0, intente de nuevo..");
+					year = leerEntero();
+				}
+				while (year < t1->getYear())
+				{
+					imprimirCadena("(!)El anio ingresado es menor al actual, intente de nuevo..");
+					year = leerEntero();
+				}
+				imprimirCadena("\t Digite el mes para terminar la rutina:");
+				month = leerEntero();
+				while (validarMes(month) == false)
+				{
+					imprimirCadena("(!)El mes debe ser mayor a 0 y menor a 12, intente de nuevo..");
+					month = leerEntero();
+				}
+				while (year == t1->getYear() && month < t1->getMonth())
+				{
+					imprimirCadena("(!)No se puede ingresar un mes menor en el mismo anio..");
+					imprimirCadena("\nIntente de nuevo..");
+					month = leerEntero();
+					while (validarMes(month) == false)
+					{
+						imprimirCadena("(!)El mes debe ser mayor a 0 y menor a 12, intente de nuevo..");
+						month = leerEntero();
+					}
+				}
+				imprimirCadena("\t Digite el dia para iniciar la rutina:");
+				day = leerEntero();
+				while (validarDia(day) == false)
+				{
+					imprimirCadena("(!)El dia debe ser mayor a 0 y menor a 31, intente de nuevo..");
+					month = leerEntero();
+				}
+				while (month == t1->getMonth() && day < t1->getDay() && year <= t1->getYear())
+				{
+					imprimirCadena("(!)El dia no puede ser menor que la fecha actual, intente de nuevo..");
+					day = leerEntero();
+					while (validarDia(day) == false)
+					{
+						imprimirCadena("(!)El dia debe ser mayor a 0 y menor a 31, intente de nuevo..");
+						month = leerEntero();
+					}
+				}
+				end.setYear(year);
+				end.setMonth(month);
+				end.setDay(day);
+				r->setEndingDate(end);
 				imprimirCadena("\t Digite el numero de rutina");
 				r->setCode(leerEntero());
 				imprimirCadena("\t Digite El objetivo para el Socio");
@@ -400,8 +511,19 @@ void gym::manejoInstructores()
 			imprimirCadena(l1->toString());
 			imprimirCadena("\t Digite el ID del socio para ver los Detalles del socio ");
 			c = leerCadena();
-			imprimirCadena("\t Historial de rutinas");
+			if (l1->searchAndGet(c) == NULL)
+			{
+				imprimirCadena("La lista se encuentra vacia, no es posible obtener las rutinas..\n");
+				break;
+			}
+			limpiaPantalla();
+			imprimirCadena(l1->toString());
+			imprimirCadena("--------------------");
+			imprimirCadena("Historial de rutinas");
+			imprimirCadena("--------------------");
+			l1->searchAndGet(c)->getListaR()->updateRoutines(t1);
 			imprimirCadena(l1->searchAndGet(c)->getListaR()->toString());
+			
 			break;
 
 
