@@ -905,7 +905,7 @@ bool schedule::load()
 				for (int j = 0; j < 3; j++)
 					f1 >> this->the_schedule[i][j];
 		}
-
+		return true;
 	}
 }
 

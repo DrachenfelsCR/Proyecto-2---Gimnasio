@@ -60,7 +60,7 @@ void listI::save(string textname)
 bool listI::recover(string textname)
 {
 	input.open(textname.c_str());
-	instructor* aux;
+	instructor* aux = NULL;
 	while (input.good())
 	{
 		aux->recuperar(input);
@@ -72,6 +72,7 @@ bool listI::recover(string textname)
 
 	}
 	input.close();
+	return true;
 }
 
 bool listI::findInstructor(string id)
