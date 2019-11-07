@@ -9,15 +9,69 @@ gym::gym()
 	r1 = new roomArray();
 	lt = new analizadorT();
 	opc = 0;
+	t1 = new timeG();
 }
 
-
+void gym::timeSetUp() {
+	int dia, mes, anio;
+	limpiaPantalla();
+	imprimirCadena("Digite el dia (ejemplo: 1,2,3,.30)");
+	dia = leerEntero(); 
+	while (dia < 1 || dia > 31)
+	{
+		imprimirCadena("(!)El dia debe ser mayor de 0 y menor a 31, intente de nuevo..");
+		dia = leerEntero();
+	}
+	imprimirCadena("Digite el mes (ejemplo: 1,2,..12)");
+	mes = leerEntero(); 
+	while (mes < 1 || mes > 12)
+	{
+		imprimirCadena("(!)El mes debe mayor a 0 y menor a 12, intente de nuevo..");
+		mes = leerEntero();
+	}
+	imprimirCadena("Digite el anio (ejemplo: 2019)");
+	anio = leerEntero();
+	while (anio < 1)
+	{
+		imprimirCadena("(!)El anio debe ser distinto de 0, intente de nuevo..");
+		anio = leerEntero();
+	}
+	t1->setDay(dia);
+	t1->setMonth(mes);
+	t1->setYear(anio);
+	imprimirCadena("\nFecha ingresada: ");
+	imprimirCadena(t1->toString());
+	imprimirCadena("Presione <enter> para continuar");
+	cin.get();
+	controlSistema();
+}
 
 void gym::inicio() {
+	int opAux = 0;
 	limpiaPantalla();
 	imprimirCadena(menuInicio());
-	imprimirCadena("\t Seleccione una opcion [1-9]: ");
-	opc = leerSeleccion(9);
+	imprimirCadena("\t Seleccione una opcion [1-2]: ");
+	opAux = leerEntero();
+	if (opAux > 2 || opAux < 1)
+	{
+		imprimirCadena("Digite solo 1 o 2, presione <enter> para intentar de nuevo..");
+		cin.get();
+		inicio();
+	}
+	else
+	{
+		if (t1->getDay() == 0 &&  opAux == 2)
+		{
+			imprimirCadena("\t(!)Para ingresar al sistema debe existir una fecha ingresada, presione <enter> para reintentar..");
+			cin.get();
+			inicio();
+		}
+		else
+		{
+			opc = opAux;
+		}
+	}
+	
 }
 void gym::adMenu()
 {
@@ -55,10 +109,10 @@ void gym::adMenu()
 		switch (opc)
 		{
 		case 1:
-			menuPrincipal();
+			timeSetUp();
 			break;
 		case 2:
-			
+			menuPrincipal();
 			break;
 		case 3:
 			
@@ -84,6 +138,7 @@ void gym::menuPrincipal() {
 		do {
 			associate* a = new associate();
 			instructor* t = new instructor();
+			imprimirCadena("Fecha: " + t1->toString());
 			imprimirCadena(menuPrimario());
 			imprimirCadena("\t Seleccione una opcion [1-9]");
 			opc = leerSeleccion(9);
@@ -94,7 +149,7 @@ void gym::menuPrincipal() {
 
 				limpiaPantalla();
 				imprimirCadena("\t Bienvenido Al Sistema De ingreso de Socios \n");
-				imprimirCadena("\t Digite el NombreCompleto De la persona");
+				imprimirCadena("\t Digite el Nombre Completo De la persona");
 				a->setFullName(leerCadena());
 				imprimirCadena("\t Digite el Numero de ID");
 				a->setId(leerCadena());

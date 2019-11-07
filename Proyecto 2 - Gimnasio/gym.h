@@ -8,6 +8,7 @@
 #include "listG.h"
 #include "listR.h"
 #include "roomArray.h"
+#include "time.h"
 class gym {
 private:
 	int opc;
@@ -16,10 +17,12 @@ private:
 	listI* l2;
 	listR* l3;
 	roomArray* r1;
+	timeG* t1;
 public:
 	gym();
 	void inicio();
 	void adMenu();
+	void timeSetUp();
 	void controlSistema();
 	void manejoClasesGrupales();
 	void menuPrincipal();

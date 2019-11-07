@@ -1,10 +1,10 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef timeG_H
+#define timeG_H
 #include <iostream>
 #include <sstream>
 #include <string>
 using namespace std;
-class time {
+class timeG {
 
 private:
 	int day;
@@ -12,8 +12,8 @@ private:
 	int year;
 
 public:
-	time(int = 0, int = 0, int = 0);
-	~time();
+	timeG(int = 0, int = 0, int = 0);
+	~timeG();
 	int getDay();
 	int getMonth();
 	int getYear();
@@ -21,6 +21,7 @@ public:
 	void setMonth(int);
 	void setYear(int);
 	string toString();
+	bool increaseMonth();
 
 
 

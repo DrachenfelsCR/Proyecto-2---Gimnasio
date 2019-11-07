@@ -181,6 +181,7 @@ string menuInicio() {
 	s << "\t|            Sistema de Fecha Gimnasio Vital Salud             |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	s << "\t|[1].Ingrese la fecha actual                                   |" << endl;
+	s << "\t|[2].Ingresar al sistema                                       |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }
