@@ -126,6 +126,7 @@ void gym::menuPrincipal() {
 				imprimirCadena("\t Digite el ID de la persona");
 				t->setId(leerCadena());
 				l2->insertLast(t);
+				l2->save("instructor_prueba.txt");
 				imprimirCadena("Se ha ingresado el instructor al sistema de manera correcta");
 				
 				break;
@@ -137,6 +138,7 @@ void gym::menuPrincipal() {
 
 			case 4:
 				limpiaPantalla();
+				l2->recover("instructor_prueba.txt");
 				imprimirCadena("\t Lista General de instructores \n");
 				imprimirCadena(l2->toString());
 			
