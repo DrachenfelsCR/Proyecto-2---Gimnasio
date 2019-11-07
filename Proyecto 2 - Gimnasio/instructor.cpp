@@ -1,8 +1,6 @@
 #include "instructor.h"
 
 
-
-
 instructor::instructor(string full_name, string id, listA* lista ): person(full_name,id)
 {
 	this->lista = lista;
@@ -12,10 +10,6 @@ instructor::instructor() : person("", "")
 {
 	lista = new listA();
 }
-
-
-
-
 
 
 instructor::~instructor()
