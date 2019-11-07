@@ -123,12 +123,14 @@ bool listA::load(listA* lisA, string fileName, int clcode)
 	string email, registration, phone, classcode, name, id;
 	associate* aso = NULL;
 		while (finput.good()) {
-			getline(finput, email, '\t');
-			getline(finput, registration, '\t');
-			getline(finput, phone, '\t');
-			getline(finput, classcode, '\t');
-			getline(finput, name, '\t');
 			getline(finput, id, '\t');
+			getline(finput, name, '\t');
+			getline(finput, email, '\t');
+			getline(finput, phone, '\t');
+			getline(finput, registration, '\t');	
+			getline(finput, classcode, '\t');
+			
+			
 			phoneAux = convertirInt(phone);
 			clAux = convertirInt(classcode);
 			if (clcode == clAux)
