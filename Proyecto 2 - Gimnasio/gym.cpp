@@ -572,8 +572,10 @@ void gym::manejoInstructores()
 			if (l1->searchR(x) == NULL)
 			{
 				imprimirCadena("Esta rutina no ha sido encontrada o no existe..");
+				break;
 			}
-			x = leerEntero();
+			cout << "\n";
+			imprimirCadena("Objetivo: " + l1->searchR(x)->getObjective());
 			imprimirCadena(l1->searchR(x)->toStringFull());
 			
 			break;

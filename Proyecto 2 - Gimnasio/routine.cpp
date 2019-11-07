@@ -140,46 +140,20 @@ string routine::toStringEsp()
 string routine::toStringFull()
 {
 	stringstream s;
-	s << "Pecho:" << endl;
-	if (this->listEx->find("Pecho"));
+	for (int i = 0; i < 8; i++)
 	{
-		this->listEx->getExercise("Pecho")->toString("Pecho");
-	}
-	if (this->listEx->find("Pierna"));
-	{
-		this->listEx->getExercise("Pierna")->toString("Pierna");
-	}
-	if (this->listEx->find("Espalda"));
-	{
-		this->listEx->getExercise("Espalda")->toString("Espalda");
-	}
-	if (this->listEx->find("Hombro"));
-	{
-		this->listEx->getExercise("Hombro")->toString("Hombro");
-	}
-	if (this->listEx->find("Triceps"));
-	{
-		this->listEx->getExercise("Triceps")->toString("Triceps");
-	}
-	if (this->listEx->find("Biceps"));
-	{
-		this->listEx->getExercise("Biceps")->toString("Biceps");
-	}
-	if (this->listEx->find("Trapecio"));
-	{
-		this->listEx->getExercise("Trapecio")->toString("Trapecio");
-	}
-	if (this->listEx->find("Antebrazo"));
-	{
-		this->listEx->getExercise("Antebrazo")->toString("Antebrazo");
+		s << this->listEx->toString(this->combo[i]);
 	}
 	return s.str();
 }
 
-int routine::RandomCode()
+/*int routine::RandomCode()
 {
 	code = rand() % 20;
 	return code;
-}
+}*/
 
-routine::~routine(){}
+routine::~routine()
+{
+	delete this->listEx;
+}

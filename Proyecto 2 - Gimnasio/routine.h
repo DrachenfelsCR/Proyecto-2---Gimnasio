@@ -38,7 +38,7 @@ public:
 	timeG getEndingDate();
 	string getObjective();
 	string toString();
-	int RandomCode();
+	//int RandomCode();
 	string toStringVen();
 	string toStringEsp();
 	string toStringFull();

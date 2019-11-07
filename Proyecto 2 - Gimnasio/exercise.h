@@ -10,8 +10,8 @@ class exercise
 private:
 	string name;
 	string bodypart;
-	string repetitions;
-	string series;
+	int repetitions;
+	int series;
 
 public:
 	exercise();
@@ -20,8 +20,8 @@ public:
 	~exercise();
 	string getName();
 	string getBodyPart();
-	string getRepetitions();
-	string getSeries();
+	int getRepetitions();
+	int getSeries();
 
 };
 
