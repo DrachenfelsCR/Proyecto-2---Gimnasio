@@ -63,11 +63,10 @@ bool listI::recover(string textname)
 	if (input)
 	{
 		instructor* aux =  NULL;
-		while (input.good())
+		while (!input.eof())
 		{
-			aux = aux->recuperar(input);
+			aux->recuperar(input);
 				this->insertLast(aux);
-
 		} return true;
 		input.close();
 	}

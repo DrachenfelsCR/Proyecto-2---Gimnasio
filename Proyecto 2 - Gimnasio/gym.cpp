@@ -142,10 +142,8 @@ void gym::menuPrincipal() {
 					imprimirCadena(l2->toString());
 				break;
 			case 5:
-				l2->recover(fileName);
 				break;
 			case 6:
-				l2->save(fileName);
 				break;
 			case 7:
 				manejoInstructores();
