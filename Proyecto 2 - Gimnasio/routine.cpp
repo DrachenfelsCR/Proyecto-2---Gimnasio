@@ -93,6 +93,22 @@ string routine::toString() {
 	return s.str();
 }
 
+string routine::toStringVen() {
+	stringstream s;
+	s << this->code << "\t";
+	s << this->ending_date.toString();
+	if (routine_status == false)
+	{
+		s << "(vencida)";
+	}
+	else
+	{
+		s << "(vigente)";
+	}
+	s << endl << "\t";
+	return s.str();
+}
+
 
 int routine::RandomCode()
 {

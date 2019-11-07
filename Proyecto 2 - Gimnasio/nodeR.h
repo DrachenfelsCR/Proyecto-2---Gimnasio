@@ -20,6 +20,7 @@ public:
 	void setNext(nodeR*);
 	nodeR* getNext();
 	string toString();
+	string toStringVe();
 	~nodeR();
 
 };

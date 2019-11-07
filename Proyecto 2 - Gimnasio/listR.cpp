@@ -48,3 +48,32 @@ string listR::toString()
 	}
 	return s.str();
 }
+
+string listR::toStringVencida()
+{
+	stringstream s;
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getR()->getRoutineStatus() == false)
+		{
+			s << current->toString() << endl;
+		}
+		
+		current = current->getNext();
+	}	
+	return s.str();
+}
+
+bool listR::checkVencida()
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getR()->getRoutineStatus() == false)
+		{
+			return true;
+		}	
+	}
+	return false;
+}

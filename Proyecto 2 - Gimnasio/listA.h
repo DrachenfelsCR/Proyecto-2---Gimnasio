@@ -22,7 +22,9 @@ public:
 	bool find(string id);
 	associate* searchAndGet(string);
 	bool eliminateAssociate(string);
+	string toStringVencidas();
 	string toString();
+	bool checkVen();
 	void save(string);
 	bool load(listA*, string, int);
 };

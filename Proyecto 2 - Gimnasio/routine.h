@@ -36,6 +36,7 @@ public:
 	string getObjective();
 	string toString();
 	int RandomCode();
+	string toStringVen();
 
 };
 

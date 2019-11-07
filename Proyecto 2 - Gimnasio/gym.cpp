@@ -452,7 +452,7 @@ void gym::manejoInstructores()
 					imprimirCadena("(!)El anio ingresado es menor al actual, intente de nuevo..");
 					year = leerEntero();
 				}
-				imprimirCadena("\t Digite el mes para terminar la rutina:");
+				imprimirCadena("\t Digite el mes donde termina la rutina:");
 				month = leerEntero();
 				while (validarMes(month) == false)
 				{
@@ -470,7 +470,7 @@ void gym::manejoInstructores()
 						month = leerEntero();
 					}
 				}
-				imprimirCadena("\t Digite el dia para iniciar la rutina:");
+				imprimirCadena("\t Digite el dia para finalizar la rutina:");
 				day = leerEntero();
 				while (validarDia(day) == false)
 				{
@@ -513,11 +513,11 @@ void gym::manejoInstructores()
 			c = leerCadena();
 			if (l1->searchAndGet(c) == NULL)
 			{
-				imprimirCadena("La lista se encuentra vacia, no es posible obtener las rutinas..\n");
+				imprimirCadena("La lista se encuentra vacia o digito incorrectamente la cedula, no es posible obtener las rutinas..\n");
 				break;
 			}
 			limpiaPantalla();
-			imprimirCadena(l1->toString());
+			imprimirCadena(l1->searchAndGet(c)->toString());
 			imprimirCadena("--------------------");
 			imprimirCadena("Historial de rutinas");
 			imprimirCadena("--------------------");
@@ -528,6 +528,24 @@ void gym::manejoInstructores()
 
 
 		case 4:
+			limpiaPantalla();
+			imprimirCadena(l2->toString());
+			imprimirCadena("\t Digite el ID del instructor: ");
+			c = leerCadena();
+			if (l2->searchAndGet(c) == NULL)
+			{
+				imprimirCadena("La lista se encuentra vacia o digito incorrectamente la cedula..");
+				break;
+			}
+			imprimirCadena("Nombre del instructor: " + l2->searchAndGet(c)->getFullName());
+			cout << "\n";
+			imprimirCadena("Rutinas vencidas:\n");
+			imprimirCadena("Nombre Socio\tID Rutina\t Fecha Vencimiento\n");
+			if (l2->searchAndGet(c)->getLista()->checkVen())
+			{
+				imprimirCadena(l2->searchAndGet(c)->getLista()->toStringVencidas());
+			}
+			
 			break;
 		case 5:
 			break;

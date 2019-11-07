@@ -93,6 +93,31 @@ string listA::toString()
 	}
 	return s.str();
 }
+string listA::toStringVencidas()
+{
+	current = first;
+	stringstream s;
+	while (current != NULL)
+	{
+		s << current->getMember()->getFullName()<< "\t";
+		s << current->getMember()->getListaR()->toStringVencida() << "\t";
+		current = current->getNext();
+	}
+	return s.str();
+}
+bool  listA::checkVen()
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getMember()->getListaR()->checkVencida())
+		{
+			return true;
+		}
+		current = current->getNext();
+	}
+	return false;
+}
 
 listA::~listA() {
 	current = first;

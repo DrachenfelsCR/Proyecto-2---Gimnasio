@@ -21,6 +21,8 @@ public:
 	void updateRoutines(timeG*);
 	int countNodes();
 	string toString();
+	string toStringVencida();
+	bool checkVencida();
 };
 
 #endif // !LIST_R
