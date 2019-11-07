@@ -6,11 +6,14 @@ gym::gym()
 	l1 = new listA();
 	l2 = new listI();
 	l3 = new listR();
+	l4 = new listE();
 	r1 = new roomArray();
 	lt = new analizadorT();
+	ro1 = new routine();
 	opc = 0;
 	t1 = new timeG();
 	e1 = NULL;
+
 }
 
 void gym::timeSetUp() {
@@ -339,7 +342,6 @@ void gym::manejoClasesGrupales()
 void gym::manejoInstructores()
 {
 	limpiaPantalla();
-	//exercise eAux;
 	int rep, ser;
 	string name;
 	int x = 0;
@@ -356,7 +358,7 @@ void gym::manejoInstructores()
 		measurements* m = new measurements();
 		associate* a = new associate();
 		instructor* t = new instructor();
-		routine* r = new routine();
+		//routine* r = new routine();
 		imprimirCadena(menuInstructor());
 		imprimirCadena("\t Seleccione una opcion [1-9]");
 		opc = leerSeleccion(9);
@@ -441,7 +443,7 @@ void gym::manejoInstructores()
 				creation.setYear(year);
 				creation.setMonth(month);
 				creation.setDay(day);
-				r->setCreationDate(creation);
+				ro1->setCreationDate(creation);
 				imprimirCadena("Fecha ingresada: ");
 				imprimirCadena(creation.toString());
 				imprimirCadena("\t Digite el anio donde termina la rutina");
@@ -494,11 +496,11 @@ void gym::manejoInstructores()
 				end.setYear(year);
 				end.setMonth(month);
 				end.setDay(day);
-				r->setEndingDate(end);
+				ro1->setEndingDate(end);
 				imprimirCadena("\t Digite el numero de rutina");
-				r->setCode(leerEntero());
+				ro1->setCode(leerEntero());
 				imprimirCadena("\t Digite El objetivo para el Socio");
-				r->setObjetive(leerCadena());
+				ro1->setObjetive(leerCadena());
 				imprimirCadena("\t Parte del cuerpo((1-pierna, 2-pecho, 3-espalda, 4-hombro, 5-triceps, 6-biceps, 7-trapecio, 8-antebrazo): ");
 				x = leerEntero();
 				while (x > 8 || x < 1)
@@ -508,15 +510,14 @@ void gym::manejoInstructores()
 				}
 				imprimirCadena("\t Digite el nombre del ejercicio ");
 				name = leerCadena();
-				//r->setExerciseName(name);
 				imprimirCadena("\t Digite el numero de series deseadas");
 				ser = leerEntero();
 				imprimirCadena("\t Digite el numero de repeticiones deseadas");
 				rep = leerEntero();
 				e1 = new exercise(validarPartCuerpo(x), ser, rep, name);
-				r->getListE()->insertFirst(e1);
-				l3->insertFirst(r);
-				l1->searchAndGet(c)->getListaR()->insertFirst(r);
+				ro1->getListE()->insertFirst(e1);
+				l3->insertFirst(ro1);
+				l1->searchAndGet(c)->getListaR()->insertFirst(ro1);
 			}
 			else
 			{

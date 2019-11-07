@@ -20,9 +20,9 @@ private:
 	string objetive;
 	bool routine_status;
 	string combo[8];
-	listE* exercises;
+	listE* listEx;
 public:
-	routine(timeG, timeG,string,string);
+	routine(timeG, timeG,string);
 	routine();
 	~routine();
 	void setCode(int);

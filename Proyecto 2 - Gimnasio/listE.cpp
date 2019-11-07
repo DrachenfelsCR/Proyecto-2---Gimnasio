@@ -2,8 +2,8 @@
 
 listE::listE()
 {
-	this->first = NULL;
-	this->current = NULL;
+	first = NULL;
+	current = NULL;
 }
 
 void listE::insertFirst(exercise* exc) 
@@ -19,7 +19,11 @@ void listE::insertFirst(exercise* exc)
 		{
 			current = current->getNext();
 		}
+		if (current->getEx()->getName() != exc->getName())
+		{
 			current->setNext(new nodeE(exc, nullptr));
+		}
+			
 	}
 }
 

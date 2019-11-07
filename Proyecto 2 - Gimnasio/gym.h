@@ -17,6 +17,8 @@ private:
 	listA* l1;
 	listI* l2;
 	listR* l3;
+	listE* l4;
+	routine* ro1;
 	roomArray* r1;
 	timeG* t1;
 	exercise* e1;

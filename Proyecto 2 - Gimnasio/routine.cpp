@@ -1,11 +1,12 @@
 #include "routine.h"
 
-routine::routine(timeG creation_date, timeG ending_date, string exerciseName, string objetive)
+routine::routine(timeG creation_date, timeG ending_date, string objetive)
 {
 	this->creation_date = creation_date;
 	this->ending_date = ending_date;
 	this->objetive = objetive;
 	this->routine_status = true;
+	this->listEx = new listE();
 	this->combo[0] = "Pierna";
 	this->combo[1] = "Pecho";
 	this->combo[2] = "Espalda";
@@ -19,6 +20,15 @@ routine::routine()
 {
 	this->objetive = "";
 	this->routine_status = true;
+	this->listEx = new listE();
+	this->combo[0] = "Pierna";
+	this->combo[1] = "Pecho";
+	this->combo[2] = "Espalda";
+	this->combo[3] = "Hombro";
+	this->combo[4] = "Triceps";
+	this->combo[5] = "Biceps";
+	this->combo[6] = "Trapecio";
+	this->combo[7] = "Antebrazo";
 }
 
 void routine::setCode(int code){
@@ -55,7 +65,7 @@ void routine::setRoutineStatus(timeG* today)
 }
 listE* routine::getListE()
 {
-	return this->exercises;
+	return listEx;
 }
 
 bool routine::getRoutineStatus()
@@ -131,37 +141,37 @@ string routine::toStringFull()
 {
 	stringstream s;
 	s << "Pecho:" << endl;
-	if (this->exercises->find("Pecho"));
+	if (this->listEx->find("Pecho"));
 	{
-		this->exercises->getExercise("Pecho")->toString("Pecho");
+		this->listEx->getExercise("Pecho")->toString("Pecho");
 	}
-	if (this->exercises->find("Pierna"));
+	if (this->listEx->find("Pierna"));
 	{
-		this->exercises->getExercise("Pierna")->toString("Pierna");
+		this->listEx->getExercise("Pierna")->toString("Pierna");
 	}
-	if (this->exercises->find("Espalda"));
+	if (this->listEx->find("Espalda"));
 	{
-		this->exercises->getExercise("Espalda")->toString("Espalda");
+		this->listEx->getExercise("Espalda")->toString("Espalda");
 	}
-	if (this->exercises->find("Hombro"));
+	if (this->listEx->find("Hombro"));
 	{
-		this->exercises->getExercise("Hombro")->toString("Hombro");
+		this->listEx->getExercise("Hombro")->toString("Hombro");
 	}
-	if (this->exercises->find("Triceps"));
+	if (this->listEx->find("Triceps"));
 	{
-		this->exercises->getExercise("Triceps")->toString("Triceps");
+		this->listEx->getExercise("Triceps")->toString("Triceps");
 	}
-	if (this->exercises->find("Biceps"));
+	if (this->listEx->find("Biceps"));
 	{
-		this->exercises->getExercise("Biceps")->toString("Biceps");
+		this->listEx->getExercise("Biceps")->toString("Biceps");
 	}
-	if (this->exercises->find("Trapecio"));
+	if (this->listEx->find("Trapecio"));
 	{
-		this->exercises->getExercise("Trapecio")->toString("Trapecio");
+		this->listEx->getExercise("Trapecio")->toString("Trapecio");
 	}
-	if (this->exercises->find("Antebrazo"));
+	if (this->listEx->find("Antebrazo"));
 	{
-		this->exercises->getExercise("Antebrazo")->toString("Antebrazo");
+		this->listEx->getExercise("Antebrazo")->toString("Antebrazo");
 	}
 	return s.str();
 }
