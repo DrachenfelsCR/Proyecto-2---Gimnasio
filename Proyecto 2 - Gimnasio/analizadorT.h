@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include "listI.h"
+#include "listA.h"
 #include "instructor.h"
 using namespace std;
 
@@ -16,6 +17,7 @@ private:
 
 public:
 	 void cargarListaI(listI*,string);
+	 void cargarListaA(listA*, string,int);
 
 	
 

@@ -16,6 +16,7 @@ private:
 	string ending_date;
 	string exerciseName;
 	string objetive;
+
 public:
 	routine(string,string,string,string);
 	routine();

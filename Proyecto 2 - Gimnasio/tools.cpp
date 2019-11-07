@@ -139,7 +139,7 @@ string menuPrimario() {
 	s << "\t|[6].Instructor con mejores resultados en perdida de grasa     |" << endl;
 	s << "\t|[7].Menu instructor                                           |" << endl;
 	s << "\t|[8].Menu clases grupales                                      |" << endl;
-	s << "\t|[9].Salir                                                     |" << endl;
+	s << "\t|[9].Guardar y Salir                                           |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }

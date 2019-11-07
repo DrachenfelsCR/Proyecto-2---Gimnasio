@@ -5,10 +5,10 @@ associate::associate() : person(" ", " ")
 	this->email = " ";
 	this->phone = 0;
 	this->registration_date = " ";
-	this->classCode = "";
+	this->classCode = 0;
 	listaR = new listR();
 }
-associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises,string classCode,listR* listaR): person(id, full_name)
+associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises,int classCode,listR* listaR): person(id, full_name)
 {
 	this->email = email;
 	this->phone = phone;
@@ -46,7 +46,7 @@ void associate::setExercises(routine* exercises)
 	this->exercises = exercises;
 }
 
-void associate::setClassCode(string classcode)
+void associate::setClassCode(int classcode)
 {
 	this->classCode = classcode;
 }
@@ -77,7 +77,7 @@ instructor* associate::getAssigned()
 string associate::getRegistrationDate() {
 	return this->registration_date;
 }
-string associate::getClassCode() {
+int associate::getClassCode() {
 	return this->classCode;
 }
 string associate::toString() {
@@ -103,32 +103,15 @@ listM* associate::getListaM()
 }
 
 
-associate* associate::load(ifstream& inp) {
-	string id;
-	string name;
-	string email;
-	string phone;
-	string registration_date;
-	string codeClass;
 
-	getline(inp, id, '\t');
-	getline(inp, name, '\t');
-	getline(inp, email, '\t');
-	getline(inp, phone, '\t');
-	getline(inp, registration_date, '\t');
-	getline(inp, codeClass, '\n');
-	
-	int phoneAux = convertirInt(phone);
-	
-	return new associate(id, name, email, phoneAux, registration_date, NULL, NULL, NULL,codeClass, NULL);
-}
+
 void associate::save(ofstream& outp)
 {
 	outp << getId() << '\t';
 	outp << getFullName() << '\t';
-	outp << email << '\t';
-	outp << phone << '\t';
-	outp << registration_date << '\t';
-	outp << classCode << '\n';
+	outp << getEmail() << '\t';
+	outp << getPhone() << '\t';
+	outp << getRegistrationDate() << '\t';
+	outp << getClassCode() << '\n';
 
 }
