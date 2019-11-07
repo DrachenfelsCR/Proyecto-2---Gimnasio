@@ -65,9 +65,20 @@ listG::~listG() {
 	}
 }
 
-void listG::save(string archivo)
+void listG::save(string fileName)
 {
+	output.open(fileName.c_str());
+	if (output.good())
+	{
+		current = first;
+		if (current!=NULL)
+		{
+			current->getGroupClass()->save(output);
+			current = current->getNext();
+		}
 
+	}
+	output.close();
 }
 
 
