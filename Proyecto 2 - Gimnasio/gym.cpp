@@ -55,6 +55,7 @@ void gym::timeSetUp() {
 void gym::inicio() {
 	int opAux = 0;
 	limpiaPantalla();
+	imprimirCadena("Fecha: " + t1->toString());
 	imprimirCadena(menuInicio());
 	imprimirCadena("\t Seleccione una opcion [1-3]: ");
 	opAux = leerEntero();
