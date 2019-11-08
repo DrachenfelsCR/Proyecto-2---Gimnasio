@@ -26,6 +26,15 @@ void listA::insertFirst(associate* member) {
 		}
 	}
 }
+
+/*void listA::swap(nodeA* node_1, nodeA* node_2)
+{
+	associate* aux = node_1->getMember();
+
+	node_1->data = node_2->data;
+	node_2->data = temp;
+}
+
 bool listA::bubbleSort()
 {
 	nodeA* aux;
@@ -48,7 +57,7 @@ bool listA::bubbleSort()
 			current = current->getNext();
 		}
 	}
-}
+}*/
 
 routine* listA::searchR(int ccode)
 {
