@@ -588,18 +588,21 @@ void gym::manejoInstructores()
 			imprimirCadena("\t Digite el numero ID del Socio para registrar Sus Mediciones");
 			ID = leerCadena();
 			if (l1->find(ID) == true) {
+				limpiaPantalla();
 				imprimirCadena(l1->searchAndGet(ID)->toString());
 				imprimirCadena("\t Digite el Peso del Socio en Kilos");
 				m->setWeight(leerDecimal());
-				l1->searchAndGet(ID)->setMeasures(m);
+				//l1->searchAndGet(ID)->setMeasures(m);
 				imprimirCadena("\t Digite la Altura del Socio en metros y centimetros");
 				m->setHeight(leerDecimal());
-				l1->searchAndGet(ID)->setMeasures(m);
+				//l1->searchAndGet(ID)->setMeasures(m);
 				imprimirCadena("\t Digite La grasa del Socio");
 				m->setBodyFat(leerDecimal());
-				l1->searchAndGet(ID)->setMeasures(m);
+				//l1->searchAndGet(ID)->setMeasures(m);
 				limpiaPantalla();
-				imprimirCadena(l1->searchAndGet(ID)->getMeasures()->toString());			
+				m->setDate(t1);
+				l1->searchAndGet(ID)->getListaM()->insertLast(m);
+				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());			
 				break;
 			}
 			else {
@@ -607,6 +610,22 @@ void gym::manejoInstructores()
 				break;
 			}
 		case 7:
+			limpiaPantalla();
+			imprimirCadena(l1->toString());
+			imprimirCadena("\t Digite el numero ID del Socio: ");
+			ID = leerCadena();
+			if (l1->find(ID) == true) 
+			{
+				limpiaPantalla();
+				cout << "\tNombre del socio: ";
+				imprimirCadena(l1->searchAndGet(ID)->getFullName());
+				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());
+			}
+			else
+			{
+				imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
+				break;
+			}
 			break;
 		case 8:
 			controlSistema();

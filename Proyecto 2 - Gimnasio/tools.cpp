@@ -123,7 +123,7 @@ string menuPrimario() {
 	stringstream s;
 	s << endl;
 	s << "\t ______________________________________________________________" << endl;
-	s << "\t|              Bienvenido al sistema Del Gimnasio              |" << endl;
+	s << "\t|                      Menu Principal                          |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	s << "\t|[1].Ingresar un nuevo Socio                                   |" << endl;
 	s << "\t|[2].Ingresar un nuevo instructor                              |" << endl;
@@ -172,7 +172,7 @@ string menuClaseGrupales() {
 string menuInicio() {
 	stringstream s;
 	s << "\t ______________________________________________________________" << endl;
-	s << "\t|            Sistema de Fecha Gimnasio Vital Salud             |" << endl;
+	s << "\t|                Menu de Fecha  (Gimnasio Vital Salud)         |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	s << "\t|[1].Ingrese la fecha actual                                   |" << endl;
 	s << "\t|[2].Ingresar al sistema                                       |" << endl;

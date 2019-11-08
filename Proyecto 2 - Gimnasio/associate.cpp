@@ -7,6 +7,7 @@ associate::associate() : person(" ", " ")
 	this->registration_date = " ";
 	this->classCode = 0;
 	listaR = new listR();
+	listaM = new listM();
 }
 associate::associate(string id, string full_name, string email, int phone, string registration_date, measurements* measures,instructor*,routine* exercises,int classCode,listR* listaR): person(id, full_name)
 {

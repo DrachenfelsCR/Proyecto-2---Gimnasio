@@ -5,14 +5,7 @@ measurements::measurements() {
 	this->height = 0;
 	this->body_fat = 0;
 	this->body_mass = 0;
-}
-
-measurements::measurements(double weight, double height, double body_mass, double body_fat)
-{
-	this->weight = weight;
-	this->height = height;
-	this->body_mass = body_fat;
-	this->body_fat = body_fat;
+	this->date = new timeG();
 }
 
 void measurements::setWeight(double weight) {
@@ -31,6 +24,14 @@ void measurements::setBodyMass(double body_mass) {
 	this->body_mass = body_mass;
 }
 
+void measurements::setDate(timeG* dat) {
+	this->date = dat;
+}
+
+timeG* measurements::getDate() {
+	return this->date;
+}
+
 double measurements::getWeight() {
 	return this->weight;
 }
@@ -45,6 +46,7 @@ double measurements::getBodyFat() {
 
 measurements::~measurements()
 {
+	delete this->date;
 }
 
 double measurements::calculateBMI()
@@ -108,6 +110,7 @@ string measurements::bmiDescription()
 string measurements::toString()
 {
 	stringstream s;
+	s << "\t Fecha: " << date->toString() << endl;
 	s << "\t Peso : " << weight <<" k "<< endl;
 	s << "\t Altura : " << height <<"m"<< endl;
 	s << "\t Porcentaje de Grasa : " << body_fat << "%" << endl;
