@@ -20,6 +20,12 @@ gym::gym()
 
 void gym::timeSetUp() {
 	int dia, mes, anio;
+	if (t1->getDay() != 0)
+	{
+		imprimirCadena("Ya ha sido ingresado una fecha");
+		system("pause");
+		controlSistema();
+	}
 	limpiaPantalla();
 	imprimirCadena("Digite el dia (ejemplo: 1,2,3,.30)");
 	dia = leerEntero(); 
