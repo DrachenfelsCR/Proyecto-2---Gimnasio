@@ -210,7 +210,8 @@ void gym::menuPrincipal() {
 				break;
 			case 5:
 				imprimirCadena("\t Mejores Resultados Perdida de Grasa");
-				imprimirCadena(l6->toString());
+				l1->bubbleSort();
+				imprimirCadena(l1->toStringFat());
 				break;
 			case 6:
 				break;
@@ -625,14 +626,14 @@ void gym::manejoInstructores()
 				me3 = leerDecimal();
 				while (me3 <= 0)
 				{
-					imprimirCadena("La grase debe ser porcentaje mayor a 0..");
+					imprimirCadena("La grasa debe ser porcentaje mayor a 0..");
 					me3 = leerDecimal();
 				}
 				m->setBodyFat(me3);
 				//-----------------------------------------------------
 				limpiaPantalla();
-				m->setDate(t1);
-				l1->searchAndGet(ID)->getListaM()->insertOrdered(m);
+				m->setMDate(t1->toString());
+				l1->searchAndGet(ID)->getListaM()->insertLast(m);
 				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());			
 				break;
 			}
