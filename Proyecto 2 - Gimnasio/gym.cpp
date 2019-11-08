@@ -56,11 +56,11 @@ void gym::inicio() {
 	int opAux = 0;
 	limpiaPantalla();
 	imprimirCadena(menuInicio());
-	imprimirCadena("\t Seleccione una opcion [1-2]: ");
+	imprimirCadena("\t Seleccione una opcion [1-3]: ");
 	opAux = leerEntero();
-	if (opAux > 2 || opAux < 1)
+	if (opAux > 3 || opAux < 1)
 	{
-		imprimirCadena("Digite solo 1 o 2, presione <enter> para intentar de nuevo..");
+		imprimirCadena("Digite solo 1 o 3, presione <enter> para intentar de nuevo..");
 		cin.get();
 		inicio();
 	}
@@ -106,6 +106,31 @@ void gym::adMenu()
 	} while (true);
 }
 
+void gym::increaseMonth()
+{
+	char opinc;
+	imprimirCadena("Desea continuar (S/N)");
+	opinc = leerCaracter();
+	 if ((opinc == 'S' || opinc == 's'))
+	{
+
+		t1->increaseMonth();
+		imprimirCadena("Fecha actualizada: " + t1->toString());
+		imprimirCadena("Presione <enter>");
+		system("pause");
+		controlSistema();
+	}
+	else if((opinc == 'N' || opinc == 'n'))
+	{
+		controlSistema();
+	}
+	else
+	 {
+		 imprimirCadena("Digito algo distinto de S o N");
+		 system("pause");
+		 controlSistema();
+	 }
+}
 
 
 	void gym::controlSistema() {
@@ -121,7 +146,7 @@ void gym::adMenu()
 			menuPrincipal();
 			break;
 		case 3:
-			
+			increaseMonth();
 			break;
 		case 4:
 			break;
@@ -577,7 +602,7 @@ void gym::manejoInstructores()
 			{
 				imprimirCadena(l2->searchAndGet(c)->getLista()->toStringVencidas());
 			}
-			
+			system("pause");
 			break;
 		case 5:
 			imprimirCadena("Digita ID rutina:");
