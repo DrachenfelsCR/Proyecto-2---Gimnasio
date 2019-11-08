@@ -345,6 +345,7 @@ void gym::manejoClasesGrupales()
 						if ((op_aux == 's') || (op_aux == 'S'))
 						{	
 							r1->getRoom(rn)->getSchedule()->insertElement(day, hour, act);
+							l2->searchAndGet(id)->setCodeI(666);
 							groupClass* group = new groupClass(act2,l2->searchAndGet(id), 666, rn, 20, hour, day);
 							l5->insertFirst(group);
 							r1->getRoom(rn)->getList()->insertFirst(group);

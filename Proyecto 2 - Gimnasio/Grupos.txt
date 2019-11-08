@@ -1,1 +1,1 @@
-Discretas	666	A	20	6:00	Lunes
+Progra	666	A	20	6:00	Martes
