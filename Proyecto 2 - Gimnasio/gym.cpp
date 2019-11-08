@@ -10,6 +10,7 @@ gym::gym()
 	r1 = new roomArray();
 	lt = new analizadorT();
 	l5 = new listG();
+	l6 = new listM();
 	ro1 = new routine();
 	opc = 0;
 	t1 = new timeG();
@@ -20,12 +21,6 @@ gym::gym()
 void gym::timeSetUp() {
 	int dia, mes, anio;
 	limpiaPantalla();
-	if (t1->getDay() != 0)
-	{
-		imprimirCadena("Ya existe una fecha ingresada");
-		system("pause");
-		controlSistema();
-	}
 	imprimirCadena("Digite el dia (ejemplo: 1,2,3,.30)");
 	dia = leerEntero(); 
 	while (dia < 1 || dia > 31)
@@ -60,13 +55,10 @@ void gym::timeSetUp() {
 void gym::inicio() {
 	int opAux = 0;
 	limpiaPantalla();
-	cout << "Fecha: ";
-	imprimirCadena(t1->toString());
-	imprimirCadena("\n");
 	imprimirCadena(menuInicio());
-	imprimirCadena("\t Seleccione una opcion [1-3]: ");
+	imprimirCadena("\t Seleccione una opcion [1-2]: ");
 	opAux = leerEntero();
-	if (opAux > 3 || opAux < 1)
+	if (opAux > 2 || opAux < 1)
 	{
 		imprimirCadena("Digite solo 1 o 2, presione <enter> para intentar de nuevo..");
 		cin.get();
@@ -76,7 +68,7 @@ void gym::inicio() {
 	{
 		if (t1->getDay() == 0 &&  opAux == 2)
 		{
-			imprimirCadena("\t(!)Para ingresar al sistema debe existir una fecha ingresada");
+			imprimirCadena("\t(!)Para ingresar al sistema debe existir una fecha ingresada, presione <enter> para reintentar..");
 			cin.get();
 			inicio();
 		}
@@ -113,37 +105,7 @@ void gym::adMenu()
 		}
 	} while (true);
 }
-void gym::increaseMonth()
-{
-	char op;
-	if (t1->getDay() == 0)
-	{
-		imprimirCadena("Aun no ha ingresado una fecha, ingrese una fecha valida antes de usar esta opcion.");
-		imprimirCadena("para volver presione <enter>");
-		cin.get();
-		controlSistema();
-	}
-	imprimirCadena("Desea aumentar un mes la fecha?  (S/N)");
-	op = leerCaracter();
-		while (op == 'S' || op == 'N' || op == 's' || op == 'n')
-		{
-			if (op == 'S' || op == 's')
-			{
-				t1->increaseMonth();
-				imprimirCadena("Nueva fecha actual: ");
-				imprimirCadena(t1->toString());
-				system("pause");
-				controlSistema();
-			}
-			else if (op == 'N' || op == 'n')
-			{
-				controlSistema();
-			}		
-		}
-		imprimirCadena("Ha digitado una opcion distinta a S o N, intente de nuevo..");
-		system("pause");
-		controlSistema();
-}
+
 
 
 	void gym::controlSistema() {
@@ -159,7 +121,7 @@ void gym::increaseMonth()
 			menuPrincipal();
 			break;
 		case 3:
-			increaseMonth();
+			
 			break;
 		case 4:
 			break;
@@ -247,11 +209,8 @@ void gym::menuPrincipal() {
 				imprimirCadena(l2->toString());
 				break;
 			case 5:
-				imprimirCadena("ID\tNombre\tPerdida de Grasa");
-				l1->bubbleSort();
-				imprimirCadena(l1->toStringFat());
-				imprimirCadena("<enter>");
-				system("pause");
+				imprimirCadena("\t Mejores Resultados Perdida de Grasa");
+				imprimirCadena(l6->toString());
 				break;
 			case 6:
 				break;
@@ -276,6 +235,8 @@ void gym::menuPrincipal() {
 
 void gym::manejoClasesGrupales()
 {
+	associate* a = new associate();
+	instructor* t = new instructor();
 	limpiaPantalla();
 	int x = 0;
 	int day = 0;
@@ -354,8 +315,10 @@ void gym::manejoClasesGrupales()
 							groupClass* group = new groupClass(act,l2->searchAndGet(id), 666, rn, 20, hour, day);
 							l5->insertFirst(group);
 							r1->getRoom(rn)->getList()->insertFirst(group);
+							t->setCodeI(666);
 							imprimirCadena("Clase agregada exitosamente..\n");
 							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
+							l5->save("Grupos.txt");
 						}
 						else
 						{
@@ -366,6 +329,8 @@ void gym::manejoClasesGrupales()
 			break;
 
 		case 2:
+			lt->cargarGrupo(l5,"Grupos.txt",a,t,6);
+			imprimirCadena(l5->toString());
 
 			break;
 		case 3:
@@ -666,8 +631,8 @@ void gym::manejoInstructores()
 				m->setBodyFat(me3);
 				//-----------------------------------------------------
 				limpiaPantalla();
-				m->setMDate(t1->toString());
-				l1->searchAndGet(ID)->getListaM()->insertLast(m);
+				m->setDate(t1);
+				l1->searchAndGet(ID)->getListaM()->insertOrdered(m);
 				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());			
 				break;
 			}
@@ -694,10 +659,9 @@ void gym::manejoInstructores()
 			}
 			break;
 		case 8:
-			menuPrincipal();
+			controlSistema();
 			break;
 		case 9:
-			controlSistema();
 			inicio();
 			break;
 

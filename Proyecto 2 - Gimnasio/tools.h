@@ -24,6 +24,7 @@ string menuClaseGrupales();
 string menuInstructor();
 bool validarDia(int);
 bool validarHora(string);
+char convertirChar(string);
 int convertirInt(string);
 double convertirDouble(string);
 bool validarDia(int);

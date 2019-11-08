@@ -13,6 +13,7 @@ public:
 	~listM();
 	void insertLast(measurements*);
 	double fatLoss();
+	void insertOrdered(measurements*);
 	string toString();
 };
 
