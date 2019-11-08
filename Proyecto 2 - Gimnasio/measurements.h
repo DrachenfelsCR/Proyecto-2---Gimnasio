@@ -14,6 +14,7 @@ private:
 	double body_mass;
 	double body_fat;
 	timeG* date;
+	string m_date;
 public:
 	measurements();
 	void setWeight(double);
@@ -30,7 +31,7 @@ public:
 	double calculateBMI();
 	string bmiDescription();
 	string toString();
-
+	void setMDate(string);
 };
 
 

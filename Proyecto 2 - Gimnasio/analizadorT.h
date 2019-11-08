@@ -22,15 +22,6 @@ public:
 	 void cargarGrupo(listG*,string,associate*,instructor*);
 	
 
-
-
-
-
-
-
-
-
-
 };
 
 

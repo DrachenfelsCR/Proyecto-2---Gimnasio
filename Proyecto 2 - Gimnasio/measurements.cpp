@@ -6,6 +6,7 @@ measurements::measurements() {
 	this->body_fat = 0;
 	this->body_mass = 0;
 	this->date = new timeG();
+	this->m_date = "0/0/0";
 }
 
 void measurements::setWeight(double weight) {
@@ -26,6 +27,10 @@ void measurements::setBodyMass(double body_mass) {
 
 void measurements::setDate(timeG* dat) {
 	this->date = dat;
+}
+
+void measurements::setMDate(string d) {
+	this->m_date = d;
 }
 
 timeG* measurements::getDate() {
@@ -110,7 +115,7 @@ string measurements::bmiDescription()
 string measurements::toString()
 {
 	stringstream s;
-	s << "\t Fecha: " << date->toString() << endl;
+	s << "\t Fecha: " << m_date << endl; 
 	s << "\t Peso : " << weight <<" k "<< endl;
 	s << "\t Altura : " << height <<"m"<< endl;
 	s << "\t Porcentaje de Grasa : " << body_fat << "%" << endl;

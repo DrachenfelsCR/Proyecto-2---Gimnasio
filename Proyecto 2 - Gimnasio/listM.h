@@ -12,6 +12,7 @@ public:
 	listM();
 	~listM();
 	void insertLast(measurements*);
+	double fatLoss();
 	string toString();
 };
 

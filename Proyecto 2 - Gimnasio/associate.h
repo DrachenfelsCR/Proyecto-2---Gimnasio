@@ -48,6 +48,7 @@ public:
 	string getRegistrationDate();
 	string toString();
 	string toStringR();
+	string toStringFat();
 	~associate();
 	listR* getListaR();
 	listM* getListaM();
