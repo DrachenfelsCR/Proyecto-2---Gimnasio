@@ -20,6 +20,12 @@ gym::gym()
 
 void gym::timeSetUp() {
 	int dia, mes, anio;
+	if (t1->getDay() != 0)
+	{
+		imprimirCadena("Ya ha sido ingresado una fecha");
+		system("pause");
+		controlSistema();
+	}
 	limpiaPantalla();
 	imprimirCadena("Digite el dia (ejemplo: 1,2,3,.30)");
 	dia = leerEntero(); 
@@ -55,12 +61,13 @@ void gym::timeSetUp() {
 void gym::inicio() {
 	int opAux = 0;
 	limpiaPantalla();
+	imprimirCadena("Fecha: " + t1->toString());
 	imprimirCadena(menuInicio());
-	imprimirCadena("\t Seleccione una opcion [1-2]: ");
+	imprimirCadena("\t Seleccione una opcion [1-3]: ");
 	opAux = leerEntero();
-	if (opAux > 2 || opAux < 1)
+	if (opAux > 3 || opAux < 1)
 	{
-		imprimirCadena("Digite solo 1 o 2, presione <enter> para intentar de nuevo..");
+		imprimirCadena("Digite solo 1 o 3, presione <enter> para intentar de nuevo..");
 		cin.get();
 		inicio();
 	}
@@ -106,6 +113,31 @@ void gym::adMenu()
 	} while (true);
 }
 
+void gym::increaseMonth()
+{
+	char opinc;
+	imprimirCadena("Desea continuar (S/N)");
+	opinc = leerCaracter();
+	 if ((opinc == 'S' || opinc == 's'))
+	{
+
+		t1->increaseMonth();
+		imprimirCadena("Fecha actualizada: " + t1->toString());
+		imprimirCadena("Presione <enter>");
+		system("pause");
+		controlSistema();
+	}
+	else if((opinc == 'N' || opinc == 'n'))
+	{
+		controlSistema();
+	}
+	else
+	 {
+		 imprimirCadena("Digito algo distinto de S o N");
+		 system("pause");
+		 controlSistema();
+	 }
+}
 
 
 	void gym::controlSistema() {
@@ -121,7 +153,7 @@ void gym::adMenu()
 			menuPrincipal();
 			break;
 		case 3:
-			
+			increaseMonth();
 			break;
 		case 4:
 			break;
@@ -577,7 +609,7 @@ void gym::manejoInstructores()
 			{
 				imprimirCadena(l2->searchAndGet(c)->getLista()->toStringVencidas());
 			}
-			
+			system("pause");
 			break;
 		case 5:
 			imprimirCadena("Digita ID rutina:");
@@ -652,20 +684,19 @@ void gym::manejoInstructores()
 				cout << "\tNombre del socio: ";
 				imprimirCadena(l1->searchAndGet(ID)->getFullName());
 				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());
+				break;
 			}
 			else
 			{
 				imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
 				break;
 			}
-			break;
 		case 8:
-			controlSistema();
+			menuPrincipal();
 			break;
 		case 9:
 			inicio();
 			break;
-
 		}
 		imprimirCadena("\t Digite 1 para seguir en el manejo de instructores o 2 para volver atras: ");
 		cont = leerSeleccion(2);
