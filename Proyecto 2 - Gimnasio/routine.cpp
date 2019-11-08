@@ -123,7 +123,7 @@ string routine::toStringVen() {
 string routine::toStringEsp()
 {
 	stringstream s;
-	s << "Fecha de inicio: " << this->creation_date.toString();
+	s << "Fecha de inicio: " << this->creation_date.toString() << endl;
 	s << "Fecha de vencimiento: " << this->ending_date.toString();
 	if (routine_status == false)
 	{

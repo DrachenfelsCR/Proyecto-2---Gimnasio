@@ -43,8 +43,25 @@ routine* listA::searchR(int ccode)
 	}
 	return NULL;
 }
+associate* listA::searchByRoutine(int ccode)
+{
+	current = first;
+	while (current != NULL)
+	{
+		if (current->getMember()->getListaR()->searchRoutine(ccode))
+		{
+			return current->getMember();
+		}
+		else
+		{
+			current = current->getNext();
+		}
+	}
+	return NULL;
+}
 
 bool listA::find(string id)
+
 {
 	current = first;
 	while (current!=NULL)
