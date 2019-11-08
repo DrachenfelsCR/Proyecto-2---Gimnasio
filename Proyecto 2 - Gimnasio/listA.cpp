@@ -118,6 +118,11 @@ bool listA::eliminateAssociate(string id) {
 	} return false;
 }
 
+
+
+
+
+
 string listA::toString()
 {
 	current = first;

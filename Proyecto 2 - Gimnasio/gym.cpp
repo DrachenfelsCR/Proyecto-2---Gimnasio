@@ -10,6 +10,7 @@ gym::gym()
 	r1 = new roomArray();
 	lt = new analizadorT();
 	l5 = new listG();
+	l6 = new listM();
 	ro1 = new routine();
 	opc = 0;
 	t1 = new timeG();
@@ -208,6 +209,8 @@ void gym::menuPrincipal() {
 				imprimirCadena(l2->toString());
 
 			case 5:
+				imprimirCadena("\t Mejores Resultados Perdida de Grasa");
+				imprimirCadena(l6->toString());
 				break;
 			case 6:
 				break;
@@ -312,6 +315,7 @@ void gym::manejoClasesGrupales()
 							r1->getRoom(rn)->getList()->insertFirst(group);
 							imprimirCadena("Clase agregada exitosamente..\n");
 							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
+							l5->save("Grupos.txt");
 						}
 						else
 						{
@@ -603,7 +607,7 @@ void gym::manejoInstructores()
 				//l1->searchAndGet(ID)->setMeasures(m);
 				limpiaPantalla();
 				m->setDate(t1);
-				l1->searchAndGet(ID)->getListaM()->insertLast(m);
+				l1->searchAndGet(ID)->getListaM()->insertOrdered(m);
 				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());			
 				break;
 			}

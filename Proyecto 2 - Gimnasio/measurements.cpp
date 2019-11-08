@@ -105,6 +105,7 @@ string measurements::bmiDescription()
 		}
 
 	}
+	return false;
 }
 
 string measurements::toString()

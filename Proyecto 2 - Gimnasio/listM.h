@@ -12,6 +12,7 @@ public:
 	listM();
 	~listM();
 	void insertLast(measurements*);
+	void insertOrdered(measurements*);
 	string toString();
 };
 
