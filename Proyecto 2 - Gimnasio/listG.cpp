@@ -71,7 +71,7 @@ void listG::save(string fileName)
 	if (output.good())
 	{
 		current = first;
-		if (current!=NULL)
+		while (current!=NULL)
 		{
 			current->getGroupClass()->save(output);
 			current = current->getNext();
