@@ -149,7 +149,7 @@ string menuInstructor() {
 	s << "\t|______________________________________________________________|" << endl;
 	s << "\t|[1].Socios por instructor                                     |" << endl;
 	s << "\t|[2].Asignar rutina a socio                                    |" << endl;
-	s << "\t|[3].detalle socio                                             |" << endl;
+	s << "\t|[3].Detalle socio                                             |" << endl;
 	s << "\t|[4].Rutinas vencidas por instructor                           |" << endl;
 	s << "\t|[5].Detalle rutina especifica                                 |" << endl;
 	s << "\t|[6].Registrar nueva medicion socio                            |" << endl;

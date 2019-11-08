@@ -684,20 +684,19 @@ void gym::manejoInstructores()
 				cout << "\tNombre del socio: ";
 				imprimirCadena(l1->searchAndGet(ID)->getFullName());
 				imprimirCadena(l1->searchAndGet(ID)->getListaM()->toString());
+				break;
 			}
 			else
 			{
 				imprimirCadena("\t La cedula ingresada ha sido escrita de manera incorrecta o el socio no se encuentra en el sistema");
 				break;
 			}
-			break;
 		case 8:
-			controlSistema();
+			menuPrincipal();
 			break;
 		case 9:
 			inicio();
 			break;
-
 		}
 		imprimirCadena("\t Digite 1 para seguir en el manejo de instructores o 2 para volver atras: ");
 		cont = leerSeleccion(2);
