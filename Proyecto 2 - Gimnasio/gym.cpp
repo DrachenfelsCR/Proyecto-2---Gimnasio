@@ -363,16 +363,16 @@ void gym::manejoClasesGrupales()
 			break;
 
 		case 2:
-			//lt->cargarGrupo(l5,"Grupos.txt",a,t,666);
 			imprimirCadena(l5->toString());
-
 			break;
 		case 3:
-			lt->cargarGrupo(l5, "Grupos.txt", a, t, 666);
-			break;
+			
 
 		case 4:
-			controlSistema();
+			lt->cargarGrupo(l5, "Grupos.txt", a, t, 666);
+			break;
+		case 5:
+			menuPrincipal();
 			break;
 		}
 		imprimirCadena("\t Digite 1 para seguir en manejo de clases grupales o 2 para volver atras: ");

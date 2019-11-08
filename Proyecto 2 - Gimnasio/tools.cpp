@@ -169,7 +169,8 @@ string menuClaseGrupales() {
 	s << "\t|[1].Creacion de clase grupal                                  |" << endl;
 	s << "\t|[2].Visualizacion clase grupal                                |" << endl;
 	s << "\t|[3].Matricular socio                                          |" << endl;
-	s << "\t|[4].Regresar al Menu principal                                |" << endl;
+	s << "\t|[4].Cargas clases grupales                                    |" << endl;
+	s << "\t|[5].Regresar al Menu principal                                |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 
