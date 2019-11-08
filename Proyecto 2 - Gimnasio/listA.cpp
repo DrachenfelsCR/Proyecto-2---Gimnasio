@@ -43,11 +43,13 @@ bool listA::bubbleSort()
 				aux = current;
 				current = current->getNext();
 				current->setNext(aux);
+				return true;
 			}
 
 			current = current->getNext();
 		}
 	}
+	return false;
 }
 
 routine* listA::searchR(int ccode)

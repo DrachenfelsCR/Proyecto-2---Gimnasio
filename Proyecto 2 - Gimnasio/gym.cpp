@@ -235,6 +235,8 @@ void gym::menuPrincipal() {
 
 void gym::manejoClasesGrupales()
 {
+	associate* a = new associate();
+	instructor* t = new instructor();
 	limpiaPantalla();
 	int x = 0;
 	int day = 0;
@@ -313,6 +315,7 @@ void gym::manejoClasesGrupales()
 							groupClass* group = new groupClass(act,l2->searchAndGet(id), 666, rn, 20, hour, day);
 							l5->insertFirst(group);
 							r1->getRoom(rn)->getList()->insertFirst(group);
+							t->setCodeI(666);
 							imprimirCadena("Clase agregada exitosamente..\n");
 							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
 							l5->save("Grupos.txt");
@@ -326,6 +329,8 @@ void gym::manejoClasesGrupales()
 			break;
 
 		case 2:
+			lt->cargarGrupo(l5,"Grupos.txt",a,t,6);
+			imprimirCadena(l5->toString());
 
 			break;
 		case 3:

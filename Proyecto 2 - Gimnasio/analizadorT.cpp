@@ -52,11 +52,14 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode)
 	input.close();
 }
 
-void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instructor* ins)
+void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instructor* ins,int code)
 {
 	ifstream finput;
 	finput.open(archivo.c_str());
 	int auxcode = 0;
+	char auxroom = '#';
+	int auxq = 0;
+	int auxDay = 0;
 	string classCode, quality,day,hour,className,room;
 	while (finput.good())
 	{
@@ -67,8 +70,15 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 		getline(finput, hour, '\t');
 		getline(finput, day, '\n');
 		auxcode = convertirInt(classCode);
-		if (auxcode == ins->getCodeI()) {
-
+		auxroom = convertirChar(room);
+		auxq = convertirInt(quality);
+		int auxDay = convertirInt(day);
+		if (!finput.eof()) {
+			
+			
+				groupClass* g = new groupClass(className,ins,auxcode,auxroom,auxq,hour,auxDay);
+				listaG->insertFirst(g);
+			
 			
 		}
 	}

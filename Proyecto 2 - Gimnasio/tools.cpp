@@ -194,6 +194,12 @@ double convertirDouble(std::string s) {
 	r >> v;
 	return v;
 }
+char convertirChar(std::string s) {
+	std::stringstream r(s);
+	char v;
+	r >> v;
+	return v;
+}
 
 string convertirString(int i) {
 	stringstream r(i);
