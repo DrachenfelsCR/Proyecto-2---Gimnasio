@@ -363,7 +363,7 @@ void gym::manejoClasesGrupales()
 			break;
 
 		case 2:
-			lt->cargarGrupo(l5,"Grupos.txt",a,t,6);
+			lt->cargarGrupo(l5,"Grupos.txt",a,t,666);
 			imprimirCadena(l5->toString());
 
 			break;
