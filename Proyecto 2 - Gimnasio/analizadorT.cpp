@@ -14,9 +14,11 @@ void analizadorT::cargarListaI(listI*list, string Archivo)
 		auxCode = convertirInt(code);
 		if (!input.eof())
 		{
+			
 			instructor* t1 = new instructor(name, id, nullptr,auxCode);
 			list->insertLast(t1);
-	
+			cargarGrupo(nullptr,"",nullptr,t1,0);
+			
 		}
 		
 			
@@ -26,7 +28,7 @@ void analizadorT::cargarListaI(listI*list, string Archivo)
 	input.close();
 }
 
-void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode)
+void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode,associate* aso)
 {
 	ifstream input;
 	int phoneAux = 0;
@@ -44,9 +46,11 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode)
 		clAux = convertirInt(classcode);
 		if (!input.eof())
 			{
+			if(clcode ==aso->getClassCode() ){
 				associate* a1 = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, clAux, NULL);
 				lisA->insertFirst(a1);
 
+			}
 			}
 	}
 	input.close();
@@ -76,8 +80,11 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 		if (!finput.eof()) {
 			
 			
-				groupClass* g = new groupClass(className,ins,auxcode,auxroom,auxq,hour,auxDay);
+			if(code= ins->getCodeI()){
+				groupClass* g = new groupClass(className, ins, auxcode, auxroom, auxq, hour, auxDay);
 				listaG->insertFirst(g);
+			}
+				
 			
 			
 		}
