@@ -97,10 +97,10 @@ void gym::adMenu()
 		switch (opc)
 		{
 		case 1:
-			menuPrincipal();
+			
 			break;
 		case 2:
-
+			menuPrincipal();
 			break;
 		case 3:
 			break;
@@ -605,7 +605,7 @@ void gym::manejoInstructores()
 			imprimirCadena("Nombre del instructor: " + l2->searchAndGet(c)->getFullName());
 			cout << "\n";
 			imprimirCadena("Rutinas vencidas:\n");
-			imprimirCadena("Nombre Socio\tID Rutina\t Fecha Vencimiento\n");
+			imprimirCadena("Nombre Socio\t ID Rutina\t Fecha Vencimiento\n");
 			if (l2->searchAndGet(c)->getLista()->checkVen())
 			{
 				imprimirCadena(l2->searchAndGet(c)->getLista()->toStringVencidas());
