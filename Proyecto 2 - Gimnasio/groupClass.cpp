@@ -8,6 +8,7 @@ groupClass::groupClass() {
 	this->quantity = 0;
 	this->hour = "";
 	this->day = "";
+	this->class_members = new listA();
 }
 
 groupClass::groupClass(string class_nam, instructor* tutor, int class_code, char room, int quantity, string hour, int day) {
@@ -93,6 +94,11 @@ void groupClass::setDay(int day) {
 		this->day = "";
 		break;
 	}
+}
+
+listA* groupClass::getListA()
+{
+	return this->class_members;
 }
 
 string groupClass::getHour() {

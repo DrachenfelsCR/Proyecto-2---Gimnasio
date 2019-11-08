@@ -11,6 +11,7 @@
 #include "time.h"
 #include "listE.h"
 #include "listM.h"
+#include "codeGenerator.h"
 class gym {
 private:
 	int opc;
@@ -25,6 +26,7 @@ private:
 	roomArray* r1;
 	timeG* t1;
 	exercise* e1;
+	codeGen* c1;
 public:
 	gym();
 	void inicio();

@@ -18,11 +18,11 @@ void listG::insertFirst(groupClass* group_class) {
 		first = current;
 	}
 }
-groupClass* listG::searchAndGet(string class_name) {
+groupClass* listG::searchAndGet(int class_code) {
 	this->current = this->first;
 	while (current != NULL)
 	{
-		if (this->current->getGroupClass()->getClassName() == class_name)
+		if (this->current->getGroupClass()->getClassCode() == class_code)
 		{
 			return this->current->getGroupClass();
 		}

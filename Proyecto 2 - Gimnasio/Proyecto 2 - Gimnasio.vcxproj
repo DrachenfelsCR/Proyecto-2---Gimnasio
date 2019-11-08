@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="analizadorT.h" />
     <ClInclude Include="associate.h" />
+    <ClInclude Include="codeGenerator.h" />
     <ClInclude Include="exercise.h" />
     <ClInclude Include="groupClass.h" />
     <ClInclude Include="gym.h" />
@@ -153,6 +154,7 @@
   <ItemGroup>
     <ClCompile Include="analizadorT.cpp" />
     <ClCompile Include="associate.cpp" />
+    <ClCompile Include="codeGenerator.cpp" />
     <ClCompile Include="exercise.cpp" />
     <ClCompile Include="groupClass.cpp" />
     <ClCompile Include="gym.cpp" />

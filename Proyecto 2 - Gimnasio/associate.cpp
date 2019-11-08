@@ -81,6 +81,13 @@ string associate::getRegistrationDate() {
 int associate::getClassCode() {
 	return this->classCode;
 }
+
+string associate::toStringPerson() {
+	stringstream s;
+	s << person::toString() << endl;
+	return s.str();
+}
+
 string associate::toString() {
 	stringstream s;
 	s << person::toString() << endl;

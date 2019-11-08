@@ -46,6 +46,7 @@ public:
 	measurements* getMeasures();
 	instructor* getAssigned();
 	string getRegistrationDate();
+	string toStringPerson();
 	string toString();
 	string toStringR();
 	string toStringFat();

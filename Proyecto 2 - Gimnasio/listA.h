@@ -26,6 +26,7 @@ public:
 	bool eliminateAssociate(string);
 	string toStringVencidas();
 	string toString();
+	string toStringSmall();
 	string toStringFat();
 	bool checkVen();
 	void save(string);

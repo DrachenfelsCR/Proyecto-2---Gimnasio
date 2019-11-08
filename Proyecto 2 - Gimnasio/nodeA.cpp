@@ -28,6 +28,13 @@ string nodeA::toString()
 	return s.str();
 }
 
+string nodeA::toStringPerson()
+{
+	stringstream s;
+	s << member->toStringPerson() << endl;
+	return s.str();
+}
+
 string nodeA::toStringVe()
 {
 	stringstream s;

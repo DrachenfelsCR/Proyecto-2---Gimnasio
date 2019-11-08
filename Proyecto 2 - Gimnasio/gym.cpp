@@ -15,7 +15,7 @@ gym::gym()
 	opc = 0;
 	t1 = new timeG();
 	e1 = NULL;
-
+	c1 = new codeGen();
 }
 
 void gym::timeSetUp() {
@@ -275,6 +275,7 @@ void gym::manejoClasesGrupales()
 	int x = 0;
 	int day = 0;
 	string act,act2;
+	int auxCode;
 	string hour;
 	string id;
 	char rn;
@@ -285,7 +286,7 @@ void gym::manejoClasesGrupales()
 	do {
 		imprimirCadena(menuClaseGrupales());
 		imprimirCadena("\t Seleccione una opcion [1-4]");
-		opc = leerSeleccion(4);
+		opc = leerSeleccion(5);
 		switch (opc)
 		{
 		case 1:
@@ -332,7 +333,7 @@ void gym::manejoClasesGrupales()
 					}
 					imprimirCadena("Digite el nombre de la clase");
 					act2 = leerCadena();
-					act = act2 + "(xxx)";
+					act = act2 + c1->genCode();
 					if (r1->getRoom(rn)->getSchedule()->insertElement(day, hour,act) == false)
 					{
 						imprimirCadena("Horario no  disponible");
@@ -345,8 +346,8 @@ void gym::manejoClasesGrupales()
 						if ((op_aux == 's') || (op_aux == 'S'))
 						{	
 							r1->getRoom(rn)->getSchedule()->insertElement(day, hour, act);
-							l2->searchAndGet(id)->setCodeI(666);
-							groupClass* group = new groupClass(act2,l2->searchAndGet(id), 666, rn, 20, hour, day);
+							l2->searchAndGet(id)->setCodeI(c1->getLast());
+							groupClass* group = new groupClass(act2,l2->searchAndGet(id), c1->getLast(), rn, 20, hour, day);
 							l5->insertFirst(group);
 							r1->getRoom(rn)->getList()->insertFirst(group);
 							t->setCodeI(666);
@@ -363,14 +364,56 @@ void gym::manejoClasesGrupales()
 			break;
 
 		case 2:
-			imprimirCadena(l5->toString());
+			imprimirCadena("Digite el ID de la clase: ");
+			auxCode = leerEntero();
+			if (l5->searchAndGet(auxCode) == NULL)
+			{
+				imprimirCadena("El ID de la clase ingresada no se encuentra o fue ingresado incorrectamente..");
+				system("pause");
+				break;
+			}
+			imprimirCadena(l5->searchAndGet(auxCode)->toString());
+			imprimirCadena("Socios matriculados: ");
+			imprimirCadena(l5->searchAndGet(auxCode)->getListA()->toStringSmall());
 			break;
 		case 3:
-			
-
+			imprimirCadena("Digite el ID de la clase: ");
+			auxCode = leerEntero();
+			if (l5->searchAndGet(auxCode) == NULL)
+			{
+				imprimirCadena("El ID de la clase ingresada no se encuentra o fue ingresado incorrectamente..");
+				system("pause");
+				break;
+			}
+			imprimirCadena(l5->searchAndGet(auxCode)->toString());
+			imprimirCadena("Digite el ID del socio: ");
+			id = leerCadena();
+			if (l1->find(id) != true) {
+				imprimirCadena("\t (!) La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema\n");
+				system("pause");
+				break;
+			}
+			else
+			{
+				l5->searchAndGet(auxCode)->getListA()->insertFirst(l1->searchAndGet(id));
+				imprimirCadena("Socio matriculado exitosamente");
+				system("pause");
+				break;
+			}
 		case 4:
-			lt->cargarGrupo(l5, "Grupos.txt", a, t, 666);
-			break;
+			if (l5->countNodes() != 0)
+			{
+				imprimirCadena("Parece que la lista ya fue cargada o ha ingresado clases antes de cargar la lista de clases..");
+				system("pause");
+				break;
+			}
+			else
+			{
+				lt->cargarGrupo(l5, "Grupos.txt", a, t, 666);
+				imprimirCadena("Clases cargadas exitosamente!");
+				system("pause");
+				break;
+			}		
 		case 5:
 			menuPrincipal();
 			break;

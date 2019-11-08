@@ -10,7 +10,7 @@ private:
 	string class_name;
 	instructor* tutor;
 	int class_code;
-	listA class_members;
+	listA* class_members;
 	char room;
 	int quantity;
 	string hour;
@@ -28,6 +28,7 @@ public:
 	void setDay(int);
 	string getClassName();
 	instructor* getInstructor();
+	listA* getListA();
 	string getHour();
 	string getDay();
 	int getClassCode();

@@ -172,6 +172,18 @@ string listA::toString()
 	}
 	return s.str();
 }
+
+string listA::toStringSmall()
+{
+	current = first;
+	stringstream s;
+	while (current != NULL)
+	{
+		s << current->toStringPerson() << endl;
+		current = current->getNext();
+	}
+	return s.str();
+}
 string listA::toStringVencidas()
 {
 	current = first;

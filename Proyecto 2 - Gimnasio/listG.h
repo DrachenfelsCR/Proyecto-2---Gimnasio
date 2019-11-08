@@ -15,7 +15,7 @@ public:
 	~listG();
 	void save(string);
 	void insertFirst(groupClass*);
-	groupClass* searchAndGet(string);
+	groupClass* searchAndGet(int);
 	string toString();
 	int countNodes();
 };
