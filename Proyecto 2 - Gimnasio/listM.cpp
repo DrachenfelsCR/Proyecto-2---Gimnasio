@@ -25,26 +25,24 @@ void listM::insertLast(measurements* measures) {
 
 double listM::fatLoss() 
 {
+	double penul;
+	double ult;
 	current = first;
-	if (first == NULL)
+	if (first == NULL || first->getNext() == NULL)
 	{
-		return 0;
+		return 0.0;
 	}
 	else
 	{
-		while (current->getNext() != NULL)
+		while (current->getNext()->getNext() != NULL)
 		{
 			current = current->getNext();
-			if (current->getNext()->getNext() == NULL)
-			{
-				return (current->getMeasures()->getBodyFat()) - (current->getNext()->getMeasures()->getBodyFat());
-			}
-			else
-			{
-				return current->getMeasures()->getBodyFat();
-			}
 		}
-	}
+		penul = current->getMeasures()->getBodyFat();
+		ult = current->getNext()->getMeasures()->getBodyFat();
+		
+	}	return (ult - penul);
+
 }
 
 string listM::toString()

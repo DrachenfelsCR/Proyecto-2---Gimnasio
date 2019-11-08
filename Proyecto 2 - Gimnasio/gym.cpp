@@ -245,7 +245,7 @@ void gym::menuPrincipal() {
 				imprimirCadena("\t Lista General de instructores \n");
 				lt->cargarListaI(l2,"instructor_prueba.txt");
 				imprimirCadena(l2->toString());
-
+				break;
 			case 5:
 				imprimirCadena("ID\tNombre\tPerdida de Grasa");
 				l1->bubbleSort();
@@ -388,6 +388,7 @@ void gym::manejoClasesGrupales()
 void gym::manejoInstructores()
 {
 	limpiaPantalla();
+	double me1, me2, me3;
 	int rep, ser;
 	string name;
 	int x = 0;
@@ -636,15 +637,34 @@ void gym::manejoInstructores()
 			if (l1->find(ID) == true) {
 				limpiaPantalla();
 				imprimirCadena(l1->searchAndGet(ID)->toString());
+				//-----------------------------------------------------
 				imprimirCadena("\t Digite el Peso del Socio en Kilos");
-				m->setWeight(leerDecimal());
-				//l1->searchAndGet(ID)->setMeasures(m);
+				me1 = leerDecimal();
+				while (me1 <= 0 )
+				{
+					imprimirCadena("El peso debe ser un valor mayor a 0..");
+					me1 = leerDecimal();
+				}
+				m->setWeight(me1);
+				//-----------------------------------------------------
 				imprimirCadena("\t Digite la Altura del Socio en metros y centimetros");
-				m->setHeight(leerDecimal());
-				//l1->searchAndGet(ID)->setMeasures(m);
+				me2 = leerDecimal();
+				while (me2 <= 0)
+				{
+					imprimirCadena("La altura debe ser un valor mayor a 0..");
+					me2 = leerDecimal();
+				}
+				m->setHeight(me2);
+				//-----------------------------------------------------
 				imprimirCadena("\t Digite La grasa del Socio");
-				m->setBodyFat(leerDecimal());
-				//l1->searchAndGet(ID)->setMeasures(m);
+				me3 = leerDecimal();
+				while (me3 <= 0)
+				{
+					imprimirCadena("La grase debe ser porcentaje mayor a 0..");
+					me3 = leerDecimal();
+				}
+				m->setBodyFat(me3);
+				//-----------------------------------------------------
 				limpiaPantalla();
 				m->setMDate(t1->toString());
 				l1->searchAndGet(ID)->getListaM()->insertLast(m);

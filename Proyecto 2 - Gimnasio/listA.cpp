@@ -27,37 +27,34 @@ void listA::insertFirst(associate* member) {
 	}
 }
 
-/*void listA::swap(nodeA* node_1, nodeA* node_2)
+void listA::swap(nodeA* node_1, nodeA* node_2)
 {
 	associate* aux = node_1->getMember();
-
-	node_1->data = node_2->data;
-	node_2->data = temp;
+	node_1->setMember(node_2->getMember());
+	node_2->setMember(aux);
 }
 
-bool listA::bubbleSort()
+void listA::bubbleSort()
 {
-	nodeA* aux;
-	current = first;
-	if (first == NULL)
+	bool aswap;
+	nodeA* aux = NULL;
+	do
 	{
-		return false;
-	}
-	else
-	{
-		while (current->getNext() != NULL)
-		{
-			if (current->getMember()->getListaM()->fatLoss() < current->getNext()->getMember()->getListaM()->fatLoss())
-			{
-				aux = current;
-				current = current->getNext();
-				current->setNext(aux);
-			}
+		aswap = false;
+		current = first;
 
+		while (current->getNext() != aux)
+		{
+			if (current->getMember()->getListaM()->fatLoss() > current->getNext()->getMember()->getListaM()->fatLoss())
+			{
+				swap(current, current->getNext());
+				aswap = true;
+			}
 			current = current->getNext();
 		}
-	}
-}*/
+	} while (aswap);
+	
+}
 
 routine* listA::searchR(int ccode)
 {

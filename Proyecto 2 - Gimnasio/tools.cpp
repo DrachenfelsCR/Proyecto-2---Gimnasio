@@ -28,6 +28,11 @@ string leerCadena() {
 	string x;
 	cout << "\t";
 	getline(cin, x);
+	while (x == "")
+	{
+		cout << "No inserte espacios en blanco" << endl;
+		getline(cin, x);
+	}
 	return x;
 }
 

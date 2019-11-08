@@ -31,7 +31,7 @@ public:
 	void save(string);
 	bool load(listA*, string, int);
 	void swap(nodeA*, nodeA*);
-	bool bubbleSort();
+	void bubbleSort();
 	associate* searchByRoutine(int ccode);
 };
 
