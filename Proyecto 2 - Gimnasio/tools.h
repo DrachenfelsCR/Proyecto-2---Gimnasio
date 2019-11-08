@@ -34,8 +34,7 @@ bool verificarAnioRutina(int, timeG);
 bool verificarMesRutina(int, timeG);
 string convertirString(int);
 string validarPartCuerpo(int);
-
-
+int convertDayToInt(string);
 
 #endif 
 

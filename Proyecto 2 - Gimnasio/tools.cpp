@@ -295,3 +295,30 @@ bool verificarMesRutina(int mesIng, timeG rutina)
 	}
 }
 
+int convertDayToInt(string day)
+{
+	if (day == "Lunes")
+	{
+		return 1;
+	}
+	else if (day == "Martes")
+	{
+		return 2;
+	}
+	else if (day == "Miercoles")
+	{
+		return 3;
+	}
+	else if (day == "Jueves")
+	{
+		return 4;
+	}
+	else if (day == "Viernes")
+	{
+		return 5;
+	}
+	else if (day == "Sabado")
+	{
+		return 6;
+	}
+}

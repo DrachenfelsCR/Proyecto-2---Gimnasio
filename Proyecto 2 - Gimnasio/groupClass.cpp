@@ -11,7 +11,7 @@ groupClass::groupClass() {
 }
 
 groupClass::groupClass(string class_nam, instructor* tutor, int class_code, char room, int quantity, string hour, int day) {
-	this->class_name = class_name;
+	this->class_name = class_nam;
 	this->class_code = class_code;
 	this->tutor = tutor;
 	this->room = room;
@@ -133,7 +133,7 @@ string groupClass::toString()
 	stringstream s;
 	s << "Nombre de la clase: " << this->class_name << endl;
 	s << "Codigo de la clase: " << this->class_code << endl;
-	s << "Tutor de la clase: " << this->tutor<< endl;
+	s << "Tutor de la clase: " << this->tutor->getFullName()<< endl;
 	s << "Salon de la clase: " << this->room << endl;
 	s << "Cantidad: " << this->quantity << endl;
 	s << "Horario: " << this->hour << endl;
