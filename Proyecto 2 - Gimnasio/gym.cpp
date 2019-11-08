@@ -309,7 +309,7 @@ void gym::manejoClasesGrupales()
 							r1->getRoom(rn)->getSchedule()->insertElement(day, hour, act);
 							groupClass* group = new groupClass(act,l2->searchAndGet(id), 666, rn, 20, hour, day);
 							l5->insertFirst(group);
-							r1->getRoom(rn)->getGroupList()->insertFirst(group);
+							r1->getRoom(rn)->getList()->insertFirst(group);
 							imprimirCadena("Clase agregada exitosamente..\n");
 							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
 						}

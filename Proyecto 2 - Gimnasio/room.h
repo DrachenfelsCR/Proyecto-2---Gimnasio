@@ -3,20 +3,21 @@
 #include "schedule.h"
 #include "groupClass.h"
 #include "listG.h"
+#include "nodeG.h"
 class room
 {
 private:
 	char name;
 	int capacity;
 	schedule* room_schedule;
-	listG* lista;
+	listG* list;
 public:
 	room();
-	room(char,int,listG*);
+	room(char,int);
 	void setName(char);
 	void setCapacity(int);
 	void setSchedule(schedule*);
-	listG* getGroupList();
+	listG* getList();
 	char getName();
 	int getCapacity();
 	schedule* getSchedule();

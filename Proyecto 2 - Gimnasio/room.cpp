@@ -1,18 +1,19 @@
 #include "room.h"
 room::room()
 {
-	lista = new listG();
 	this->name = ' ';
 	this->capacity = 0;
 	this->room_schedule = new schedule();
+	list = new listG();
 }
 
-room::room(char name, int capacity, listG* lista)
+room::room(char name, int capacity)
 {
-	this->lista = lista;
+
 	this->name = name;
 	this->capacity = capacity;
 	this->room_schedule = new schedule();
+	this->list = new listG();
 }
 void room::setName(char n)
 {
@@ -44,9 +45,9 @@ schedule* room::getSchedule()
 	return this->room_schedule;
 }
 
-listG* room::getGroupList()
+listG* room::getList()
 {
-	return lista;
+	return list;
 }
 
 room::~room()
