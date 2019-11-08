@@ -98,7 +98,14 @@ string associate::toStringR() {
 	s << "ID socio: " << this->classCode;
 	return s.str();
 }
-
+string  associate::toStringFat()
+{
+	stringstream s;
+	s << this->getId() << "\t";
+	s << this->getFullName() << "\t";
+	s << this->listaM->fatLoss() << "%";
+	return s.str();
+}
 
 associate::~associate()
 {

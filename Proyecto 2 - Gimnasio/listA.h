@@ -26,9 +26,11 @@ public:
 	bool eliminateAssociate(string);
 	string toStringVencidas();
 	string toString();
+	string toStringFat();
 	bool checkVen();
 	void save(string);
 	bool load(listA*, string, int);
+	bool bubbleSort();
 	associate* searchByRoutine(int ccode);
 };
 

@@ -176,6 +176,7 @@ string menuInicio() {
 	s << "\t|______________________________________________________________|" << endl;
 	s << "\t|[1].Ingrese la fecha actual                                   |" << endl;
 	s << "\t|[2].Ingresar al sistema                                       |" << endl;
+	s << "\t|[3].Incrementar mes en 1                                      |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
 }

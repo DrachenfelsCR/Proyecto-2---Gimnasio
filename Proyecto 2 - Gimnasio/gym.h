@@ -34,6 +34,7 @@ public:
 	void manejoClasesGrupales();
 	void menuPrincipal();
 	void manejoInstructores();
+	void increaseMonth();
 	~gym();
 
 

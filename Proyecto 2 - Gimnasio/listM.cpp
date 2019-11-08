@@ -17,6 +17,32 @@ void listM::insertLast(measurements* measures) {
 		while (current->getNext() != NULL)
 		{
 			current = current->getNext();
+			
+		}
+		current->setNext(new nodeM(measures, NULL));
+	}
+}
+
+double listM::fatLoss() 
+{
+	current = first;
+	if (first == NULL)
+	{
+		return 0;
+	}
+	else
+	{
+		while (current->getNext() != NULL)
+		{
+			current = current->getNext();
+			if (current->getNext()->getNext() == NULL)
+			{
+				return (current->getMeasures()->getBodyFat()) - (current->getNext()->getMeasures()->getBodyFat());
+			}
+			else
+			{
+				return current->getMeasures()->getBodyFat();
+			}
 		}
 		
 	}

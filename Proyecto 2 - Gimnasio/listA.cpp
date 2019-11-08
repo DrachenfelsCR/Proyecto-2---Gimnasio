@@ -26,6 +26,29 @@ void listA::insertFirst(associate* member) {
 		}
 	}
 }
+bool listA::bubbleSort()
+{
+	nodeA* aux;
+	current = first;
+	if (first == NULL)
+	{
+		return false;
+	}
+	else
+	{
+		while (current->getNext() != NULL)
+		{
+			if (current->getMember()->getListaM()->fatLoss() < current->getNext()->getMember()->getListaM()->fatLoss())
+			{
+				aux = current;
+				current = current->getNext();
+				current->setNext(aux);
+			}
+
+			current = current->getNext();
+		}
+	}
+}
 
 routine* listA::searchR(int ccode)
 {
@@ -146,6 +169,20 @@ string listA::toStringVencidas()
 	}
 	return s.str();
 }
+
+string listA::toStringFat()
+{
+	current = first;
+	stringstream s;
+	while (current != NULL)
+	{
+		s << current->getMember()->toStringFat() << endl;
+		current = current->getNext();
+	}
+	return s.str();
+}
+
+
 bool  listA::checkVen()
 {
 	current = first;
