@@ -18,6 +18,7 @@ private:
 	listI* l2;
 	listR* l3;
 	listE* l4;
+	listG* l5;
 	routine* ro1;
 	roomArray* r1;
 	timeG* t1;

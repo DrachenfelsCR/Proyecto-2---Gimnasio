@@ -9,6 +9,7 @@ gym::gym()
 	l4 = new listE();
 	r1 = new roomArray();
 	lt = new analizadorT();
+	l5 = new listG();
 	ro1 = new routine();
 	opc = 0;
 	t1 = new timeG();
@@ -307,6 +308,7 @@ void gym::manejoClasesGrupales()
 						{	
 							r1->getRoom(rn)->getSchedule()->insertElement(day, hour, act);
 							groupClass* group = new groupClass(act,l2->searchAndGet(id), 666, rn, 20, hour, day);
+							l5->insertFirst(group);
 							r1->getRoom(rn)->getGroupList()->insertFirst(group);
 							imprimirCadena("Clase agregada exitosamente..\n");
 							imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
