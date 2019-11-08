@@ -34,16 +34,16 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode,associate*
 	int phoneAux = 0;
 	int clAux = 0;
 	input.open(archivo.c_str());
-	string email, registration, phone, classcode, name, id;
+	string email, registration, phone, classcod, name, id;
 	while (input.good()) {
 		getline(input, name, '\t');
 		getline(input, id,'\t');
 		getline(input, email, '\t');
 		getline(input, phone, '\t');
 		getline(input, registration, '\t');
-		getline(input, classcode,'\n');
+		getline(input, classcod,'\n');
 		phoneAux = convertirInt(phone);
-		clAux = convertirInt(classcode);
+		clAux = convertirInt(classcod);
 		if (!input.eof())
 			{
 			if(clcode ==aso->getClassCode() ){
@@ -61,12 +61,14 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 	ifstream finput;
 	finput.open(archivo.c_str());
 	int auxcode = 0;
+	int auxclasscod = 0;
 	char auxroom = '#';
 	int auxq = 0;
 	int auxDay = 0;
-	string classCode, quality,day,hour,className,room;
+	string classCode, quality,day,hour,className,room,classcod;
 	while (finput.good())
 	{
+		getline(finput, classcod, '\t');
 		getline(finput, className, '\t');
 		getline(finput, classCode, '\t');
 		getline(finput, room, '\t');
@@ -76,11 +78,12 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 		auxcode = convertirInt(classCode);
 		auxroom = convertirChar(room);
 		auxq = convertirInt(quality);
+		auxclasscod = convertirInt(classcod);
 		int auxDay = convertirInt(day);
 		if (!finput.eof()) {
 			
 			
-			if(code= ins->getCodeI()){
+			if( auxclasscod == ins->getCodeI()){
 				groupClass* g = new groupClass(className, ins, auxcode, auxroom, auxq, hour, auxDay);
 				listaG->insertFirst(g);
 			}
