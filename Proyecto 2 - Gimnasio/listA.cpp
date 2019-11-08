@@ -56,6 +56,20 @@ void listA::bubbleSort()
 	
 }
 
+double listA::fatLossTotal()
+{
+	double total = 0;
+	current = first;
+	while (current != NULL)
+	{
+		total = total + current->getMember()->getListaM()->fatLoss();
+		current = current->getNext();
+	}
+	return total;
+}
+
+
+
 routine* listA::searchR(int ccode)
 {
 	current = first;

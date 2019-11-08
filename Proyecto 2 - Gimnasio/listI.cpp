@@ -27,6 +27,41 @@ void listI::insertLast(instructor* tutor) {
 	}
 }
 
+void listI::swap(nodeI* node_1, nodeI* node_2)
+{
+	instructor* aux = node_1->getTutor();
+	node_1->setTutor(node_2->getTutor());
+	node_2->setTutor(aux);
+}
+
+void listI::bubbleSort()
+{
+	bool aswap;
+	nodeI* aux = NULL;
+	do
+	{
+		aswap = false;
+		current = first;
+
+		while (current->getNext() != aux)
+		{
+			if (current->getTutor()->getLista()->fatLossTotal() < current->getNext()->getTutor()->getLista()->fatLossTotal())
+			{
+				swap(current, current->getNext());
+				aswap = true;
+			}
+			current = current->getNext();
+		}
+	} while (aswap);
+
+}
+
+nodeI* listI::getFirst()
+{
+	return this->first;
+}
+
+
 string listI::toString()
 {
 	current = first;

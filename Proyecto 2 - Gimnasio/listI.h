@@ -17,8 +17,11 @@ public:
 	string toString();
 	void save(string);
 	bool recover(string);
+	void swap(nodeI*, nodeI*);
+	void bubbleSort();
 	bool findInstructor(string id);
 	instructor* searchAndGet(string id);
+	nodeI* getFirst();
 };
 
 #endif // !LISTA_H

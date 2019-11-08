@@ -92,7 +92,7 @@ void gym::adMenu()
 	opc = 0;
 	do {
 		imprimirCadena(menuInicio());
-		imprimirCadena("\t Seleccione una opcion [1-5]: ");
+		imprimirCadena("\t Seleccione una opcion [1-3]: ");
 		opc = leerSeleccion(5);
 		switch (opc)
 		{
@@ -183,8 +183,6 @@ void gym::menuPrincipal() {
 			switch (opc)
 			{
 			case 1:
-				
-
 				limpiaPantalla();
 				imprimirCadena("\t Bienvenido Al Sistema De ingreso de Socios \n");
 				imprimirCadena("\t Digite el Nombre Completo De la persona");
@@ -246,6 +244,9 @@ void gym::menuPrincipal() {
 				imprimirCadena(l1->toStringFat());
 				break;
 			case 6:
+				imprimirCadena("\t Instructor con mejores resultados: ");
+				l2->bubbleSort();
+				//imprimirCadena(l2->getFirst()->getTutor()->getFullName() + ",");
 				break;
 			case 7:
 				manejoInstructores();
@@ -695,7 +696,7 @@ void gym::manejoInstructores()
 			menuPrincipal();
 			break;
 		case 9:
-			inicio();
+			controlSistema();
 			break;
 		}
 		imprimirCadena("\t Digite 1 para seguir en el manejo de instructores o 2 para volver atras: ");

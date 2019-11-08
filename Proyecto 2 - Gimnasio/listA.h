@@ -32,6 +32,7 @@ public:
 	bool load(listA*, string, int);
 	void swap(nodeA*, nodeA*);
 	void bubbleSort();
+	double fatLossTotal();
 	associate* searchByRoutine(int ccode);
 };
 
