@@ -102,6 +102,7 @@ bool listR::checkVencida()
 		{
 			return true;
 		}	
+		current = current->getNext();
 	}
 	return false;
 }

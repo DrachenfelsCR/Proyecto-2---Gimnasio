@@ -75,7 +75,7 @@ string measurements::bmiDescription()
 		}
 		else
 		{
-			if (calculateBMI()>=25 && calculateBMI()<=29)
+			if (calculateBMI()>=25 && calculateBMI()<=29.9)
 			{
 				return "sobrePeso";
 			}
@@ -116,7 +116,7 @@ string measurements::toString()
 {
 	stringstream s;
 	s << "\t Fecha: " << m_date << endl; 
-	s << "\t Peso : " << weight <<" k "<< endl;
+	s << "\t Peso : " << weight <<" kg "<< endl;
 	s << "\t Altura : " << height <<"m"<< endl;
 	s << "\t Porcentaje de Grasa : " << body_fat << "%" << endl;
 	s << "\t IMC : " << calculateBMI() << endl;

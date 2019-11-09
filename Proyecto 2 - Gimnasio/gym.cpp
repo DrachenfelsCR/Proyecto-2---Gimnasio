@@ -255,11 +255,13 @@ void gym::menuPrincipal() {
 				imprimirCadena(l2->toString());
 				break;
 			case 5:
+				limpiaPantalla();
 				imprimirCadena("\t[ Mejores Resultados Perdida de Grasa ]\n");
 				l1->bubbleSort();
 				imprimirCadena(l1->toStringFat());
 				break;
 			case 6:
+				limpiaPantalla();
 				imprimirCadena("\t[ Instructor con mejores resultados ]\n");
 				l2->bubbleSort();
 				imprimirCadena(l2->getFirst()->getTutor()->getFullName());
@@ -671,6 +673,7 @@ void gym::manejoInstructores()
 				imprimirCadena("La lista se encuentra vacia o digito incorrectamente la cedula..");
 				break;
 			}
+			l2->searchAndGet(c)->getLista();
 			imprimirCadena("Nombre del instructor: " + l2->searchAndGet(c)->getFullName());
 			cout << "\n";
 			imprimirCadena("Rutinas vencidas:\n");
@@ -678,8 +681,8 @@ void gym::manejoInstructores()
 			if (l2->searchAndGet(c)->getLista()->checkVen())
 			{
 				imprimirCadena(l2->searchAndGet(c)->getLista()->toStringVencidas());
+				break;
 			}
-			system("pause");
 			break;
 		case 5:
 			imprimirCadena("Digita ID rutina:");
