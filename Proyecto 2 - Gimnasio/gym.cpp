@@ -418,7 +418,6 @@ void gym::manejoClasesGrupales()
 			id = leerCadena();
 			if (l1->find(id) != true) {
 				imprimirCadena("\t (!) La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema\n");
-				system("pause");
 				break;
 			}
 			else
@@ -426,21 +425,18 @@ void gym::manejoClasesGrupales()
 				l1->searchAndGet(id)->setClassCode(auxCode);
 				l5->searchAndGet(auxCode)->getListA()->insertFirst(l1->searchAndGet(id));
 				imprimirCadena("Socio matriculado exitosamente");
-				system("pause");
 				break;
 			}
 		case 4:
 			if (l5->countNodes() != 0)
 			{
 				imprimirCadena("Parece que la lista ya fue cargada o ha ingresado clases antes de cargar la lista de clases..");
-				system("pause");
 				break;
 			}
 			else
 			{
 				lt->cargarGrupo(l5, "Grupos.txt", a, t);
 				imprimirCadena("Clases cargadas exitosamente!");
-				system("pause");
 				break;
 			}		
 		case 5:
