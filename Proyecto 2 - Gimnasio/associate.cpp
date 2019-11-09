@@ -138,6 +138,6 @@ void associate::save(ofstream& outp)
 	outp << getEmail() << '\t';
 	outp << getPhone() << '\t';
 	outp << getRegistrationDate() << '\t';
-	outp << getClassCode() << '\n';
+	outp << this->classCode << '\n';
 
 }

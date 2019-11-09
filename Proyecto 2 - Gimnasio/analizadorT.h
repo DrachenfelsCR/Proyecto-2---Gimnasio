@@ -19,8 +19,9 @@ private:
 public:
 	 void cargarListaI(listI*,string);
 	 void cargarListaA(listA*, string,int,associate*);
-	 void cargarGrupo(listG*,string,associate*,instructor*,int);
+	 void cargarGrupo(listG*,string,associate*,instructor*);
 	 instructor* cargarInstructor(string, int);
+	 associate* cargarSocio(string, int);
 
 };
 

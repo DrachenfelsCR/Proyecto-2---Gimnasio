@@ -17,7 +17,7 @@ void analizadorT::cargarListaI(listI*list, string Archivo)
 			
 			instructor* t1 = new instructor(name, id, nullptr,auxCode);
 			list->insertLast(t1);
-			cargarGrupo(nullptr,"",nullptr,t1,0);
+			cargarGrupo(nullptr,"",nullptr,t1);
 			
 		}
 		
@@ -63,12 +63,12 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode,associate*
 	input.open(archivo.c_str());
 	string email, registration, phone, classcod, name, id;
 	while (input.good()) {
-		getline(input, name, '\t');
-		getline(input, id,'\t');
+		getline(input, id, '\t');
+		getline(input, name,'\t');
 		getline(input, email, '\t');
 		getline(input, phone, '\t');
 		getline(input, registration, '\t');
-		getline(input, classcod,'\n');
+		getline(input, classcod,'\t');
 		phoneAux = convertirInt(phone);
 		clAux = convertirInt(classcod);
 		if (!input.eof())
@@ -83,7 +83,7 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode,associate*
 	input.close();
 }
 
-void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instructor* ins,int code)
+void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instructor* ins)
 {
 	string archivo2 = "instructor_prueba.txt";
 	ifstream finput;
@@ -96,7 +96,7 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 	string classCode, quality,day,hour,className,room;
 	while (finput.good())
 	{
-		//getline(finput, classcod, '\t');
+
 		getline(finput, className, '\t');
 		getline(finput, classCode, '\t');
 		getline(finput, room, '\t');
@@ -106,7 +106,6 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 		auxcode = convertirInt(classCode);
 		auxroom = convertirChar(room);
 		auxq = convertirInt(quality);
-		//auxclasscod = convertirInt(classcod);
 		int auxDay = convertDayToInt(day);
 		ins = cargarInstructor(archivo2, auxcode);
 		if (!finput.eof()) {
@@ -114,6 +113,7 @@ void analizadorT::cargarGrupo(listG* listaG, string archivo,associate* aso,instr
 			
 			if(auxcode == ins->getCodeI()){
 				groupClass* g = new groupClass(className, ins, auxcode, auxroom, auxq, hour, auxDay);
+				cargarListaA(g->getListA(), "Socios.txt", auxcode,aso );
 				listaG->insertFirst(g);
 			}
 				

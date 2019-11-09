@@ -251,7 +251,7 @@ void gym::menuPrincipal() {
 			case 4:
 				limpiaPantalla();			
 				imprimirCadena("\t[ Lista General de instructores ] \n");
-				lt->cargarListaI(l2,"instructor_prueba.txt");
+				//lt->cargarListaI(l2,"instructor_prueba.txt");
 				imprimirCadena(l2->toString());
 				break;
 			case 5:
@@ -272,6 +272,7 @@ void gym::menuPrincipal() {
 				manejoClasesGrupales();
 				break;
 			case 9:
+				l1->save("Socios.txt");
 				l2->save("instructor_prueba.txt");
 				exit(9);
 				break;
@@ -422,6 +423,7 @@ void gym::manejoClasesGrupales()
 			}
 			else
 			{		
+				l1->searchAndGet(id)->setClassCode(auxCode);
 				l5->searchAndGet(auxCode)->getListA()->insertFirst(l1->searchAndGet(id));
 				imprimirCadena("Socio matriculado exitosamente");
 				system("pause");
@@ -436,7 +438,7 @@ void gym::manejoClasesGrupales()
 			}
 			else
 			{
-				lt->cargarGrupo(l5, "Grupos.txt", a, t, 666);
+				lt->cargarGrupo(l5, "Grupos.txt", a, t);
 				imprimirCadena("Clases cargadas exitosamente!");
 				system("pause");
 				break;
