@@ -141,15 +141,15 @@ string groupClass::toString()
 	s << "Nombre de la clase: " << this->class_name << endl;
 	if (this->class_code < 10)
 	{
-		s  << "00" << "Codigo de la clase: " << this->class_code << endl;
+		s << "Codigo de la clase: " << "00" << this->class_code << endl;
 	}
 	else if (this->class_code < 100 && this->class_code >= 10)
 	{
-		s  << "0" << "Codigo de la clase: " << this->class_code << endl;
+		s << "Codigo de la clase: " << "0" << this->class_code << endl;
 	}
 	else
 	{
-		s << this->class_code << endl;
+		s << "Codigo de la clase: " << this->class_code << endl;
 	}
 	s << "Tutor de la clase: " << this->tutor->getFullName()<< endl;
 	s << "Salon de la clase: " << this->room << endl;

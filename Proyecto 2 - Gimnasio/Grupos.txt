@@ -1,1 +1,1 @@
-discretas	1	C	20	8:00	Martes
+Discretas	1	C	20	8:00	Martes
