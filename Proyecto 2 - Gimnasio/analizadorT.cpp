@@ -68,12 +68,13 @@ void analizadorT::cargarListaA(listA* lisA, string archivo,int clcode,associate*
 		getline(input, email, '\t');
 		getline(input, phone, '\t');
 		getline(input, registration, '\t');
-		getline(input, classcod,'\t');
+		getline(input, classcod,'\n');
 		phoneAux = convertirInt(phone);
 		clAux = convertirInt(classcod);
 		if (!input.eof())
 			{
-			if(clcode ==aso->getClassCode() ){
+			//aso->getClassCode()
+			if(clcode == clAux ){
 				associate* a1 = new associate(id, name, email, phoneAux, registration, NULL, NULL, NULL, clAux, NULL);
 				lisA->insertFirst(a1);
 
