@@ -12,6 +12,7 @@ public:
 	codeGen();
 	~codeGen();
 	string genCode();
+	int genCodeNum();
 	int getLast();
 };
 #endif // !CODEGENERATOR_H

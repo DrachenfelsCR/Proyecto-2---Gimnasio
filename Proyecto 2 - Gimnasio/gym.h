@@ -27,6 +27,7 @@ private:
 	timeG* t1;
 	exercise* e1;
 	codeGen* c1;
+	codeGen* c2;
 public:
 	gym();
 	void inicio();

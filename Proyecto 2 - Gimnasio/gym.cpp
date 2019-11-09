@@ -16,6 +16,7 @@ gym::gym()
 	t1 = new timeG();
 	e1 = NULL;
 	c1 = new codeGen();
+	c2 = new codeGen();
 }
 
 void gym::timeSetUp() {
@@ -251,7 +252,6 @@ void gym::menuPrincipal() {
 			case 4:
 				limpiaPantalla();			
 				imprimirCadena("\t[ Lista General de instructores ] \n");
-				//lt->cargarListaI(l2,"instructor_prueba.txt");
 				imprimirCadena(l2->toString());
 				break;
 			case 5:
@@ -615,7 +615,7 @@ void gym::manejoInstructores()
 				end.setDay(day);
 				r->setEndingDate(end);
 				imprimirCadena("\t Digite el numero de rutina");
-				r->setCode(leerEntero());
+				r->setCode(c2->genCodeNum());
 				imprimirCadena("\t Digite El objetivo para el Socio");
 				r->setObjetive(leerCadena());
 				imprimirCadena("\t Parte del cuerpo((1-pierna, 2-pecho, 3-espalda, 4-hombro, 5-triceps, 6-biceps, 7-trapecio, 8-antebrazo): ");

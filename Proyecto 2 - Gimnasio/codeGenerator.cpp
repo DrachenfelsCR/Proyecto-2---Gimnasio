@@ -25,6 +25,12 @@ string codeGen::genCode()
 	return s.str();
 }
 
+int codeGen::genCodeNum()
+{
+	this->last++;
+	return this->last;
+}
+
 int codeGen::getLast()
 {
 	return this->last;
