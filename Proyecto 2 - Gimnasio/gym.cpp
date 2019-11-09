@@ -238,6 +238,7 @@ void gym::menuPrincipal() {
 				t->setFullName(leerCadena());
 				imprimirCadena("\t Digite el ID de la persona");
 				t->setId(leerCadena());
+				t->setCodeI(0);
 				l2->insertLast(t);
 				imprimirCadena("Se ha ingresado el instructor al sistema de manera correcta");
 				
@@ -315,7 +316,6 @@ void gym::manejoClasesGrupales()
 			if (r1->searchRoom(rn) == false)
 			{
 				imprimirCadena("El salon ingresado no existe o fue ingresado incorrectamente..");
-				system("pause");
 				break;
 			}
 			imprimirCadena(r1->getRoom(rn)->getSchedule()->toString());
@@ -330,7 +330,10 @@ void gym::manejoClasesGrupales()
 					id = leerCadena();
 					if (l2->findInstructor(id) != true) {
 						imprimirCadena("No se encuentra al instructor o digito incorrectamentel el ID..");
-						system("pause");
+						break;
+					}
+					else if (l2->searchAndGet(id)->getCodeI() != 0) {
+						imprimirCadena("El instructor ya tiene una clase asignada..");
 						break;
 					}
 					limpiaPantalla();
@@ -389,7 +392,6 @@ void gym::manejoClasesGrupales()
 			if (l5->searchAndGet(auxCode) == NULL)
 			{
 				imprimirCadena("El ID de la clase ingresada no se encuentra o fue ingresado incorrectamente..");
-				system("pause");
 				break;
 			}
 			limpiaPantalla();
@@ -403,7 +405,6 @@ void gym::manejoClasesGrupales()
 			if (l5->searchAndGet(auxCode) == NULL)
 			{
 				imprimirCadena("El ID de la clase ingresada no se encuentra o fue ingresado incorrectamente..");
-				system("pause");
 				break;
 			}
 			limpiaPantalla();
@@ -420,6 +421,11 @@ void gym::manejoClasesGrupales()
 			id = leerCadena();
 			if (l1->find(id) != true) {
 				imprimirCadena("\t (!) La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema\n");
+				break;
+			}
+			else if(l1->searchAndGet(id)->getClassCode() != 0)
+			{
+				imprimirCadena("El socio ya fue matriculado en otra clase..");
 				break;
 			}
 			else

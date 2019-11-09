@@ -1,2 +1,2 @@
-Progra	2	B	20	11:00	Martes
-Discretas	1	A	20	10:00	Martes
+Progra	2	B	20	7:00	Miercoles
+Megadeth	1	A	20	6:00	Martes
