@@ -407,7 +407,7 @@ void gym::manejoClasesGrupales()
 				break;
 			}
 			limpiaPantalla();
-			if (l5->searchAndGet(auxCode)->getListA()->countNodes() >= 2)
+			if (l5->searchAndGet(auxCode)->getListA()->countNodes() >= 20)
 			{
 				imprimirCadena("La clase se encuentra llena..");
 				break;
@@ -674,6 +674,7 @@ void gym::manejoInstructores()
 				break;
 			}
 			l2->searchAndGet(c)->getLista();
+			limpiaPantalla();
 			imprimirCadena("Nombre del instructor: " + l2->searchAndGet(c)->getFullName());
 			cout << "\n";
 			imprimirCadena("Rutinas vencidas:\n");

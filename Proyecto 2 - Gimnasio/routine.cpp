@@ -48,14 +48,15 @@ void routine::setObjetive(string objective) {
 
 void routine::setRoutineStatus(timeG* today)
 {
-	if (today->getYear() >= this->ending_date.getYear())
+	if (today->getYear() > this->ending_date.getYear())
 	{
-		if (today->getMonth() >= this->ending_date.getMonth())
+		this->routine_status = false;
+	} 
+	else if ((today->getMonth() >= this->ending_date.getMonth()) && (today->getYear() == this->ending_date.getYear()))
+	{
+		if (today->getDay() >= this->ending_date.getDay())
 		{
-			if (today->getDay() >= this->ending_date.getDay())
-			{
-				this->routine_status = false;
-			}
+			this->routine_status = false;
 		}
 	}
 	else
