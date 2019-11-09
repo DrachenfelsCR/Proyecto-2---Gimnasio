@@ -11,15 +11,15 @@ string codeGen::genCode()
 
 	if (last < 10)
 	{
-		s << "(" << "00" << this->last << ")";
+		s << "(" << "00" << this->last + 1 << ")";
 	}
 	else if (last < 100 && last >= 10)
 	{
-		s << "(" << "0" << this->last << ")";
+		s << "(" << "0" << this->last + 1 << ")";
 	}
 	else
 	{
-		s << "(" << this->last << ")";
+		s << "(" << this->last + 1 << ")";
 	}
 	this->last++;
 	return s.str();

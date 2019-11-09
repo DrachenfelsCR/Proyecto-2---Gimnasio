@@ -18,6 +18,7 @@ groupClass::groupClass(string class_nam, instructor* tutor, int class_code, char
 	this->room = room;
 	this->quantity = quantity;
 	this->hour = hour;
+	this->class_members = new listA();
 	switch (day)
 	{
 	case 1:
@@ -138,11 +139,23 @@ string groupClass::toString()
 {
 	stringstream s;
 	s << "Nombre de la clase: " << this->class_name << endl;
-	s << "Codigo de la clase: " << this->class_code << endl;
+	if (this->class_code < 10)
+	{
+		s  << "00" << "Codigo de la clase: " << this->class_code << endl;
+	}
+	else if (this->class_code < 100 && this->class_code >= 10)
+	{
+		s  << "0" << "Codigo de la clase: " << this->class_code << endl;
+	}
+	else
+	{
+		s << this->class_code << endl;
+	}
 	s << "Tutor de la clase: " << this->tutor->getFullName()<< endl;
 	s << "Salon de la clase: " << this->room << endl;
-	s << "Cantidad: " << this->quantity << endl;
+	s << "Capacidad: " << this->quantity << endl;
 	s << "Horario: " << this->hour << endl;
+	s << "Disponible: " << (this->quantity) - (this->class_members->countNodes());
 	return s.str();
 }
 

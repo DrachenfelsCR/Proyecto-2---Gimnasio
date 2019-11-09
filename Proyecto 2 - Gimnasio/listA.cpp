@@ -68,6 +68,16 @@ double listA::fatLossTotal()
 	return total;
 }
 
+int listA::countNodes() {
+	current = first;
+	int quantity = 0;
+	while (current != NULL)
+	{
+		quantity++;
+		current = current->getNext();
+	}
+	return quantity;
+}
 
 
 routine* listA::searchR(int ccode)

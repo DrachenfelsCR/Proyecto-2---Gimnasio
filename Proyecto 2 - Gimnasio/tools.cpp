@@ -169,7 +169,7 @@ string menuClaseGrupales() {
 	s << "\t|[1].Creacion de clase grupal                                  |" << endl;
 	s << "\t|[2].Visualizacion clase grupal                                |" << endl;
 	s << "\t|[3].Matricular socio                                          |" << endl;
-	s << "\t|[4].Cargas clases grupales                                    |" << endl;
+	s << "\t|[4].Cargar clases grupales                                    |" << endl;
 	s << "\t|[5].Regresar al Menu principal                                |" << endl;
 	s << "\t|______________________________________________________________|" << endl;
 	return s.str();
@@ -212,6 +212,12 @@ string convertirString(int i) {
 	string v;
 	r >> v;
 	return v.c_str();
+}
+
+string doubleToString(double i) {
+	stringstream r;
+	r << i;
+	return r.str();
 }
 
 string validarPartCuerpo(int p)

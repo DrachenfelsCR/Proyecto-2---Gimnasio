@@ -169,6 +169,7 @@ void gym::menuPrincipal() {
 	{
 		limpiaPantalla();
 		int x = 0;
+		string opAux;
 		string id;
 		string fileName = "instructor_prueba.txt";
 		int cont = 1;
@@ -184,6 +185,10 @@ void gym::menuPrincipal() {
 			{
 			case 1:
 				limpiaPantalla();
+				if (l2->getFirst() == NULL) {
+					imprimirCadena("Aun no ha ingresado socios al sistema..");
+					break;
+				}
 				imprimirCadena("\t Bienvenido Al Sistema De ingreso de Socios \n");
 				imprimirCadena("\t Digite el Nombre Completo De la persona");
 				a->setFullName(leerCadena());
@@ -199,7 +204,7 @@ void gym::menuPrincipal() {
 				cout << "\n";
 				//--
 				imprimirCadena(l2->toString());
-				imprimirCadena("\t Digite la cedula del instructor \n");
+				imprimirCadena("\t Digite la cedula del instructor que le asignara al socio \n");
 				id = leerCadena();
 				if (l2->findInstructor(id)==true) {
 					l1->insertFirst(a);
@@ -217,6 +222,17 @@ void gym::menuPrincipal() {
 			case 2:
 				limpiaPantalla();
 				imprimirCadena("\t Bienvenido Al Sistema De ingreso de instructores \n");
+				imprimirCadena("\t Desea ingresar un nuevo instructor? (S/N)");
+				opAux = leerCadena();
+				while ((opAux != "S" && opAux != "s") && (opAux != "N" && opAux != "n"))
+				{
+					imprimirCadena("Digite S o N..");
+					opAux = leerCadena();
+				}
+				if ((opAux == "N") || (opAux == "n"))
+				{
+					break;
+				}
 				imprimirCadena("\t Digite el Nombre Completo De la persona");
 				t->setFullName(leerCadena());
 				imprimirCadena("\t Digite el ID de la persona");
@@ -227,26 +243,27 @@ void gym::menuPrincipal() {
 				break;
 			case 3:
 				limpiaPantalla();
-				imprimirCadena("\t Lista General de socios \n");
+				imprimirCadena("\t [ Lista General de socios ] \n");
 				
 				imprimirCadena(l1->toString());
 				break;
 
 			case 4:
 				limpiaPantalla();			
-				imprimirCadena("\t Lista General de instructores \n");
+				imprimirCadena("\t[ Lista General de instructores ] \n");
 				lt->cargarListaI(l2,"instructor_prueba.txt");
 				imprimirCadena(l2->toString());
 				break;
 			case 5:
-				imprimirCadena("\t Mejores Resultados Perdida de Grasa");
+				imprimirCadena("\t[ Mejores Resultados Perdida de Grasa ]\n");
 				l1->bubbleSort();
 				imprimirCadena(l1->toStringFat());
 				break;
 			case 6:
-				imprimirCadena("\t Instructor con mejores resultados: ");
+				imprimirCadena("\t[ Instructor con mejores resultados ]\n");
 				l2->bubbleSort();
-				//imprimirCadena(l2->getFirst()->getTutor()->getFullName() + ",");
+				imprimirCadena(l2->getFirst()->getTutor()->getFullName());
+				imprimirCadena(doubleToString(l2->getFirst()->getTutor()->getLista()->fatLossTotal()) + "% de perdida de grasa promedio en sus socios");
 				break;
 			case 7:
 				manejoInstructores();
@@ -372,8 +389,9 @@ void gym::manejoClasesGrupales()
 				system("pause");
 				break;
 			}
+			limpiaPantalla();
 			imprimirCadena(l5->searchAndGet(auxCode)->toString());
-			imprimirCadena("Socios matriculados: ");
+			imprimirCadena("\nSocios matriculados: ");
 			imprimirCadena(l5->searchAndGet(auxCode)->getListA()->toStringSmall());
 			break;
 		case 3:
@@ -385,8 +403,17 @@ void gym::manejoClasesGrupales()
 				system("pause");
 				break;
 			}
+			limpiaPantalla();
+			if (l5->searchAndGet(auxCode)->getListA()->countNodes() >= 2)
+			{
+				imprimirCadena("La clase se encuentra llena..");
+				break;
+			}
 			imprimirCadena(l5->searchAndGet(auxCode)->toString());
-			imprimirCadena("Digite el ID del socio: ");
+			imprimirCadena("-------------------------------------");
+			imprimirCadena(l1->toString());
+			imprimirCadena("-------------------------------------");
+			imprimirCadena("\nDigite el ID del socio: ");
 			id = leerCadena();
 			if (l1->find(id) != true) {
 				imprimirCadena("\t (!) La cedula ingresada ha sido escrita de manera incorrecta o el instructor no se encuentra en el sistema\n");
@@ -394,7 +421,7 @@ void gym::manejoClasesGrupales()
 				break;
 			}
 			else
-			{
+			{		
 				l5->searchAndGet(auxCode)->getListA()->insertFirst(l1->searchAndGet(id));
 				imprimirCadena("Socio matriculado exitosamente");
 				system("pause");
@@ -464,6 +491,7 @@ void gym::manejoInstructores()
 			}
 			else
 			{
+				limpiaPantalla();
 				imprimirCadena("Lista de Socios:\n");
 				imprimirCadena(l2->searchAndGet(id)->getLista()->toString());
 				break;
@@ -474,8 +502,8 @@ void gym::manejoInstructores()
 			limpiaPantalla();
 			imprimirCadena("\t Lista De socios");
 			imprimirCadena(l1->toString());
-			c = leerCadena();
 			imprimirCadena("\t Digita el Numero de ID del Socio");
+			c = leerCadena();
 			if (l1->find(c) == true)
 			{
 				limpiaPantalla();

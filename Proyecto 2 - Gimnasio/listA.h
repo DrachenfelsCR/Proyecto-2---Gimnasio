@@ -35,6 +35,7 @@ public:
 	void bubbleSort();
 	double fatLossTotal();
 	associate* searchByRoutine(int ccode);
+	int countNodes();
 };
 
 #endif // !LISTA_H
